@@ -1,272 +1,272 @@
-cost,id,en_name,cn_name,name,recipe,secret_shop,side_shop
-2250,1,Blink Dagger,闪烁匕首,item_blink,0,0,1
-420,2,Blades of Attack,攻击之爪,item_blades_of_attack,0,0,0
-1200,3,Broadsword,阔剑,item_broadsword,0,0,1
-550,4,Chainmail,锁子甲,item_chainmail,0,0,1
-1400,5,Claymore,大剑,item_claymore,0,0,0
-900,6,Helm of Iron Will,铁意头盔,item_helm_of_iron_will,0,0,1
-1100,7,Javelin,标枪,item_javelin,0,0,0
-1600,8,Mithril Hammer,秘银锤,item_mithril_hammer,0,0,0
-1400,9,Platemail,板甲,item_platemail,0,1,0
-875,10,Quarterstaff,短棍,item_quarterstaff,0,0,0
-200,11,Quelling Blade,压制之刃,item_quelling_blade,0,0,1
-175,12,Ring of Protection,守护指环,item_ring_of_protection,0,0,1
-135,13,Gauntlets of Strength,力量手套,item_gauntlets,0,0,0
-135,14,Slippers of Agility,敏捷便鞋,item_slippers,0,0,0
-135,15,Mantle of Intelligence,智力斗篷,item_mantle,0,0,0
-50,16,Iron Branch,铁树枝干,item_branches,0,0,0
-450,17,Belt of Strength,力量腰带,item_belt_of_strength,0,0,1
-450,18,Band of Elvenskin,精灵布带,item_boots_of_elves,0,0,1
-450,19,Robe of the Magi,法师长袍,item_robe,0,0,1
-165,20,Circlet,圆环,item_circlet,0,0,0
-1000,21,Ogre Axe,食人魔之斧,item_ogre_axe,0,0,0
-1000,22,Blade of Alacrity,欢欣之刃,item_blade_of_alacrity,0,0,0
-1000,23,Staff of Wizardry,魔力法杖,item_staff_of_wizardry,0,0,0
-2150,24,Ultimate Orb,极限法球,item_ultimate_orb,0,1,0
-500,25,Gloves of Haste,加速手套,item_gloves,0,0,1
-1100,26,Morbid Mask,吸血面具,item_lifesteal,0,0,1
-300,27,Ring of Regen,回复戒指,item_ring_of_regen,0,0,0
-325,28,Sage's Mask,贤者面罩,item_sobi_mask,0,0,0
-500,29,Boots of Speed,速度之靴,item_boots,0,0,1
-900,30,Gem of True Sight,真视宝石,item_gem,0,0,0
-550,31,Cloak,抗魔斗篷,item_cloak,0,0,1
-1450,32,Talisman of Evasion,闪避护符,item_talisman_of_evasion,0,1,0
-1000,33,Cheese,奶酪,item_cheese,0,0,0
-200,34,Magic Stick,魔棒,item_magic_stick,0,0,1
-150,35,Recipe: Magic Wand,卷轴：魔杖,item_recipe_magic_wand,1,0,0
-450,36,Magic Wand,魔杖,item_magic_wand,0,0,0
-1500,37,Ghost Scepter,幽魂权杖,item_ghost,0,0,0
-50,38,Clarity,净化药水,item_clarity,0,0,0
-110,39,Healing Salve,治疗药膏,item_flask,0,0,0
-180,40,Dust of Appearance,显影之尘,item_dust,0,0,0
-650,41,Bottle,魔瓶,item_bottle,0,1,0
-75,42,Observer Ward,侦查守卫,item_ward_observer,0,0,0
-100,43,Sentry Ward,岗哨守卫,item_ward_sentry,0,0,0
-90,44,Tango,树之祭祀,item_tango,0,0,0
-50,45,Animal Courier,动物信使,item_courier,0,0,0
-50,46,Town Portal Scroll,回城卷轴,item_tpscroll,0,0,1
-2000,47,Recipe: Boots of Travel,卷轴：远行鞋,item_recipe_travel_boots,1,0,0
-2500,48,Boots of Travel,远行鞋,item_travel_boots,0,0,0
-0,49,Recipe: Phase Boots,卷轴：相位鞋,item_recipe_phase_boots,1,0,0
-1340,50,Phase Boots,相位鞋,item_phase_boots,0,0,0
-2200,51,Demon Edge,恶魔刀锋,item_demon_edge,0,1,0
-3200,52,Eaglesong,鹰歌弓,item_eagle,0,1,0
-3000,53,Reaver,掠夺者之斧,item_reaver,0,1,0
-3800,54,Sacred Relic,圣者遗物,item_relic,0,1,0
-2000,55,Hyperstone,振奋宝石,item_hyperstone,0,1,0
-850,56,Ring of Health,治疗指环,item_ring_of_health,0,1,0
-850,57,Void Stone,虚无宝石,item_void_stone,0,1,1
-2700,58,Mystic Staff,神秘法杖,item_mystic_staff,0,1,0
-900,59,Energy Booster,能量之球,item_energy_booster,0,1,1
-1200,60,Point Booster,精气之球,item_point_booster,0,1,0
-1100,61,Vitality Booster,活力之球,item_vitality_booster,0,1,1
-0,62,Recipe: Power Treads,卷轴：动力鞋,item_recipe_power_treads,1,0,0
-1450,63,Power Treads,动力鞋,item_power_treads,0,0,0
-1650,64,Recipe: Hand of Midas,卷轴：迈达斯之手,item_recipe_hand_of_midas,1,0,0
-2150,65,Hand of Midas,迈达斯之手,item_hand_of_midas,0,0,0
-0,66,Recipe: Oblivion Staff,卷轴：空明杖,item_recipe_oblivion_staff,1,0,0
-1650,67,Oblivion Staff,空明杖,item_oblivion_staff,0,0,0
-0,68,Recipe: Perseverance,卷轴：坚韧球,item_recipe_pers,1,0,0
-1700,69,Perseverance,坚韧球,item_pers,0,0,0
-0,70,Recipe: Poor Man's Shield,卷轴：穷鬼盾,item_recipe_poor_mans_shield,1,0,0
-0,71,Poor Man's Shield,穷鬼盾,item_poor_mans_shield,0,0,0
-165,72,Recipe: Bracer,卷轴：护腕,item_recipe_bracer,1,0,0
-465,73,Bracer,护腕,item_bracer,0,0,0
-165,74,Recipe: Wraith Band,卷轴：怨灵系带,item_recipe_wraith_band,1,0,0
-465,75,Wraith Band,怨灵系带,item_wraith_band,0,0,0
-165,76,Recipe: Null Talisman,卷轴：空灵挂件,item_recipe_null_talisman,1,0,0
-465,77,Null Talisman,空灵挂件,item_null_talisman,0,0,0
-900,78,Recipe: Mekansm,卷轴：梅肯斯姆,item_recipe_mekansm,1,0,0
-2350,79,Mekansm,梅肯斯姆,item_mekansm,0,0,0
-0,80,Recipe: Vladmir's Offering,卷轴：弗拉迪米尔的祭品,item_recipe_vladmir,1,0,0
-2250,81,Vladmir's Offering,弗拉迪米尔的祭品,item_vladmir,0,0,0
-200,85,Recipe: Buckler,卷轴：玄冥盾牌,item_recipe_buckler,1,0,0
-800,86,Buckler,玄冥盾牌,item_buckler,0,0,0
-0,87,Recipe: Ring of Basilius,卷轴：王者之戒,item_recipe_ring_of_basilius,1,0,0
-500,88,Ring of Basilius,王者之戒,item_ring_of_basilius,0,0,0
-800,89,Recipe: Pipe of Insight,卷轴：洞察烟斗,item_recipe_pipe,1,0,0
-3150,90,Pipe of Insight,洞察烟斗,item_pipe,0,0,0
-310,91,Recipe: Urn of Shadows,卷轴：影之灵龛,item_recipe_urn_of_shadows,1,0,0
-875,92,Urn of Shadows,影之灵龛,item_urn_of_shadows,0,0,0
-300,93,Recipe: Headdress,卷轴：恢复头巾,item_recipe_headdress,1,0,0
-650,94,Headdress,恢复头巾,item_headdress,0,0,0
-0,95,Recipe: Scythe of Vyse,卷轴：邪恶镰刀,item_recipe_sheepstick,1,0,0
-5700,96,Scythe of Vyse,邪恶镰刀,item_sheepstick,0,0,0
-775,97,Recipe: Orchid Malevolence,卷轴：紫怨,item_recipe_orchid,1,0,0
-4075,98,Orchid Malevolence,紫怨,item_orchid,0,0,0
-650,99,Recipe: Eul's Scepter of Divinity,卷轴：Eul的神圣法杖,item_recipe_cyclone,1,0,0
-2750,100,Eul's Scepter of Divinity,Eul的神圣法杖,item_cyclone,0,0,0
-950,101,Recipe: Force Staff,卷轴：原力法杖,item_recipe_force_staff,1,0,0
-2250,102,Force Staff,原力法杖,item_force_staff,0,0,0
-1250,103,Recipe: Dagon,卷轴：达贡之神力,item_recipe_dagon,1,0,0
-2715,104,Dagon,达贡之神力,item_dagon,0,0,0
-1300,105,Recipe: Necronomicon,卷轴：死灵书,item_recipe_necronomicon,1,0,0
-2400,106,Necronomicon,死灵书,item_necronomicon,0,0,0
-0,107,Recipe: Aghanim's Scepter,卷轴：阿哈利姆神杖,item_recipe_ultimate_scepter,1,0,0
-4200,108,Aghanim's Scepter,阿哈利姆神杖,item_ultimate_scepter,0,0,0
-1800,109,Recipe: Refresher Orb,卷轴：刷新球,item_recipe_refresher,1,0,0
-5200,110,Refresher Orb,刷新球,item_refresher,0,0,0
-1300,111,Recipe: Assault Cuirass,卷轴：强袭胸甲,item_recipe_assault,1,0,0
-5250,112,Assault Cuirass,强袭胸甲,item_assault,0,0,0
-0,113,Recipe: Heart of Tarrasque,卷轴：恐鳌之心,item_recipe_heart,1,0,0
-5200,114,Heart of Tarrasque,恐鳌之心,item_heart,0,0,0
-1375,115,Recipe: Black King Bar,卷轴：黑皇杖,item_recipe_black_king_bar,1,0,0
-3975,116,Black King Bar,黑皇杖,item_black_king_bar,0,0,0
-0,117,Aegis of the Immortal,不朽之守护,item_aegis,0,0,0
-650,118,Recipe: Shiva's Guard,卷轴：希瓦的守护,item_recipe_shivas_guard,1,0,0
-4750,119,Shiva's Guard,希瓦的守护,item_shivas_guard,0,0,0
-0,120,Recipe: Bloodstone,卷轴：血精石,item_recipe_bloodstone,1,0,0
-4900,121,Bloodstone,血精石,item_bloodstone,0,0,0
-1200,122,Recipe: Linken's Sphere,卷轴：林肯法球,item_recipe_sphere,1,0,0
-5050,123,Linken's Sphere,林肯法球,item_sphere,0,0,0
-0,124,Recipe: Vanguard,卷轴：先锋盾,item_recipe_vanguard,1,0,0
-2150,125,Vanguard,先锋盾,item_vanguard,0,0,0
-0,126,Recipe: Blade Mail,卷轴：刃甲,item_recipe_blade_mail,1,0,0
-2200,127,Blade Mail,刃甲,item_blade_mail,0,0,0
-0,128,Recipe: Soul Booster,卷轴：振魂石,item_recipe_soul_booster,1,0,0
-3200,129,Soul Booster,振魂石,item_soul_booster,0,0,0
-0,130,Recipe: Hood of Defiance,卷轴：挑战头巾,item_recipe_hood_of_defiance,1,0,0
-1700,131,Hood of Defiance,挑战头巾,item_hood_of_defiance,0,0,0
-0,132,Recipe: Divine Rapier,卷轴：圣剑,item_recipe_rapier,1,0,0
-6000,133,Divine Rapier,圣剑,item_rapier,0,0,0
-0,134,Recipe: Monkey King Bar,卷轴：金箍棒,item_recipe_monkey_king_bar,1,0,0
-4175,135,Monkey King Bar,金箍棒,item_monkey_king_bar,0,0,0
-1350,136,Recipe: Radiance,卷轴：辉耀,item_recipe_radiance,1,0,0
-5150,137,Radiance,辉耀,item_radiance,0,0,0
-0,138,Recipe: Butterfly,卷轴：蝴蝶,item_recipe_butterfly,1,0,0
-5525,139,Butterfly,蝴蝶,item_butterfly,0,0,0
-1000,140,Recipe: Daedalus,卷轴：代达罗斯之殇,item_recipe_greater_crit,1,0,0
-5320,141,Daedalus,代达罗斯之殇,item_greater_crit,0,0,0
-1150,142,Recipe: Skull Basher,卷轴：碎颅锤,item_recipe_basher,1,0,0
-3200,143,Skull Basher,碎颅锤,item_basher,0,0,0
-300,144,Recipe: Battle Fury,卷轴：狂战斧,item_recipe_bfury,1,0,0
-4400,145,Battle Fury,狂战斧,item_bfury,0,0,0
-500,146,Recipe: Manta Style,卷轴：幻影斧,item_recipe_manta,1,0,0
-4800,147,Manta Style,幻影斧,item_manta,0,0,0
-500,148,Recipe: Crystalys,卷轴：水晶剑,item_recipe_lesser_crit,1,0,0
-2120,149,Crystalys,水晶剑,item_lesser_crit,0,0,0
-550,150,Recipe: Armlet of Mordiggian,卷轴：莫尔迪基安的臂章,item_recipe_armlet,1,0,0
-2370,151,Armlet of Mordiggian,莫尔迪基安的臂章,item_armlet,0,0,0
-2700,152,Shadow Blade,影刃,item_invis_sword,0,0,0
-0,153,Recipe: Sange and Yasha,卷轴：散夜对剑,item_recipe_sange_and_yasha,1,0,0
-4300,154,Sange and Yasha,散夜对剑,item_sange_and_yasha,0,0,0
-0,155,Recipe: Satanic,卷轴：撒旦之邪力,item_recipe_satanic,1,0,0
-5500,156,Satanic,撒旦之邪力,item_satanic,0,0,0
-900,157,Recipe: Mjollnir,卷轴：雷神之锤,item_recipe_mjollnir,1,0,0
-5600,158,Mjollnir,雷神之锤,item_mjollnir,0,0,0
-0,159,Recipe: Eye of Skadi,卷轴：斯嘉蒂之眼,item_recipe_skadi,1,0,0
-5500,160,Eye of Skadi,斯嘉蒂之眼,item_skadi,0,0,0
-700,161,Recipe: Sange,卷轴：散华,item_recipe_sange,1,0,0
-2150,162,Sange,散华,item_sange,0,0,0
-0,163,Recipe: Helm of the Dominator,卷轴：支配头盔,item_recipe_helm_of_the_dominator,1,0,0
-2000,164,Helm of the Dominator,支配头盔,item_helm_of_the_dominator,0,0,0
-0,165,Recipe: Maelstrom,卷轴：漩涡,item_recipe_maelstrom,1,0,0
-2700,166,Maelstrom,漩涡,item_maelstrom,0,0,0
-0,167,Recipe: Desolator,卷轴：黯灭,item_recipe_desolator,1,0,0
-3500,168,Desolator,黯灭,item_desolator,0,0,0
-700,169,Recipe: Yasha,卷轴：夜叉,item_recipe_yasha,1,0,0
-2150,170,Yasha,夜叉,item_yasha,0,0,0
-0,171,Recipe: Mask of Madness,卷轴：疯狂面具,item_recipe_mask_of_madness,1,0,0
-1975,172,Mask of Madness,疯狂面具,item_mask_of_madness,0,0,0
-700,173,Recipe: Diffusal Blade,卷轴：净魂之刃,item_recipe_diffusal_blade,1,0,0
-3150,174,Diffusal Blade,净魂之刃,item_diffusal_blade,0,0,0
-0,175,Recipe: Ethereal Blade,卷轴：虚灵之刃,item_recipe_ethereal_blade,1,0,0
-4700,176,Ethereal Blade,虚灵之刃,item_ethereal_blade,0,0,0
-200,177,Recipe: Soul Ring,卷轴：灵魂之戒,item_recipe_soul_ring,1,0,0
-770,178,Soul Ring,灵魂之戒,item_soul_ring,0,0,0
-0,179,Recipe: Arcane Boots,卷轴：奥术鞋,item_recipe_arcane_boots,1,0,0
-1400,180,Arcane Boots,奥术鞋,item_arcane_boots,0,0,0
-275,181,Orb of Venom,淬毒之珠,item_orb_of_venom,0,0,0
-200,182,Stout Shield,圆盾,item_stout_shield,0,0,0
-0,183,Recipe: Shadow Blade,卷轴：影刃,item_recipe_invis_sword,1,0,0
-575,184,Recipe: Drum of Endurance,卷轴：韧鼓,item_recipe_ancient_janggo,1,0,0
-1615,185,Drum of Endurance,韧鼓,item_ancient_janggo,0,0,0
-0,186,Recipe: Medallion of Courage,卷轴：勇气勋章,item_recipe_medallion_of_courage,1,0,0
-1175,187,Medallion of Courage,勇气勋章,item_medallion_of_courage,0,0,0
-80,188,Smoke of Deceit,诡计之雾,item_smoke_of_deceit,0,0,0
-500,189,Recipe: Veil of Discord,卷轴：纷争面纱,item_recipe_veil_of_discord,1,0,0
-2330,190,Veil of Discord,纷争面纱,item_veil_of_discord,0,0,0
-0,191,Recipe: Necronomicon,卷轴：死灵书,item_recipe_necronomicon_2,1,0,0
-0,192,Recipe: Necronomicon,卷轴：死灵书,item_recipe_necronomicon_3,1,0,0
-3700,193,Necronomicon,死灵书,item_necronomicon_2,0,0,0
-5000,194,Necronomicon,死灵书,item_necronomicon_3,0,0,0
-0,197,Recipe: Dagon,卷轴：达贡之神力,item_recipe_dagon_2,1,0,0
-0,198,Recipe: Dagon,卷轴：达贡之神力,item_recipe_dagon_3,1,0,0
-0,199,Recipe: Dagon,卷轴：达贡之神力,item_recipe_dagon_4,1,0,0
-0,200,Recipe: Dagon,卷轴：达贡之神力,item_recipe_dagon_5,1,0,0
-3965,201,Dagon,达贡之神力,item_dagon_2,0,0,0
-5215,202,Dagon,达贡之神力,item_dagon_3,0,0,0
-6465,203,Dagon,达贡之神力,item_dagon_4,0,0,0
-7715,204,Dagon,达贡之神力,item_dagon_5,0,0,0
-1100,205,Recipe: Rod of Atos,卷轴：阿托斯之棍,item_recipe_rod_of_atos,1,0,0
-3030,206,Rod of Atos,阿托斯之棍,item_rod_of_atos,0,0,0
-1550,207,Recipe: Abyssal Blade,卷轴：深渊之刃,item_recipe_abyssal_blade,1,0,0
-6900,208,Abyssal Blade,深渊之刃,item_abyssal_blade,0,0,0
-0,209,Recipe: Heaven's Halberd,卷轴：天堂之戟,item_recipe_heavens_halberd,1,0,0
-3600,210,Heaven's Halberd,天堂之戟,item_heavens_halberd,0,0,0
-0,211,Recipe: Ring of Aquila,卷轴：天鹰之戒,item_recipe_ring_of_aquila,1,0,0
-965,212,Ring of Aquila,天鹰之戒,item_ring_of_aquila,0,0,0
-0,213,Recipe: Tranquil Boots,卷轴：静谧之鞋,item_recipe_tranquil_boots,1,0,0
-1050,214,Tranquil Boots,静谧之鞋,item_tranquil_boots,0,0,0
-1300,215,Shadow Amulet,暗影护符,item_shadow_amulet,0,0,0
-70,216,Enchanted Mango,魔法芒果,item_enchanted_mango,0,0,0
-0,217,Recipe: Observer and Sentry Wards,卷轴：侦查·岗哨守卫,item_recipe_ward_dispenser,1,0,0
-175,218,Observer and Sentry Wards,侦查·岗哨守卫,item_ward_dispenser,0,0,0
-0,219,Recipe: Boots of Travel,卷轴：远行鞋,item_recipe_travel_boots_2,1,0,0
-4500,220,Boots of Travel,远行鞋,item_travel_boots_2,0,0,0
-0,221,Recipe: Lotus Orb,卷轴：清莲宝珠,item_recipe_lotus_orb,1,0,0
-0,222,Recipe: Meteor Hammer,卷轴：陨星锤,item_recipe_meteor_hammer,1,0,0
-2625,223,Meteor Hammer,陨星锤,item_meteor_hammer,0,0,0
-0,224,Recipe: Nullifier,卷轴：否决挂饰,item_recipe_nullifier,1,0,0
-4700,225,Nullifier,否决挂饰,item_nullifier,0,0,0
-4000,226,Lotus Orb,清莲宝珠,item_lotus_orb,0,0,0
-0,227,Recipe: Solar Crest,卷轴：炎阳纹章,item_recipe_solar_crest,1,0,0
-0,228,Recipe: Octarine Core,卷轴：玲珑心,item_recipe_octarine_core,1,0,0
-2625,229,Solar Crest,炎阳纹章,item_solar_crest,0,0,0
-1700,230,Recipe: Guardian Greaves,卷轴：卫士胫甲,item_recipe_guardian_greaves,1,0,0
-5450,231,Guardian Greaves,卫士胫甲,item_guardian_greaves,0,0,0
-2350,232,Aether Lens,以太之镜,item_aether_lens,0,0,0
-600,233,Recipe: Aether Lens,卷轴：以太之镜,item_recipe_aether_lens,1,0,0
-0,234,Recipe: Dragon Lance,卷轴：魔龙枪,item_recipe_dragon_lance,1,0,0
-5900,235,Octarine Core,玲珑心,item_octarine_core,0,0,0
-1900,236,Dragon Lance,魔龙枪,item_dragon_lance,0,0,0
-70,237,Faerie Fire,仙灵之火,item_faerie_fire,0,0,0
-0,238,Iron Talon Recipe,图纸（寒铁钢爪）,item_recipe_iron_talon,1,0,0
-0,239,Iron Talon,寒铁钢爪,item_iron_talon,0,0,0
-300,240,Blight Stone,枯萎之石,item_blight_stone,0,0,0
-30,241,Tango (Shared),树之祭祀（共享）,item_tango_single,0,0,0
-3550,242,Crimson Guard,赤红甲,item_crimson_guard,0,0,0
-600,243,Recipe: Crimson Guard,卷轴：赤红甲,item_recipe_crimson_guard,1,0,0
-250,244,Wind Lace,风灵之纹,item_wind_lace,0,0,0
-1000,245,Recipe: Bloodthorn,卷轴：血棘,item_recipe_bloodthorn,1,0,0
-0,246,Recipe: Moon Shard,卷轴：银月之晶,item_recipe_moon_shard,1,0,0
-4000,247,Moon Shard,银月之晶,item_moon_shard,0,0,0
-700,248,Recipe: Silver Edge,卷轴：白银之锋,item_recipe_silver_edge,1,0,0
-5550,249,Silver Edge,白银之锋,item_silver_edge,0,0,0
-7195,250,Bloodthorn,血棘,item_bloodthorn,0,0,0
-0,251,Recipe: Echo Sabre,卷轴：回音战刃,item_recipe_echo_sabre,1,0,0
-2650,252,Echo Sabre,回音战刃,item_echo_sabre,0,0,0
-0,253,Recipe: Glimmer Cape,卷轴：微光披风,item_recipe_glimmer_cape,1,0,0
-1850,254,Glimmer Cape,微光披风,item_glimmer_cape,0,0,0
-1350,255,Recipe: Aeon Disk,卷轴：永恒之盘,item_recipe_aeon_disk,1,0,0
-3350,256,Aeon Disk,永恒之盘,item_aeon_disk,0,0,0
-150,257,Tome of Knowledge,知识之书,item_tome_of_knowledge,0,0,0
-500,258,Recipe: Kaya,卷轴：慧光,item_recipe_kaya,1,0,0
-1950,259,Kaya,慧光,item_kaya,0,0,0
-1000,260,Refresher Shard,刷新球碎片,item_refresher_shard,0,0,0
-0,262,Recipe: Hurricane Pike,卷轴：飓风长戟,item_recipe_hurricane_pike,1,0,0
-4615,263,Hurricane Pike,飓风长戟,item_hurricane_pike,0,0,0
-225,265,Infused Raindrops,凝魂之露,item_infused_raindrop,0,0,0
-750,266,Recipe: Spirit Vessel,卷轴：魂之灵瓮,item_recipe_spirit_vessel,1,0,0
-2975,267,Spirit Vessel,魂之灵瓮,item_spirit_vessel,0,0,0
-0,275,DOTA_Tooltip_Ability_item_trident,DOTA_Tooltip_Ability_item_trident,item_trident,0,0,0
-0,276,DOTA_Tooltip_Ability_item_combo_breaker,DOTA_Tooltip_Ability_item_combo_breaker,item_combo_breaker,0,0,0
-0,1021,River Vial: Chrome,河水药瓶：液铬,item_river_painter,0,0,0
-0,1022,River Vial: Dry,河水药瓶：干涸,item_river_painter2,0,0,0
-0,1023,River Vial: Slime,河水药瓶：烂泥,item_river_painter3,0,0,0
-0,1024,River Vial: Oil,河水药瓶：油污,item_river_painter4,0,0,0
-0,1025,River Vial: Electrified,河水药瓶：导电,item_river_painter5,0,0,0
-0,1026,River Vial: Potion,河水药瓶：魔水,item_river_painter6,0,0,0
-0,1027,River Vial: Blood,河水药瓶：血红,item_river_painter7,0,0,0
-0,1028,Tombstone,墓碑,item_mutation_tombstone,0,0,0
-0,1029,Super Blink Dagger,超级闪烁匕首,item_super_blink,0,0,0
+item_id,cost,en_name,name,recipe,secret_shop,side_shop
+1,2250,Blink Dagger,item_blink,0,0,1
+2,420,Blades of Attack,item_blades_of_attack,0,0,0
+3,1200,Broadsword,item_broadsword,0,0,1
+4,550,Chainmail,item_chainmail,0,0,1
+5,1400,Claymore,item_claymore,0,0,0
+6,900,Helm of Iron Will,item_helm_of_iron_will,0,0,1
+7,1100,Javelin,item_javelin,0,0,0
+8,1600,Mithril Hammer,item_mithril_hammer,0,0,0
+9,1400,Platemail,item_platemail,0,1,0
+10,875,Quarterstaff,item_quarterstaff,0,0,0
+11,200,Quelling Blade,item_quelling_blade,0,0,1
+12,175,Ring of Protection,item_ring_of_protection,0,0,1
+13,135,Gauntlets of Strength,item_gauntlets,0,0,0
+14,135,Slippers of Agility,item_slippers,0,0,0
+15,135,Mantle of Intelligence,item_mantle,0,0,0
+16,50,Iron Branch,item_branches,0,0,0
+17,450,Belt of Strength,item_belt_of_strength,0,0,1
+18,450,Band of Elvenskin,item_boots_of_elves,0,0,1
+19,450,Robe of the Magi,item_robe,0,0,1
+20,165,Circlet,item_circlet,0,0,0
+21,1000,Ogre Axe,item_ogre_axe,0,0,0
+22,1000,Blade of Alacrity,item_blade_of_alacrity,0,0,0
+23,1000,Staff of Wizardry,item_staff_of_wizardry,0,0,0
+24,2150,Ultimate Orb,item_ultimate_orb,0,1,0
+25,500,Gloves of Haste,item_gloves,0,0,1
+26,1100,Morbid Mask,item_lifesteal,0,0,1
+27,300,Ring of Regen,item_ring_of_regen,0,0,0
+28,325,Sage's Mask,item_sobi_mask,0,0,0
+29,500,Boots of Speed,item_boots,0,0,1
+30,900,Gem of True Sight,item_gem,0,0,0
+31,550,Cloak,item_cloak,0,0,1
+32,1450,Talisman of Evasion,item_talisman_of_evasion,0,1,0
+33,1000,Cheese,item_cheese,0,0,0
+34,200,Magic Stick,item_magic_stick,0,0,1
+35,150,Recipe: Magic Wand,item_recipe_magic_wand,1,0,0
+36,450,Magic Wand,item_magic_wand,0,0,0
+37,1500,Ghost Scepter,item_ghost,0,0,0
+38,50,Clarity,item_clarity,0,0,0
+39,110,Healing Salve,item_flask,0,0,0
+40,180,Dust of Appearance,item_dust,0,0,0
+41,650,Bottle,item_bottle,0,1,0
+42,75,Observer Ward,item_ward_observer,0,0,0
+43,100,Sentry Ward,item_ward_sentry,0,0,0
+44,90,Tango,item_tango,0,0,0
+45,50,Animal Courier,item_courier,0,0,0
+46,50,Town Portal Scroll,item_tpscroll,0,0,1
+47,2000,Recipe: Boots of Travel,item_recipe_travel_boots,1,0,0
+48,2500,Boots of Travel,item_travel_boots,0,0,0
+49,0,Recipe: Phase Boots,item_recipe_phase_boots,1,0,0
+50,1340,Phase Boots,item_phase_boots,0,0,0
+51,2200,Demon Edge,item_demon_edge,0,1,0
+52,3200,Eaglesong,item_eagle,0,1,0
+53,3000,Reaver,item_reaver,0,1,0
+54,3800,Sacred Relic,item_relic,0,1,0
+55,2000,Hyperstone,item_hyperstone,0,1,0
+56,850,Ring of Health,item_ring_of_health,0,1,0
+57,850,Void Stone,item_void_stone,0,1,1
+58,2700,Mystic Staff,item_mystic_staff,0,1,0
+59,900,Energy Booster,item_energy_booster,0,1,1
+60,1200,Point Booster,item_point_booster,0,1,0
+61,1100,Vitality Booster,item_vitality_booster,0,1,1
+62,0,Recipe: Power Treads,item_recipe_power_treads,1,0,0
+63,1450,Power Treads,item_power_treads,0,0,0
+64,1650,Recipe: Hand of Midas,item_recipe_hand_of_midas,1,0,0
+65,2150,Hand of Midas,item_hand_of_midas,0,0,0
+66,0,Recipe: Oblivion Staff,item_recipe_oblivion_staff,1,0,0
+67,1650,Oblivion Staff,item_oblivion_staff,0,0,0
+68,0,Recipe: Perseverance,item_recipe_pers,1,0,0
+69,1700,Perseverance,item_pers,0,0,0
+70,0,Recipe: Poor Man's Shield,item_recipe_poor_mans_shield,1,0,0
+71,0,Poor Man's Shield,item_poor_mans_shield,0,0,0
+72,165,Recipe: Bracer,item_recipe_bracer,1,0,0
+73,465,Bracer,item_bracer,0,0,0
+74,165,Recipe: Wraith Band,item_recipe_wraith_band,1,0,0
+75,465,Wraith Band,item_wraith_band,0,0,0
+76,165,Recipe: Null Talisman,item_recipe_null_talisman,1,0,0
+77,465,Null Talisman,item_null_talisman,0,0,0
+78,900,Recipe: Mekansm,item_recipe_mekansm,1,0,0
+79,2350,Mekansm,item_mekansm,0,0,0
+80,0,Recipe: Vladmir's Offering,item_recipe_vladmir,1,0,0
+81,2250,Vladmir's Offering,item_vladmir,0,0,0
+85,200,Recipe: Buckler,item_recipe_buckler,1,0,0
+86,800,Buckler,item_buckler,0,0,0
+87,0,Recipe: Ring of Basilius,item_recipe_ring_of_basilius,1,0,0
+88,500,Ring of Basilius,item_ring_of_basilius,0,0,0
+89,800,Recipe: Pipe of Insight,item_recipe_pipe,1,0,0
+90,3150,Pipe of Insight,item_pipe,0,0,0
+91,310,Recipe: Urn of Shadows,item_recipe_urn_of_shadows,1,0,0
+92,875,Urn of Shadows,item_urn_of_shadows,0,0,0
+93,300,Recipe: Headdress,item_recipe_headdress,1,0,0
+94,650,Headdress,item_headdress,0,0,0
+95,0,Recipe: Scythe of Vyse,item_recipe_sheepstick,1,0,0
+96,5700,Scythe of Vyse,item_sheepstick,0,0,0
+97,775,Recipe: Orchid Malevolence,item_recipe_orchid,1,0,0
+98,4075,Orchid Malevolence,item_orchid,0,0,0
+99,650,Recipe: Eul's Scepter of Divinity,item_recipe_cyclone,1,0,0
+100,2750,Eul's Scepter of Divinity,item_cyclone,0,0,0
+101,950,Recipe: Force Staff,item_recipe_force_staff,1,0,0
+102,2250,Force Staff,item_force_staff,0,0,0
+103,1250,Recipe: Dagon,item_recipe_dagon,1,0,0
+104,2715,Dagon,item_dagon,0,0,0
+105,1300,Recipe: Necronomicon,item_recipe_necronomicon,1,0,0
+106,2400,Necronomicon,item_necronomicon,0,0,0
+107,0,Recipe: Aghanim's Scepter,item_recipe_ultimate_scepter,1,0,0
+108,4200,Aghanim's Scepter,item_ultimate_scepter,0,0,0
+109,1800,Recipe: Refresher Orb,item_recipe_refresher,1,0,0
+110,5200,Refresher Orb,item_refresher,0,0,0
+111,1300,Recipe: Assault Cuirass,item_recipe_assault,1,0,0
+112,5250,Assault Cuirass,item_assault,0,0,0
+113,0,Recipe: Heart of Tarrasque,item_recipe_heart,1,0,0
+114,5200,Heart of Tarrasque,item_heart,0,0,0
+115,1375,Recipe: Black King Bar,item_recipe_black_king_bar,1,0,0
+116,3975,Black King Bar,item_black_king_bar,0,0,0
+117,0,Aegis of the Immortal,item_aegis,0,0,0
+118,650,Recipe: Shiva's Guard,item_recipe_shivas_guard,1,0,0
+119,4750,Shiva's Guard,item_shivas_guard,0,0,0
+120,0,Recipe: Bloodstone,item_recipe_bloodstone,1,0,0
+121,4900,Bloodstone,item_bloodstone,0,0,0
+122,1200,Recipe: Linken's Sphere,item_recipe_sphere,1,0,0
+123,5050,Linken's Sphere,item_sphere,0,0,0
+124,0,Recipe: Vanguard,item_recipe_vanguard,1,0,0
+125,2150,Vanguard,item_vanguard,0,0,0
+126,0,Recipe: Blade Mail,item_recipe_blade_mail,1,0,0
+127,2200,Blade Mail,item_blade_mail,0,0,0
+128,0,Recipe: Soul Booster,item_recipe_soul_booster,1,0,0
+129,3200,Soul Booster,item_soul_booster,0,0,0
+130,0,Recipe: Hood of Defiance,item_recipe_hood_of_defiance,1,0,0
+131,1700,Hood of Defiance,item_hood_of_defiance,0,0,0
+132,0,Recipe: Divine Rapier,item_recipe_rapier,1,0,0
+133,6000,Divine Rapier,item_rapier,0,0,0
+134,0,Recipe: Monkey King Bar,item_recipe_monkey_king_bar,1,0,0
+135,4175,Monkey King Bar,item_monkey_king_bar,0,0,0
+136,1350,Recipe: Radiance,item_recipe_radiance,1,0,0
+137,5150,Radiance,item_radiance,0,0,0
+138,0,Recipe: Butterfly,item_recipe_butterfly,1,0,0
+139,5525,Butterfly,item_butterfly,0,0,0
+140,1000,Recipe: Daedalus,item_recipe_greater_crit,1,0,0
+141,5320,Daedalus,item_greater_crit,0,0,0
+142,1150,Recipe: Skull Basher,item_recipe_basher,1,0,0
+143,3200,Skull Basher,item_basher,0,0,0
+144,300,Recipe: Battle Fury,item_recipe_bfury,1,0,0
+145,4400,Battle Fury,item_bfury,0,0,0
+146,500,Recipe: Manta Style,item_recipe_manta,1,0,0
+147,4800,Manta Style,item_manta,0,0,0
+148,500,Recipe: Crystalys,item_recipe_lesser_crit,1,0,0
+149,2120,Crystalys,item_lesser_crit,0,0,0
+150,550,Recipe: Armlet of Mordiggian,item_recipe_armlet,1,0,0
+151,2370,Armlet of Mordiggian,item_armlet,0,0,0
+152,2700,Shadow Blade,item_invis_sword,0,0,0
+153,0,Recipe: Sange and Yasha,item_recipe_sange_and_yasha,1,0,0
+154,4300,Sange and Yasha,item_sange_and_yasha,0,0,0
+155,0,Recipe: Satanic,item_recipe_satanic,1,0,0
+156,5500,Satanic,item_satanic,0,0,0
+157,900,Recipe: Mjollnir,item_recipe_mjollnir,1,0,0
+158,5600,Mjollnir,item_mjollnir,0,0,0
+159,0,Recipe: Eye of Skadi,item_recipe_skadi,1,0,0
+160,5500,Eye of Skadi,item_skadi,0,0,0
+161,700,Recipe: Sange,item_recipe_sange,1,0,0
+162,2150,Sange,item_sange,0,0,0
+163,0,Recipe: Helm of the Dominator,item_recipe_helm_of_the_dominator,1,0,0
+164,2000,Helm of the Dominator,item_helm_of_the_dominator,0,0,0
+165,0,Recipe: Maelstrom,item_recipe_maelstrom,1,0,0
+166,2700,Maelstrom,item_maelstrom,0,0,0
+167,0,Recipe: Desolator,item_recipe_desolator,1,0,0
+168,3500,Desolator,item_desolator,0,0,0
+169,700,Recipe: Yasha,item_recipe_yasha,1,0,0
+170,2150,Yasha,item_yasha,0,0,0
+171,0,Recipe: Mask of Madness,item_recipe_mask_of_madness,1,0,0
+172,1975,Mask of Madness,item_mask_of_madness,0,0,0
+173,700,Recipe: Diffusal Blade,item_recipe_diffusal_blade,1,0,0
+174,3150,Diffusal Blade,item_diffusal_blade,0,0,0
+175,0,Recipe: Ethereal Blade,item_recipe_ethereal_blade,1,0,0
+176,4700,Ethereal Blade,item_ethereal_blade,0,0,0
+177,200,Recipe: Soul Ring,item_recipe_soul_ring,1,0,0
+178,770,Soul Ring,item_soul_ring,0,0,0
+179,0,Recipe: Arcane Boots,item_recipe_arcane_boots,1,0,0
+180,1400,Arcane Boots,item_arcane_boots,0,0,0
+181,275,Orb of Venom,item_orb_of_venom,0,0,0
+182,200,Stout Shield,item_stout_shield,0,0,0
+183,0,Recipe: Shadow Blade,item_recipe_invis_sword,1,0,0
+184,575,Recipe: Drum of Endurance,item_recipe_ancient_janggo,1,0,0
+185,1615,Drum of Endurance,item_ancient_janggo,0,0,0
+186,0,Recipe: Medallion of Courage,item_recipe_medallion_of_courage,1,0,0
+187,1175,Medallion of Courage,item_medallion_of_courage,0,0,0
+188,80,Smoke of Deceit,item_smoke_of_deceit,0,0,0
+189,500,Recipe: Veil of Discord,item_recipe_veil_of_discord,1,0,0
+190,2330,Veil of Discord,item_veil_of_discord,0,0,0
+191,0,Recipe: Necronomicon,item_recipe_necronomicon_2,1,0,0
+192,0,Recipe: Necronomicon,item_recipe_necronomicon_3,1,0,0
+193,3700,Necronomicon,item_necronomicon_2,0,0,0
+194,5000,Necronomicon,item_necronomicon_3,0,0,0
+197,0,Recipe: Dagon,item_recipe_dagon_2,1,0,0
+198,0,Recipe: Dagon,item_recipe_dagon_3,1,0,0
+199,0,Recipe: Dagon,item_recipe_dagon_4,1,0,0
+200,0,Recipe: Dagon,item_recipe_dagon_5,1,0,0
+201,3965,Dagon,item_dagon_2,0,0,0
+202,5215,Dagon,item_dagon_3,0,0,0
+203,6465,Dagon,item_dagon_4,0,0,0
+204,7715,Dagon,item_dagon_5,0,0,0
+205,1100,Recipe: Rod of Atos,item_recipe_rod_of_atos,1,0,0
+206,3030,Rod of Atos,item_rod_of_atos,0,0,0
+207,1550,Recipe: Abyssal Blade,item_recipe_abyssal_blade,1,0,0
+208,6900,Abyssal Blade,item_abyssal_blade,0,0,0
+209,0,Recipe: Heaven's Halberd,item_recipe_heavens_halberd,1,0,0
+210,3600,Heaven's Halberd,item_heavens_halberd,0,0,0
+211,0,Recipe: Ring of Aquila,item_recipe_ring_of_aquila,1,0,0
+212,965,Ring of Aquila,item_ring_of_aquila,0,0,0
+213,0,Recipe: Tranquil Boots,item_recipe_tranquil_boots,1,0,0
+214,1050,Tranquil Boots,item_tranquil_boots,0,0,0
+215,1300,Shadow Amulet,item_shadow_amulet,0,0,0
+216,70,Enchanted Mango,item_enchanted_mango,0,0,0
+217,0,Recipe: Observer and Sentry Wards,item_recipe_ward_dispenser,1,0,0
+218,175,Observer and Sentry Wards,item_ward_dispenser,0,0,0
+219,0,Recipe: Boots of Travel,item_recipe_travel_boots_2,1,0,0
+220,4500,Boots of Travel,item_travel_boots_2,0,0,0
+221,0,Recipe: Lotus Orb,item_recipe_lotus_orb,1,0,0
+222,0,Recipe: Meteor Hammer,item_recipe_meteor_hammer,1,0,0
+223,2625,Meteor Hammer,item_meteor_hammer,0,0,0
+224,0,Recipe: Nullifier,item_recipe_nullifier,1,0,0
+225,4700,Nullifier,item_nullifier,0,0,0
+226,4000,Lotus Orb,item_lotus_orb,0,0,0
+227,0,Recipe: Solar Crest,item_recipe_solar_crest,1,0,0
+228,0,Recipe: Octarine Core,item_recipe_octarine_core,1,0,0
+229,2625,Solar Crest,item_solar_crest,0,0,0
+230,1700,Recipe: Guardian Greaves,item_recipe_guardian_greaves,1,0,0
+231,5450,Guardian Greaves,item_guardian_greaves,0,0,0
+232,2350,Aether Lens,item_aether_lens,0,0,0
+233,600,Recipe: Aether Lens,item_recipe_aether_lens,1,0,0
+234,0,Recipe: Dragon Lance,item_recipe_dragon_lance,1,0,0
+235,5900,Octarine Core,item_octarine_core,0,0,0
+236,1900,Dragon Lance,item_dragon_lance,0,0,0
+237,70,Faerie Fire,item_faerie_fire,0,0,0
+238,0,Iron Talon Recipe,item_recipe_iron_talon,1,0,0
+239,0,Iron Talon,item_iron_talon,0,0,0
+240,300,Blight Stone,item_blight_stone,0,0,0
+241,30,Tango (Shared),item_tango_single,0,0,0
+242,3550,Crimson Guard,item_crimson_guard,0,0,0
+243,600,Recipe: Crimson Guard,item_recipe_crimson_guard,1,0,0
+244,250,Wind Lace,item_wind_lace,0,0,0
+245,1000,Recipe: Bloodthorn,item_recipe_bloodthorn,1,0,0
+246,0,Recipe: Moon Shard,item_recipe_moon_shard,1,0,0
+247,4000,Moon Shard,item_moon_shard,0,0,0
+248,700,Recipe: Silver Edge,item_recipe_silver_edge,1,0,0
+249,5550,Silver Edge,item_silver_edge,0,0,0
+250,7195,Bloodthorn,item_bloodthorn,0,0,0
+251,0,Recipe: Echo Sabre,item_recipe_echo_sabre,1,0,0
+252,2650,Echo Sabre,item_echo_sabre,0,0,0
+253,0,Recipe: Glimmer Cape,item_recipe_glimmer_cape,1,0,0
+254,1850,Glimmer Cape,item_glimmer_cape,0,0,0
+255,1350,Recipe: Aeon Disk,item_recipe_aeon_disk,1,0,0
+256,3350,Aeon Disk,item_aeon_disk,0,0,0
+257,150,Tome of Knowledge,item_tome_of_knowledge,0,0,0
+258,500,Recipe: Kaya,item_recipe_kaya,1,0,0
+259,1950,Kaya,item_kaya,0,0,0
+260,1000,Refresher Shard,item_refresher_shard,0,0,0
+262,0,Recipe: Hurricane Pike,item_recipe_hurricane_pike,1,0,0
+263,4615,Hurricane Pike,item_hurricane_pike,0,0,0
+265,225,Infused Raindrops,item_infused_raindrop,0,0,0
+266,750,Recipe: Spirit Vessel,item_recipe_spirit_vessel,1,0,0
+267,2975,Spirit Vessel,item_spirit_vessel,0,0,0
+275,0,DOTA_Tooltip_Ability_item_trident,item_trident,0,0,0
+276,0,DOTA_Tooltip_Ability_item_combo_breaker,item_combo_breaker,0,0,0
+1021,0,River Vial: Chrome,item_river_painter,0,0,0
+1022,0,River Vial: Dry,item_river_painter2,0,0,0
+1023,0,River Vial: Slime,item_river_painter3,0,0,0
+1024,0,River Vial: Oil,item_river_painter4,0,0,0
+1025,0,River Vial: Electrified,item_river_painter5,0,0,0
+1026,0,River Vial: Potion,item_river_painter6,0,0,0
+1027,0,River Vial: Blood,item_river_painter7,0,0,0
+1028,0,Tombstone,item_mutation_tombstone,0,0,0
+1029,0,Super Blink Dagger,item_super_blink,0,0,0

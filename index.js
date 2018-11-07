@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const port = process.env.PORT || 5000
 const http = require('http');
 const { Client } = require('pg');
-const { DATABASE_URL } = process.env;
+const { PORT, DATABASE_URL } = process.env;
 
 const client = new Client({
   connectionString: DATABASE_URL,
@@ -26,7 +25,7 @@ app.get('/match', (req, res) => {
     });
 })
 
-app.listen(port, () => console.log(`Server running on ${port}/`))
+app.listen(PORT, () => console.log(`Server running on ${PORT}/`))
 
 // express()
 //   .use(express.static(path.join(__dirname, 'public')))
