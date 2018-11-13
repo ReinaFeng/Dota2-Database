@@ -22,9 +22,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => res.render('pages/index'))
-app.get('/match', asyncHandler(async (req, res) => {
+
+app.get('/hero', asyncHandler(async (req, res) => {
   try {
-    const query = runQuery(`SELECT * FROM user_view1 WHERE steam_id=${req.params.userId};`)
+    const query = runQuery('SELECT * FROM hero_view1;')
     console.log(query.rows)
     res.end(`Result: ${query.rows}`);
   } catch (error) {
