@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html xmlns:http="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            user_hero
+		</title>
+        <meta http-equiv="Cache-Control" content="no-siteapp-platform">
+        <link rel="apple-touch-icon" sizes="57x57" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="stylesheet" type="text/css" href="./user_hero_files/dotamax_style_2016051401.css">
+        <link rel="stylesheet" type="text/css" href="./user_hero_files/font-awesome.min.css">
+        <style type="text/css">
+			.nav-head li{border: 0;}
+			#top-nav .nav-right{display: table;float: right;width: 320px;height: 46px;font-size: 12px;}
+			#top-nav .nav-right *{box-sizing: border-box;}
+			#top-nav .nav-right .account-wrap{display: table-cell;vertical-align: middle;}
+			#top-nav .nav-right .account-wrap .btn{
+			    float: right;
+			    width: 70px;
+			    text-align: center;
+			    border: 0;
+			    border-radius: 0;
+			    cursor: pointer;
+			    background: transparent;
+			    box-shadow: none;
+			    text-shadow: none;
+			    padding: 0;
+			    color: #d2d2d2;
+			    line-height: 46px;
+			    -webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .account-wrap .btn:hover{color: #fff;background: #913232;}
+			#top-nav .nav-right .account-wrap .btn.sign-in{border-color: transparent;}
+			#top-nav .nav-right .account-wrap .btn.login{border-color: #913232;}
+			#top-nav .nav-right .account-info-wrap{display: block;position: relative;float: right;cursor: pointer;}
+			#top-nav .nav-right .account-wrap .avator{position: relative;z-index: 1;float: right;width: 30px;height: 30px;border: 1px solid #913232;border-radius: 50%;overflow: hidden;margin-top: 5px;}
+			#top-nav .nav-right .account-wrap .avator img{display: block;width: 30px;margin: -1px 0 0 -1px;border-radius: 50%;}
+			#top-nav .nav-right .account-wrap .name{max-width: 130px;float: right;padding-left: 15px;line-height: 40px;text-align: center;}
+			#top-nav .nav-right .account-wrap .arrow{float: right;line-height: 40px;}
+			#top-nav .nav-right .account-wrap .arrow i{top: 2px;line-height: 20px;margin-left: 8px;
+				-webkit-transition: all 200ms ease;
+			    -moz-transition: all 200ms ease;
+			    transition: all 200ms ease;
+			}
+			#top-nav .nav-right .account-wrap .arrow i.open{
+				-webkit-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+			#top-nav .nav-right .menu-wrap{position: absolute;z-index: 1000;top: 60px;right: -5px;width: 120px;background: #1b1b1b;box-shadow: 0 0 5px rgba(0,0,0,.5);padding: 5px 1px;}
+			#top-nav .nav-right .menu{overflow: hidden;}
+			#top-nav .nav-right .menu i{margin-right: 10px;color: #913232;
+				-webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .menu li{width: 100%;padding: 0;line-height: 34px;border: 0;}
+			#top-nav .nav-right .menu li a{display: block;line-height: 34px;padding-left: 20px;
+				-webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .menu li a:hover{color: #fff;background: #913232;}
+			#top-nav .nav-right .menu li a:hover i{color: #fff;}
+			.ellipsis{display: block;overflow: hidden;white-space: nowrap;-o-text-overflow: ellipsis;text-overflow: ellipsis;word-berak: normal;word-wrap: normal;}
+			.n-modal{padding: 20px;background: #1b1b1b;box-shadow: 0 0 5px rgba(0,0,0,.5);}
+			.n-modal a{color: #C23C2A;}
+			.n-modal i{margin-right: 10px;}
+			.n-modal i.fail{color: #913232;}
+			.n-modal i.success{color: #57BA35;}
+			.n-modal i.warn{color: #BAB135;}
+			.s-notice{line-height: 40px;text-align: center;}
+			.steam_login{
+				height: 28px;
+				font-size: 12px;
+				margin: 7px 7px 7px 0;
+				float: right;
+				padding: 0 12px;
+				background-color: rgba(145,50,50,.6);
+				border: 2px solid transparent;
+				box-sizing: content-box !important;
+				-moz-transition: border .4s ease;
+				-webkit-transition: border .4s ease;
+				-o-transition: border .4s ease;
+			}
+			.steam_login:hover{
+				border: 2px solid rgba(145,50,50,1);
+			}
+			.steam_loginDec{float: left;height: 28px;line-height: 28px;color: #fff;}
+			.steam_loginImgDiv{float: left;height: 28px;width: 32px;overflow: hidden;margin-left: 4px;}
+			.steam_loginImg{
+				height: 28px;
+				width: 32px;
+				position: relative;
+				left: -32px;
+				border-right: 32px solid transparent;
+				-webkit-filter: drop-shadow(rgb(255, 255, 255) 32px 0px);
+				filter: drop-shadow(rgb(255, 255, 255) 32px 0px);
+				background: url('/static/image/steamLogo.png') no-repeat center;
+				background-size: cover;
+				box-sizing: content-box !important;
+				overflow: hidden;
+			}
+			.not-login-wrap{float: right;}
+			.not-login-wrap:after,.account-wrap:after,.steam_login:after{content: ".";display: block;height: 0;clear: both;visibility: hidden}
+
+			.footbar {padding-bottom:10px;}
+			.footbar .c-divider {padding: 0 8px;}
+			.footbar a.c-link {margin: 0 !important;transition: none;}
+			.footbar a.c-link:hover {color: rgba(255, 255, 255, .3) !important;}
+
+
+		</style>
+        
+        <link rel="stylesheet" type="text/css" href="./user_hero_files/popModal.css">
+        <script src="./user_hero_files/hm.js"></script>
+        <script async="" src="./user_hero_files/analytics.js"></script>
+        <script type="text/javascript" src="./user_hero_files/sorttable.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/jquery.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/underscore-min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/highcharts.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/highcharts-more.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/bootstrap_plus_select.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/dotamax_v1205.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/dotamax_extend_v20160201.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/popModal.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./user_hero_files/common.js" charset="utf-8"></script>
+        <script type="text/javascript">
+		/* top nav right */
+		$(function(){
+			var menuTimer,
+				$wrap = $("#top-nav .account-info-wrap"),
+				$menu = $("#top-nav .account-info-wrap .menu-wrap"),
+				$arrow = $("#top-nav .account-info-wrap .arrow i");
+			$wrap.hover(function(){
+				clearTimeout(menuTimer);
+				$menu.fadeIn(200);
+				$arrow.addClass("open");
+			},function(){
+				menuTimer = setTimeout(function(){
+					$menu.fadeOut(200);
+					$arrow.removeClass("open");
+				},500);
+			});
+			$menu.mouseenter(function(){
+				clearTimeout(menuTimer);
+			});
+		});
+		var language = "zh-cn",
+			account_type = "5";
+		function bindCheck(){
+			if(account_type==1||account_type==5){
+				$("#notice-11").notifyModal({
+					duration: -1,
+					type: "notify"
+				});
+			}else{
+				$("#notice-10").notifyModal({
+					duration: -1,
+					type: "notify"
+				});
+			}
+		}
+		</script>
+        
+        <script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-47132172-1', 'dotamax.com');
+			ga('send', 'pageview');
+		</script>
+        <script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?575895fe09d48554a608faa5ef059555";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+        <link rel="stylesheet" type="text/css">
+    </head>
+    <body style="">
+        <script type="text/javascript">
+            function closeApp() {
+                $("#android_app").hide();
+                setCookie('androidHide','True');
+            }
+        </script>
+    <div class="nav-head" style="background-color: rgb(27,27,40)">
+        <div id="top-nav" class="nav-container">
+            <a class="nav-logo" href="/">
+                <img src="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+            </a>
+            <a href="/home/">
+                <li>Home</li>
+            </a>
+            <div class="nav-item-box">
+                <a href="/hero/rate/">
+                    <li>Stats</li>
+                </a>
+                <ul class="nav-item-list">
+                    <a href="/hero/rate/">
+                        <li>Hero</li>
+                    </a>
+                    <a href="/item/">
+                        <li>Item</li>
+                    </a>
+                </ul>
+            </div><!--  --><!--  -->
+            <a href="/match/tour_famous_team_list/">
+                <li>Player</li>
+            </a>
+            <a href="/player/">
+                <li>Match</li>
+            </a>
+<!--
+            <a href="/ladder/">
+                <li>天梯</li>
+            </a>
+            <a href="/live/">
+                <li>直播</li>
+            </a>
+            <a href="/app" id="appdownload">
+                <li>APP</li>
+            </a>
+-->
+            <a href="https://www.youtube.com/watch?v=cEM6725JmM4&t=40070s">
+                <li style="background-color: #F7B018;text-align: center;
+							background-image: -webkit-gradient(linear,left top,left bottom,from(#B78B36),to(#F7B018));
+							background-image: -webkit-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -moz-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -o-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -ms-linear-gradient(top,#B78B36,#F7B018);
+							background-image: linear-gradient(top,#B78B36,#F7B018);color: #fff">Youtube</li>
+            </a>
+            <script type="text/javascript">
+					    var href = '';
+					    if ((navigator.userAgent.match(/(pod|iPhone|iPod|ios|iPad)/i))) {
+					        href = "https://itunes.apple.com/cn/app/id990892583";
+					        document.getElementById("appdownload").setAttribute("href",href);
+
+					    } else if ((navigator.userAgent.match(/(Android|android)/i))) {
+					        href = "//cdn.max-c.com/app/Maxjia_release.apk";
+					        document.getElementById("appdownload").setAttribute("href",href); 
+
+					    } else {
+					     
+					    }
+            </script>
+<!--            <div class="nav-right"><div class="account-wrap"><div href="/bets/account/" class="account-info-wrap clearfix"><div class="arrow"><i class="glyphicon glyphicon-chevron-down"></i></div><div class="name ellipsis">MatRix</div><div class="avator"><img src="http://cdn.maxjia.com/avatar/d32ebb98f73b8010d68a449a89d3e458"></div><div class="menu-wrap" style="display: none;"><ul class="menu"><li><a href="/player/detail/180999306/"><i class="fa fa-pie-chart"></i>数据主页</a></li><li><a href="/bets/account/"><i class="glyphicon glyphicon-user"></i>竞猜主页</a></li><li><a href="/accounts/logout/?src=bets"><i class="glyphicon glyphicon-off"></i>注销账号</a></li></ul></div></div></div></div>-->
+        </div>
+    </div>
+<!--
+    <div class="nav-right">
+        <div class="account-wrap">
+            <div href="/bets/account/" class="account-info-wrap clearfix">
+                <div class="arrow">
+                    <i class="glyphicon glyphicon-chevron-down"></i>
+                </div>
+                <div class="name ellipsis">MatRix</div>
+                <div class="avator">
+                    <img src="./user_hero_files/d32ebb98f73b8010d68a449a89d3e458">
+                </div>
+                <div class="menu-wrap" style="display: none;">
+                    <ul class="menu">
+                        <li>
+                            <a href="http://dotamax.com/player/detail/180999306/"><i class="fa fa-pie-chart"></i>数据主页</a>
+                        </li>
+                        <li>
+                            <a href="http://dotamax.com/bets/account/"><i class="glyphicon glyphicon-user"></i>竞猜主页</a>
+                        </li>
+                        <li>
+                            <a href="http://dotamax.com/accounts/logout/?src=bets"><i class="glyphicon glyphicon-off"></i>注销账号</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+<!--
+    </div>
+    </div>
+-->
+    <div class="maxtopmainbar">
+        <div style="width:100%;height:160px;background: url('http://cdn.max-c.com/image/back_new_2.jpg') repeat-x;background-position: center;"></div>
+        <div style="position: absolute;top:19px;width:100%;display: table;height: 130px;">
+            <div style="margin-left: auto;margin-right: auto;position: relative;text-align: center;width:1080px;padding-left:20px;">
+<!--
+                <div style="position: absolute;top:0px;right:20px;">
+                    <div class="player-update" style="line-height: 20px;">
+                        已同步. 如果因为中途关闭共享而缺少数据，请点<a href="http://dotamax.com/verify_data/?acc=180999306">修复数据</a>
+                    </div>
+                </div>
+-->
+                <div class="new-box" style="width:300px;margin:0 auto;">
+                    <div style="margin: 0px auto 5px auto;" class="circle-img">
+                        <img src="./user_hero_files/4b6ad59000481a499bcac3013f50704856095351_medium.jpg" style="width:90px;">
+                    </div>
+                    <span style="font-size:16px;font-weight: bold;color:#fff;text-shadow: rgb(17, 17, 17) 1px 1px 1px;display: block;width:300px;">只能祝他长生不老了
+<!--                        <span class="glyphicon glyphicon-ok" style="font-size:14px;color:rgb(87,186,53)"></span>-->
+<!--
+                        <a href="http://dotamax.com/wechat_login_redirect/?code=071YpLnY0chLL12lt2lY0MLMnY0YpLnM&amp;state=dotamax#" onclick="FollowAJAX(&#39;/accounts/follow/?type=steam_id&amp;steam_id=180999306&#39;);">
+                            <span style="position: absolute;top:40px;right:610px;" id="ajax_box" class="follow-circle">
+                                <span class="glyphicon glyphicon-plus" style="font-size: 12px;padding-right: 3px;"></span>
+                                关注
+                            </span>
+                        </a>
+-->
+                    </span>
+                </div>
+                <div style="position: absolute;left:10px;top:10px;font-size: 10px;color:#999;padding: 3px 8px;text-align: left;">
+                    <div style="float: left;text-align: center;padding: 0px 10px;">
+                        <span style="font-size: 14px;font-weight: bold;color: #ccc;">
+                            <!-- JiaThis Button BEGIN -->
+                            <div class="jiathis_style_24x24" style="display: table;margin-top: 8px;">
+                                <a class="jiathis_button_tsina"></a>
+                                <a class="jiathis_button_tqq"></a>
+                                <a class="jiathis_button_weixin"></a>
+                            </div>
+                            <script type="text/javascript">
+                                var jiathis_config={
+                                url:"http://dotamax.com/player/detail/180999306/",
+                                summary:" 我的Dota2个人主页, 小伙伴们快来看看吧！",
+                                title:"只能祝他长生不老了 －dotamax.com",
+                                shortUrl:false,
+                                hideMore:false
+                                }
+                            </script>
+                            <script type="text/javascript" src="./user_hero_files/jia.js" charset="utf-8"></script>
+                            <!-- JiaThis Button END -->
+                        </span>
+                    </div>
+                </div>
+                <div style="position: absolute;top:40px;left:20px;text-align: left;font-size: 28px;color:#fff;font-weight: 500;width:450px;"></div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="main-shadow-box" style="background-color: rgb(33,33,33)">
+        <div class="main-container" style="margin-top:0px;margin-bottom:1px;padding-bottom:1px;">
+            <div class="secoundbar-outer">
+                <div style="padding-left:35%;padding-right: 30%; margin-left:0">
+                    <ul class="secoundbar" style="margin-top: 20px;margin-bottom: 0px; width:100%">
+                        <a href="user_overview.html">
+                            <li>Overview</li>
+                        </a>
+                        <a href="user_hero.html">
+                            <li class="active-s">Hero Stats</li>
+                        </a>
+                        <a href="user_item.html">
+                            <li>Item</li>
+                        </a>
+                        <a href="user_match.html">
+                            <li>Match Stats</li>
+                        </a>
+                        <a href="user_allies:opponents.html">
+                            <li style="position: relative;">
+                                Allies/Opponents 
+                                <div style="position: absolute;top:-13px;right:-5px;color:#c23c2a">New</div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div><!-- Where content to be added -->
+            <script language="javascript"> 
+                if(top.location!==self.location){ 
+                    top.location.href=self.location.href;
+                } 
+            </script>
+            <script>
+                function show_r20 () {
+                    $(".recent_m").hide();
+                    $(".recent_r20").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_r20").addClass("left-select-active")
+
+                }
+                function show_r100 () {
+                    $(".recent_m").hide();
+                    $(".recent_r100").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_r100").addClass("left-select-active")
+                }
+                function show_all () {
+                    $(".recent_m").hide();
+                    $(".recent_all").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_all").addClass("left-select-active")
+                }
+                Highcharts.createElement('link', {
+                    rel: 'stylesheet',
+                    type: 'text/css'
+                }, null, document.getElementsByTagName('head')[0]);
+
+                Highcharts.theme = {
+                    colors: ["rgb(223,223,223)"],
+                    chart: {
+                        height: 250,
+                        width:300,
+                        backgroundColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+                            stops: [
+                                [0, 'rgb(18,18,18)'],
+                                [1, 'rgb(18,18,18)']
+                            ]
+                        },
+                        style: {
+                        },
+                        plotBorderColor: 'rgb(80,80,80)'
+                    },
+                     xAxis: {
+                      gridLineColor: 'rgb(150,150,150)',
+                      categories: ['KDA', '发育', '推进', '生存', '输出', '综合'],
+                      labels: {
+                         style: {
+                            color: '#999'
+                         }
+                      },
+                      lineColor: '#707073',
+                      minorGridLineColor: '#505053',
+                      tickColor: '#707073',
+                      title: {
+                         style: {
+                            color: '#A0A0A3'
+
+                         }
+                      }
+                   },
+                   yAxis: {
+                      gridLineColor: 'rgb(80,80,80)',
+                      labels: {
+                         formatter: function() {
+                            return "";
+                        }
+                      },
+                      lineColor: '#707073',
+                      minorGridLineColor: 'rgb(40,40,40)',
+                      tickColor: '#707073',
+                      tickWidth: 1,
+                      title: {
+                         style: {
+                            color: '#A0A0A3'
+                         }
+                      }
+                   },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                        style: {
+                            color: '#F0F0F0'
+                        }
+                    },
+
+                    plotOptions: {
+                        series: {
+                            dataLabels: {
+                                color: '#B0B0B3'
+                            },
+                            marker: {
+                                radius:0,
+                                lineColor:'#fff',
+                                states: {
+                                    hover: {
+                                        fillColor: '#fff',
+                                        radius: 4
+                                    }
+                                }
+                            },
+                        },
+                        boxplot: {
+                            fillColor: '#505053'
+                        },
+                        candlestick: {
+                        },
+                        errorbar: {
+                        }
+                    },
+                    legend: {
+                        enabled: false,
+                    },
+                };
+
+                Highcharts.setOptions(Highcharts.theme);
+                $(function () {
+
+                var colors = Highcharts.getOptions().colors,
+                    categories = ['all','N', 'H', 'VH'],
+                    data = [{
+                            y: 55.11,
+                            color: colors[0]
+                        }, {
+                            y: 21.63,
+                            color: colors[1]
+                        }, {
+                            y: 11.94,
+                            color: colors[2]
+                        }, {
+                            y: 7.15,
+                            color: colors[3]
+                        }];
+
+                function setChart(name, categories, data, color) {
+                chart.xAxis[0].setCategories(categories, false);
+                chart.series[0].remove(false);
+                chart.addSeries({
+                    color: color 
+                }, false);
+                chart.redraw();
+                }
+
+                var chart = $('#container').highcharts({
+                    chart: {
+                        polar: true,
+                        type: 'area'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    pane: {
+                        size: '85%'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+
+                        tickmarkPlacement: 'on',
+                        lineWidth: 0
+                    },
+
+                    yAxis: {
+                        gridLineInterpolation: 'polygon',
+                        lineWidth: 0,
+                        min: 0,
+                        max: 100,
+                        minorTickInterval: 50
+                    },
+
+                    tooltip: {
+                        borderWidth:0,
+                        backgroundColor: '#333',
+                        formatter: function() {
+                            var point = this.point,
+                                s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                            return s;
+                        }
+                    },
+                    series: [{
+                        name: 'Allocated Budget',
+                        data: [50.0, 60.8, 65.3, 52.1, 40.2, 52.0],
+                        fillColor: 'rgba(70,70,70,0.7)',
+                        fillOpacity: 0.8
+                    }],
+                    exporting: {
+                        enabled: false
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                })
+                var chart = $('#container_r20').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'area'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        pane: {
+                            size: '85%'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0,
+                            max: 100,
+                            minorTickInterval: 50
+                        },
+
+                        tooltip: {
+                            borderWidth:0,
+                            backgroundColor: '#333',
+                            formatter: function() {
+                                var point = this.point,
+                                    s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                                return s;
+                            }
+                        },
+                        series: [{
+                            name: 'Allocated Budget',
+                            data: [26.9, 31.8, 67.5, 26.2, 44.3, 36.9],
+                            fillColor: 'rgba(70,70,70,0.7)',
+                            fillOpacity: 0.8
+                        }],
+                        exporting: {
+                            enabled: false
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    })
+                var chart = $('#container_r100').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'area'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        pane: {
+                            size: '85%'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0,
+                            max: 100,
+                            minorTickInterval: 50
+                        },
+
+                        tooltip: {
+                            borderWidth:0,
+                            backgroundColor: '#333',
+                            formatter: function() {
+                                var point = this.point,
+                                    s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                                return s;
+                            }
+                        },
+                        series: [{
+                            name: 'Allocated Budget',
+                            data: [53.3, 36.5, 67.0, 39.1, 51.8, 48.4],
+                            fillColor: 'rgba(70,70,70,0.7)',
+                            fillOpacity: 0.8
+                        }],
+                        exporting: {
+                            enabled: false
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    })
+                    .highcharts(); // return chart
+                });             
+            </script>
+            <div class="container xuning-box" style="margin-top:0px;">
+                <div style="float:left; width:100%;">
+                    <div class="flat-grey-box" style="width:100%;">
+                        
+        <table class="table table-hover table-striped sortable table-list table-thead-left" style="width: 95%; margin-left: auto;margin-right: auto;margin-bottom: 20px;margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th style="width:20%;" class="">Hero</th>
+                    <th style="width:16%;" class=" sorttable_sorted_reverse">Matched Played</th>
+                    <th style="width:12%;" class="">Win Rate</th>
+                    <th style="width:17%;" class="">KDA (K / D / A)</th>
+                    <th style="width:15%;" class="">All Players' Avg. KDA</th>
+                    <th style="width:10%;" class="">GPM</th>
+                    <th style="width:10%;" class="">XPM</th>
+                </tr>
+            </thead>
+            <tbody class="table-player-detail">
+                <tr onclick="DoNav(&#39;/player/match/180999306/?hero=86&#39;);">
+                    <td><a href="http://dotamax.com/player/match/180999306/?hero=86"><img class="hero-img-list" src="./user_hero_files/rubick_hphover.png"> 
+					 	Rubick </a></td><td><div>264</div><div class="segment segment-white" style="width:100.0%;"></div></td><td sorttable_customkey="48.11"><div>48.1%</div><div class="segment segment-green" style="width:48.11%;"></div></td><td sorttable_customkey="2.2"><div>2.21  <div style="float:right;"> (3.9 / 8.5 / 15.0)</div></div><div class="segment segment-gold" style="width:44.6996991108%;"></div></td><td sorttable_customkey="2.29"><div style="float:middle;">2.29</div><div class="segment segment-gray" style="width:62.1279817006%;"></div></td><td sorttable_customkey="309.75"><div style="float:middle;">309.75</div><div class="segment segment-gold" style="width:56.9236205744%;"></div></td><td sorttable_customkey="377.93"><div style="float:middle;">377.93</div><div class="segment segment-blue" style="width:62.9612619019%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=35&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=35"><img class="hero-img-list" src="./user_hero_files/sniper_hphover.png"> 
+					 	Sniper </a></td><td><div>236</div><div class="segment segment-white" style="width:89.3939393939%;"></div></td><td sorttable_customkey="52.54"><div>52.5%</div><div class="segment segment-green" style="width:52.54%;"></div></td><td sorttable_customkey="2.6"><div>2.59  <div style="float:right;"> (7.5 / 7.3 / 11.3)</div></div><div class="segment segment-gold" style="width:52.2047049903%;"></div></td><td sorttable_customkey="2.70"><div style="float:middle;">2.70</div><div class="segment segment-gray" style="width:73.1384946238%;"></div></td><td sorttable_customkey="399.91"><div style="float:middle;">399.91</div><div class="segment segment-gold" style="width:73.4918631609%;"></div></td><td sorttable_customkey="434.67"><div style="float:middle;">434.67</div><div class="segment segment-blue" style="width:72.412725246%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=53&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=53"><img class="hero-img-list" src="./user_hero_files/furion_hphover.png"> 
+					 	Nature's Prophet </a></td><td><div>172</div><div class="segment segment-white" style="width:65.1515151515%;"></div></td><td sorttable_customkey="44.77"><div>44.8%</div><div class="segment segment-green" style="width:44.77%;"></div></td><td sorttable_customkey="2.0"><div>2.03  <div style="float:right;"> (5.3 / 8.0 / 10.8)</div></div><div class="segment segment-gold" style="width:40.939362075%;"></div></td><td sorttable_customkey="1.93"><div style="float:middle;">1.93</div><div class="segment segment-gray" style="width:52.3144767466%;"></div></td><td sorttable_customkey="502.65"><div style="float:middle;">502.65</div><div class="segment segment-gold" style="width:92.3714067119%;"></div></td><td sorttable_customkey="464.98"><div style="float:middle;">464.98</div><div class="segment segment-blue" style="width:77.4624447072%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=72&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=72"><img class="hero-img-list" src="./user_hero_files/gyrocopter_hphover.png"> 
+					 	Gyrocopter </a></td><td><div>151</div><div class="segment segment-white" style="width:57.196969697%;"></div></td><td sorttable_customkey="50.33"><div>50.3%</div><div class="segment segment-green" style="width:50.33%;"></div></td><td sorttable_customkey="2.9"><div>2.87  <div style="float:right;"> (8.9 / 7.7 / 13.3)</div></div><div class="segment segment-gold" style="width:57.9945112029%;"></div></td><td sorttable_customkey="2.37"><div style="float:middle;">2.37</div><div class="segment segment-gray" style="width:64.3219348534%;"></div></td><td sorttable_customkey="473.31"><div style="float:middle;">473.31</div><div class="segment segment-gold" style="width:86.9806650771%;"></div></td><td sorttable_customkey="518.72"><div style="float:middle;">518.72</div><div class="segment segment-blue" style="width:86.4149669066%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=62&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=62"><img class="hero-img-list" src="./user_hero_files/bounty_hunter_hphover.png"> 
+					 	Bounty Hunter </a></td><td><div>139</div><div class="segment segment-white" style="width:52.6515151515%;"></div></td><td sorttable_customkey="50.36"><div>50.4%</div><div class="segment segment-green" style="width:50.36%;"></div></td><td sorttable_customkey="2.2"><div>2.23  <div style="float:right;"> (6.8 / 7.3 / 9.3)</div></div><div class="segment segment-gold" style="width:45.0653447499%;"></div></td><td sorttable_customkey="2.61"><div style="float:middle;">2.61</div><div class="segment segment-gray" style="width:70.7441787427%;"></div></td><td sorttable_customkey="394.06"><div style="float:middle;">394.06</div><div class="segment segment-gold" style="width:72.4174912016%;"></div></td><td sorttable_customkey="382.20"><div style="float:middle;">382.20</div><div class="segment segment-blue" style="width:63.6725560881%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=32&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=32"><img class="hero-img-list" src="./user_hero_files/riki_hphover.png"> 
+					 	Riki </a></td><td><div>122</div><div class="segment segment-white" style="width:46.2121212121%;"></div></td><td sorttable_customkey="56.56"><div>56.6%</div><div class="segment segment-green" style="width:56.56%;"></div></td><td sorttable_customkey="3.4"><div>3.41  <div style="float:right;"> (11.0 / 6.3 / 10.5)</div></div><div class="segment segment-gold" style="width:68.927444795%;"></div></td><td sorttable_customkey="3.05"><div style="float:middle;">3.05</div><div class="segment segment-gray" style="width:82.7064404753%;"></div></td><td sorttable_customkey="382.87"><div style="float:middle;">382.87</div><div class="segment segment-gold" style="width:70.3600154058%;"></div></td><td sorttable_customkey="521.89"><div style="float:middle;">521.89</div><div class="segment segment-blue" style="width:86.9430729809%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=52&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=52"><img class="hero-img-list" src="./user_hero_files/leshrac_hphover.png"> 
+					 	Leshrac </a></td><td><div>112</div><div class="segment segment-white" style="width:42.4242424242%;"></div></td><td sorttable_customkey="53.57"><div>53.6%</div><div class="segment segment-green" style="width:53.57%;"></div></td><td sorttable_customkey="2.8"><div>2.82  <div style="float:right;"> (6.9 / 7.4 / 14.0)</div></div><div class="segment segment-gold" style="width:56.943483714%;"></div></td><td sorttable_customkey="1.92"><div style="float:middle;">1.92</div><div class="segment segment-gray" style="width:51.9788963216%;"></div></td><td sorttable_customkey="444.71"><div style="float:middle;">444.71</div><div class="segment segment-gold" style="width:81.7253840135%;"></div></td><td sorttable_customkey="519.62"><div style="float:middle;">519.62</div><div class="segment segment-blue" style="width:86.5650415968%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=111&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=111"><img class="hero-img-list" src="./user_hero_files/oracle_hphover.png"> 
+					 	Oracle </a></td><td><div>110</div><div class="segment segment-white" style="width:41.6666666667%;"></div></td><td sorttable_customkey="56.36"><div>56.4%</div><div class="segment segment-green" style="width:56.36%;"></div></td><td sorttable_customkey="3.8"><div>3.77  <div style="float:right;"> (6.9 / 6.4 / 17.4)</div></div><div class="segment segment-gold" style="width:76.1375180452%;"></div></td><td sorttable_customkey="2.50"><div style="float:middle;">2.50</div><div class="segment segment-gray" style="width:67.8132739232%;"></div></td><td sorttable_customkey="321.18"><div style="float:middle;">321.18</div><div class="segment segment-gold" style="width:59.0237558636%;"></div></td><td sorttable_customkey="415.23"><div style="float:middle;">415.23</div><div class="segment segment-blue" style="width:69.1744695982%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=71&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=71"><img class="hero-img-list" src="./user_hero_files/spirit_breaker_hphover.png"> 
+					 	Spirit Breaker </a></td><td><div>109</div><div class="segment segment-white" style="width:41.2878787879%;"></div></td><td sorttable_customkey="52.29"><div>52.3%</div><div class="segment segment-green" style="width:52.29%;"></div></td><td sorttable_customkey="2.5"><div>2.51  <div style="float:right;"> (7.9 / 9.1 / 14.9)</div></div><div class="segment segment-gold" style="width:50.6259808306%;"></div></td><td sorttable_customkey="3.13"><div style="float:middle;">3.13</div><div class="segment segment-gray" style="width:84.9594826138%;"></div></td><td sorttable_customkey="345.90"><div style="float:middle;">345.90</div><div class="segment segment-gold" style="width:63.5660608641%;"></div></td><td sorttable_customkey="445.83"><div style="float:middle;">445.83</div><div class="segment segment-blue" style="width:74.2735175638%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=2&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=2"><img class="hero-img-list" src="./user_hero_files/axe_hphover.png"> 
+					 	Axe </a></td><td><div>105</div><div class="segment segment-white" style="width:39.7727272727%;"></div></td><td sorttable_customkey="61.90"><div>61.9%</div><div class="segment segment-green" style="width:61.90%;"></div></td><td sorttable_customkey="2.7"><div>2.70  <div style="float:right;"> (11.4 / 8.9 / 12.5)</div></div><div class="segment segment-gold" style="width:54.4655989126%;"></div></td><td sorttable_customkey="2.40"><div style="float:middle;">2.40</div><div class="segment segment-gray" style="width:65.1973428188%;"></div></td><td sorttable_customkey="434.89"><div style="float:middle;">434.89</div><div class="segment segment-gold" style="width:79.9191821439%;"></div></td><td sorttable_customkey="523.01"><div style="float:middle;">523.01</div><div class="segment segment-blue" style="width:87.1303711982%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=21&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=21"><img class="hero-img-list" src="./user_hero_files/windrunner_hphover.png"> 
+					 	Windranger </a></td><td><div>103</div><div class="segment segment-white" style="width:39.0151515152%;"></div></td><td sorttable_customkey="55.34"><div>55.3%</div><div class="segment segment-green" style="width:55.34%;"></div></td><td sorttable_customkey="3.3"><div>3.27  <div style="float:right;"> (7.7 / 5.8 / 11.2)</div></div><div class="segment segment-gold" style="width:65.9786841674%;"></div></td><td sorttable_customkey="2.69"><div style="float:middle;">2.69</div><div class="segment segment-gray" style="width:72.9188714634%;"></div></td><td sorttable_customkey="402.86"><div style="float:middle;">402.86</div><div class="segment segment-gold" style="width:74.0345487214%;"></div></td><td sorttable_customkey="481.14"><div style="float:middle;">481.14</div><div class="segment segment-blue" style="width:80.1544706185%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=67&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=67"><img class="hero-img-list" src="./user_hero_files/spectre_hphover.png"> 
+					 	Spectre </a></td><td><div>101</div><div class="segment segment-white" style="width:38.2575757576%;"></div></td><td sorttable_customkey="57.43"><div>57.4%</div><div class="segment segment-green" style="width:57.43%;"></div></td><td sorttable_customkey="4.1"><div>4.10  <div style="float:right;"> (9.8 / 6.7 / 17.7)</div></div><div class="segment segment-gold" style="width:82.7522030839%;"></div></td><td sorttable_customkey="3.52"><div style="float:middle;">3.52</div><div class="segment segment-gray" style="width:95.4948263166%;"></div></td><td sorttable_customkey="480.91"><div style="float:middle;">480.91</div><div class="segment segment-gold" style="width:88.3772536954%;"></div></td><td sorttable_customkey="545.46"><div style="float:middle;">545.46</div><div class="segment segment-blue" style="width:90.8697323448%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=110&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=110"><img class="hero-img-list" src="./user_hero_files/phoenix_hphover.png"> 
+					 	Phoenix </a></td><td><div>92</div><div class="segment segment-white" style="width:34.8484848485%;"></div></td><td sorttable_customkey="59.78"><div>59.8%</div><div class="segment segment-green" style="width:59.78%;"></div></td><td sorttable_customkey="3.7"><div>3.70  <div style="float:right;"> (6.8 / 7.3 / 20.1)</div></div><div class="segment segment-gold" style="width:74.6912619711%;"></div></td><td sorttable_customkey="2.83"><div style="float:middle;">2.83</div><div class="segment segment-gray" style="width:76.794006434%;"></div></td><td sorttable_customkey="386.79"><div style="float:middle;">386.79</div><div class="segment segment-gold" style="width:71.081246005%;"></div></td><td sorttable_customkey="461.00"><div style="float:middle;">461.00</div><div class="segment segment-blue" style="width:76.7999420542%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=104&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=104"><img class="hero-img-list" src="./user_hero_files/legion_commander_hphover.png"> 
+					 	Legion Commander </a></td><td><div>88</div><div class="segment segment-white" style="width:33.3333333333%;"></div></td><td sorttable_customkey="42.05"><div>42.0%</div><div class="segment segment-green" style="width:42.05%;"></div></td><td sorttable_customkey="1.9"><div>1.89  <div style="float:right;"> (6.9 / 9.5 / 11.0)</div></div><div class="segment segment-gold" style="width:38.1299231191%;"></div></td><td sorttable_customkey="2.29"><div style="float:middle;">2.29</div><div class="segment segment-gray" style="width:62.1108082416%;"></div></td><td sorttable_customkey="408.16"><div style="float:middle;">408.16</div><div class="segment segment-gold" style="width:75.0076161587%;"></div></td><td sorttable_customkey="502.50"><div style="float:middle;">502.50</div><div class="segment segment-blue" style="width:83.7136027814%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=112&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=112"><img class="hero-img-list" src="./user_hero_files/winter_wyvern_hphover.png"> 
+					 	Winter Wyvern </a></td><td><div>87</div><div class="segment segment-white" style="width:32.9545454545%;"></div></td><td sorttable_customkey="56.32"><div>56.3%</div><div class="segment segment-green" style="width:56.32%;"></div></td><td sorttable_customkey="2.8"><div>2.81  <div style="float:right;"> (5.2 / 6.7 / 13.7)</div></div><div class="segment segment-gold" style="width:56.778027799%;"></div></td><td sorttable_customkey="2.29"><div style="float:middle;">2.29</div><div class="segment segment-gray" style="width:62.1056994732%;"></div></td><td sorttable_customkey="356.23"><div style="float:middle;">356.23</div><div class="segment segment-gold" style="width:65.4645580064%;"></div></td><td sorttable_customkey="432.29"><div style="float:middle;">432.29</div><div class="segment segment-blue" style="width:72.0165811633%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=39&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=39"><img class="hero-img-list" src="./user_hero_files/queenofpain_hphover.png"> 
+					 	Queen of Pain </a></td><td><div>87</div><div class="segment segment-white" style="width:32.9545454545%;"></div></td><td sorttable_customkey="50.57"><div>50.6%</div><div class="segment segment-green" style="width:50.57%;"></div></td><td sorttable_customkey="3.2"><div>3.20  <div style="float:right;"> (8.8 / 6.8 / 12.9)</div></div><div class="segment segment-gold" style="width:64.6194124337%;"></div></td><td sorttable_customkey="2.83"><div style="float:middle;">2.83</div><div class="segment segment-gray" style="width:76.6120815529%;"></div></td><td sorttable_customkey="414.63"><div style="float:middle;">414.63</div><div class="segment segment-gold" style="width:76.1971799485%;"></div></td><td sorttable_customkey="496.16"><div style="float:middle;">496.16</div><div class="segment segment-blue" style="width:82.6575485255%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=25&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=25"><img class="hero-img-list" src="./user_hero_files/lina_hphover.png"> 
+					 	Lina </a></td><td><div>82</div><div class="segment segment-white" style="width:31.0606060606%;"></div></td><td sorttable_customkey="47.56"><div>47.6%</div><div class="segment segment-green" style="width:47.56%;"></div></td><td sorttable_customkey="2.9"><div>2.87  <div style="float:right;"> (8.6 / 6.9 / 11.2)</div></div><div class="segment segment-gold" style="width:58.0352465138%;"></div></td><td sorttable_customkey="2.13"><div style="float:middle;">2.13</div><div class="segment segment-gray" style="width:57.7752898494%;"></div></td><td sorttable_customkey="421.87"><div style="float:middle;">421.87</div><div class="segment segment-gold" style="width:77.5265153379%;"></div></td><td sorttable_customkey="483.07"><div style="float:middle;">483.07</div><div class="segment segment-blue" style="width:80.4772050328%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=105&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=105"><img class="hero-img-list" src="./user_hero_files/techies_hphover.png"> 
+					 	Techies </a></td><td><div>81</div><div class="segment segment-white" style="width:30.6818181818%;"></div></td><td sorttable_customkey="44.44"><div>44.4%</div><div class="segment segment-green" style="width:44.44%;"></div></td><td sorttable_customkey="2.2"><div>2.18  <div style="float:right;"> (9.2 / 8.2 / 8.7)</div></div><div class="segment segment-gold" style="width:43.9306468063%;"></div></td><td sorttable_customkey="1.84"><div style="float:middle;">1.84</div><div class="segment segment-gray" style="width:49.9418588912%;"></div></td><td sorttable_customkey="360.51"><div style="float:middle;">360.51</div><div class="segment segment-gold" style="width:66.2504137173%;"></div></td><td sorttable_customkey="377.60"><div style="float:middle;">377.60</div><div class="segment segment-blue" style="width:62.9068055936%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=68&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=68"><img class="hero-img-list" src="./user_hero_files/ancient_apparition_hphover.png"> 
+					 	Ancient Apparition </a></td><td><div>81</div><div class="segment segment-white" style="width:30.6818181818%;"></div></td><td sorttable_customkey="43.21"><div>43.2%</div><div class="segment segment-green" style="width:43.21%;"></div></td><td sorttable_customkey="2.9"><div>2.89  <div style="float:right;"> (4.9 / 6.8 / 14.9)</div></div><div class="segment segment-gold" style="width:58.2677794194%;"></div></td><td sorttable_customkey="2.88"><div style="float:middle;">2.88</div><div class="segment segment-gray" style="width:78.041896215%;"></div></td><td sorttable_customkey="320.11"><div style="float:middle;">320.11</div><div class="segment segment-gold" style="width:58.8269914481%;"></div></td><td sorttable_customkey="355.44"><div style="float:middle;">355.44</div><div class="segment segment-blue" style="width:59.2149950907%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=56&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=56"><img class="hero-img-list" src="./user_hero_files/clinkz_hphover.png"> 
+					 	Clinkz </a></td><td><div>79</div><div class="segment segment-white" style="width:29.9242424242%;"></div></td><td sorttable_customkey="60.76"><div>60.8%</div><div class="segment segment-green" style="width:60.76%;"></div></td><td sorttable_customkey="3.5"><div>3.52  <div style="float:right;"> (13.2 / 5.9 / 7.6)</div></div><div class="segment segment-gold" style="width:71.0090575541%;"></div></td><td sorttable_customkey="2.61"><div style="float:middle;">2.61</div><div class="segment segment-gray" style="width:70.6440565695%;"></div></td><td sorttable_customkey="499.00"><div style="float:middle;">499.00</div><div class="segment segment-gold" style="width:91.7014989911%;"></div></td><td sorttable_customkey="567.67"><div style="float:middle;">567.67</div><div class="segment segment-blue" style="width:94.5706966518%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=47&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=47"><img class="hero-img-list" src="./user_hero_files/viper_hphover.png"> 
+					 	Viper </a></td><td><div>69</div><div class="segment segment-white" style="width:26.1363636364%;"></div></td><td sorttable_customkey="60.87"><div>60.9%</div><div class="segment segment-green" style="width:60.87%;"></div></td><td sorttable_customkey="3.0"><div>2.98  <div style="float:right;"> (9.8 / 7.7 / 13.2)</div></div><div class="segment segment-gold" style="width:60.0744764118%;"></div></td><td sorttable_customkey="2.53"><div style="float:middle;">2.53</div><div class="segment segment-gray" style="width:68.5409633746%;"></div></td><td sorttable_customkey="428.13"><div style="float:middle;">428.13</div><div class="segment segment-gold" style="width:78.6777607881%;"></div></td><td sorttable_customkey="510.22"><div style="float:middle;">510.22</div><div class="segment segment-blue" style="width:84.9992756772%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=11&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=11"><img class="hero-img-list" src="./user_hero_files/nevermore_hphover.png"> 
+					 	Shadow Fiend </a></td><td><div>69</div><div class="segment segment-white" style="width:26.1363636364%;"></div></td><td sorttable_customkey="40.58"><div>40.6%</div><div class="segment segment-green" style="width:40.58%;"></div></td><td sorttable_customkey="3.1"><div>3.07  <div style="float:right;"> (9.4 / 6.6 / 10.7)</div></div><div class="segment segment-gold" style="width:61.9524859719%;"></div></td><td sorttable_customkey="2.48"><div style="float:middle;">2.48</div><div class="segment segment-gray" style="width:67.3528765164%;"></div></td><td sorttable_customkey="520.45"><div style="float:middle;">520.45</div><div class="segment segment-gold" style="width:95.6432438868%;"></div></td><td sorttable_customkey="600.26"><div style="float:middle;">600.26</div><div class="segment segment-blue" style="width:100.0%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=50&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=50"><img class="hero-img-list" src="./user_hero_files/dazzle_hphover.png"> 
+					 	Dazzle </a></td><td><div>67</div><div class="segment segment-white" style="width:25.3787878788%;"></div></td><td sorttable_customkey="50.75"><div>50.7%</div><div class="segment segment-green" style="width:50.75%;"></div></td><td sorttable_customkey="2.4"><div>2.36  <div style="float:right;"> (3.0 / 7.7 / 15.2)</div></div><div class="segment segment-gold" style="width:47.5751110787%;"></div></td><td sorttable_customkey="2.29"><div style="float:middle;">2.29</div><div class="segment segment-gray" style="width:61.9773145129%;"></div></td><td sorttable_customkey="289.40"><div style="float:middle;">289.40</div><div class="segment segment-gold" style="width:53.1837425728%;"></div></td><td sorttable_customkey="367.51"><div style="float:middle;">367.51</div><div class="segment segment-blue" style="width:61.2246243792%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=45&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=45"><img class="hero-img-list" src="./user_hero_files/pugna_hphover.png"> 
+					 	Pugna </a></td><td><div>67</div><div class="segment segment-white" style="width:25.3787878788%;"></div></td><td sorttable_customkey="58.21"><div>58.2%</div><div class="segment segment-green" style="width:58.21%;"></div></td><td sorttable_customkey="2.6"><div>2.64  <div style="float:right;"> (5.1 / 7.1 / 13.8)</div></div><div class="segment segment-gold" style="width:53.3453004765%;"></div></td><td sorttable_customkey="2.26"><div style="float:middle;">2.26</div><div class="segment segment-gray" style="width:61.3735696215%;"></div></td><td sorttable_customkey="343.09"><div style="float:middle;">343.09</div><div class="segment segment-gold" style="width:63.0497519609%;"></div></td><td sorttable_customkey="388.09"><div style="float:middle;">388.09</div><div class="segment segment-blue" style="width:64.6534818303%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=36&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=36"><img class="hero-img-list" src="./user_hero_files/necrolyte_hphover.png"> 
+					 	Necrophos </a></td><td><div>60</div><div class="segment segment-white" style="width:22.7272727273%;"></div></td><td sorttable_customkey="55.00"><div>55.0%</div><div class="segment segment-green" style="width:55.00%;"></div></td><td sorttable_customkey="3.4"><div>3.39  <div style="float:right;"> (9.4 / 7.4 / 15.7)</div></div><div class="segment segment-gold" style="width:68.3888936255%;"></div></td><td sorttable_customkey="2.72"><div style="float:middle;">2.72</div><div class="segment segment-gray" style="width:73.7250310738%;"></div></td><td sorttable_customkey="388.78"><div style="float:middle;">388.78</div><div class="segment segment-gold" style="width:71.4469227443%;"></div></td><td sorttable_customkey="451.02"><div style="float:middle;">451.02</div><div class="segment segment-blue" style="width:75.1367762808%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=26&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=26"><img class="hero-img-list" src="./user_hero_files/lion_hphover.png"> 
+					 	Lion </a></td><td><div>58</div><div class="segment segment-white" style="width:21.9696969697%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.0"><div>2.03  <div style="float:right;"> (5.6 / 9.7 / 14.0)</div></div><div class="segment segment-gold" style="width:40.9914375845%;"></div></td><td sorttable_customkey="1.86"><div style="float:middle;">1.86</div><div class="segment segment-gray" style="width:50.3073364471%;"></div></td><td sorttable_customkey="308.59"><div style="float:middle;">308.59</div><div class="segment segment-gold" style="width:56.7090535879%;"></div></td><td sorttable_customkey="393.41"><div style="float:middle;">393.41</div><div class="segment segment-blue" style="width:65.5404696609%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=98&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=98"><img class="hero-img-list" src="./user_hero_files/shredder_hphover.png"> 
+					 	Timbersaw </a></td><td><div>57</div><div class="segment segment-white" style="width:21.5909090909%;"></div></td><td sorttable_customkey="50.88"><div>50.9%</div><div class="segment segment-green" style="width:50.88%;"></div></td><td sorttable_customkey="2.6"><div>2.55  <div style="float:right;"> (9.4 / 8.7 / 12.7)</div></div><div class="segment segment-gold" style="width:51.4949105353%;"></div></td><td sorttable_customkey="2.23"><div style="float:middle;">2.23</div><div class="segment segment-gray" style="width:60.5228715132%;"></div></td><td sorttable_customkey="436.96"><div style="float:middle;">436.96</div><div class="segment segment-gold" style="width:80.3012774802%;"></div></td><td sorttable_customkey="499.72"><div style="float:middle;">499.72</div><div class="segment segment-blue" style="width:83.2503539016%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=99&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=99"><img class="hero-img-list" src="./user_hero_files/bristleback_hphover.png"> 
+					 	Bristleback </a></td><td><div>55</div><div class="segment segment-white" style="width:20.8333333333%;"></div></td><td sorttable_customkey="50.91"><div>50.9%</div><div class="segment segment-green" style="width:50.91%;"></div></td><td sorttable_customkey="2.8"><div>2.79  <div style="float:right;"> (7.1 / 7.5 / 13.8)</div></div><div class="segment segment-gold" style="width:56.3148769105%;"></div></td><td sorttable_customkey="2.49"><div style="float:middle;">2.49</div><div class="segment segment-gray" style="width:67.5422308528%;"></div></td><td sorttable_customkey="414.13"><div style="float:middle;">414.13</div><div class="segment segment-gold" style="width:76.1043921486%;"></div></td><td sorttable_customkey="497.85"><div style="float:middle;">497.85</div><div class="segment segment-blue" style="width:82.939696838%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=1&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=1"><img class="hero-img-list" src="./user_hero_files/antimage_hphover.png"> 
+					 	Anti-Mage </a></td><td><div>55</div><div class="segment segment-white" style="width:20.8333333333%;"></div></td><td sorttable_customkey="47.27"><div>47.3%</div><div class="segment segment-green" style="width:47.27%;"></div></td><td sorttable_customkey="2.6"><div>2.61  <div style="float:right;"> (6.9 / 5.5 / 7.4)</div></div><div class="segment segment-gold" style="width:52.638702356%;"></div></td><td sorttable_customkey="2.53"><div style="float:middle;">2.53</div><div class="segment segment-gray" style="width:68.4854346987%;"></div></td><td sorttable_customkey="526.95"><div style="float:middle;">526.95</div><div class="segment segment-gold" style="width:96.8370502372%;"></div></td><td sorttable_customkey="559.27"><div style="float:middle;">559.27</div><div class="segment segment-blue" style="width:93.1716118157%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=93&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=93"><img class="hero-img-list" src="./user_hero_files/slark_hphover.png"> 
+					 	Slark </a></td><td><div>52</div><div class="segment segment-white" style="width:19.696969697%;"></div></td><td sorttable_customkey="51.92"><div>51.9%</div><div class="segment segment-green" style="width:51.92%;"></div></td><td sorttable_customkey="2.4"><div>2.44  <div style="float:right;"> (8.4 / 8.6 / 12.5)</div></div><div class="segment segment-gold" style="width:49.2709034842%;"></div></td><td sorttable_customkey="2.57"><div style="float:middle;">2.57</div><div class="segment segment-gray" style="width:69.6778125515%;"></div></td><td sorttable_customkey="455.79"><div style="float:middle;">455.79</div><div class="segment segment-gold" style="width:83.7604912744%;"></div></td><td sorttable_customkey="541.63"><div style="float:middle;">541.63</div><div class="segment segment-blue" style="width:90.2332040696%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=101&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=101"><img class="hero-img-list" src="./user_hero_files/skywrath_mage_hphover.png"> 
+					 	Skywrath Mage </a></td><td><div>51</div><div class="segment segment-white" style="width:19.3181818182%;"></div></td><td sorttable_customkey="50.98"><div>51.0%</div><div class="segment segment-green" style="width:50.98%;"></div></td><td sorttable_customkey="2.8"><div>2.82  <div style="float:right;"> (8.9 / 7.6 / 12.6)</div></div><div class="segment segment-gold" style="width:57.0294968942%;"></div></td><td sorttable_customkey="2.34"><div style="float:middle;">2.34</div><div class="segment segment-gray" style="width:63.3393023956%;"></div></td><td sorttable_customkey="342.16"><div style="float:middle;">342.16</div><div class="segment segment-gold" style="width:62.8783511098%;"></div></td><td sorttable_customkey="431.57"><div style="float:middle;">431.57</div><div class="segment segment-blue" style="width:71.8968450773%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=100&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=100"><img class="hero-img-list" src="./user_hero_files/tusk_hphover.png"> 
+					 	Tusk </a></td><td><div>51</div><div class="segment segment-white" style="width:19.3181818182%;"></div></td><td sorttable_customkey="52.94"><div>52.9%</div><div class="segment segment-green" style="width:52.94%;"></div></td><td sorttable_customkey="2.7"><div>2.68  <div style="float:right;"> (5.8 / 8.3 / 16.4)</div></div><div class="segment segment-gold" style="width:54.0289803193%;"></div></td><td sorttable_customkey="2.33"><div style="float:middle;">2.33</div><div class="segment segment-gray" style="width:63.2596964261%;"></div></td><td sorttable_customkey="335.35"><div style="float:middle;">335.35</div><div class="segment segment-gold" style="width:61.6279907754%;"></div></td><td sorttable_customkey="400.04"><div style="float:middle;">400.04</div><div class="segment segment-blue" style="width:66.6442268636%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=94&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=94"><img class="hero-img-list" src="./user_hero_files/medusa_hphover.png"> 
+					 	Medusa </a></td><td><div>51</div><div class="segment segment-white" style="width:19.3181818182%;"></div></td><td sorttable_customkey="62.75"><div>62.7%</div><div class="segment segment-green" style="width:62.75%;"></div></td><td sorttable_customkey="5.0"><div>4.95  <div style="float:right;"> (6.6 / 3.8 / 12.0)</div></div><div class="segment segment-gold" style="width:100.0%;"></div></td><td sorttable_customkey="2.68"><div style="float:middle;">2.68</div><div class="segment segment-gray" style="width:72.7553107157%;"></div></td><td sorttable_customkey="544.16"><div style="float:middle;">544.16</div><div class="segment segment-gold" style="width:100.0%;"></div></td><td sorttable_customkey="571.47"><div style="float:middle;">571.47</div><div class="segment segment-blue" style="width:95.2037051239%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=89&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=89"><img class="hero-img-list" src="./user_hero_files/naga_siren_hphover.png"> 
+					 	Naga Siren </a></td><td><div>48</div><div class="segment segment-white" style="width:18.1818181818%;"></div></td><td sorttable_customkey="45.83"><div>45.8%</div><div class="segment segment-green" style="width:45.83%;"></div></td><td sorttable_customkey="3.1"><div>3.06  <div style="float:right;"> (4.3 / 5.6 / 12.8)</div></div><div class="segment segment-gold" style="width:61.697820048%;"></div></td><td sorttable_customkey="2.36"><div style="float:middle;">2.36</div><div class="segment segment-gray" style="width:63.9480207119%;"></div></td><td sorttable_customkey="493.08"><div style="float:middle;">493.08</div><div class="segment segment-gold" style="width:90.6141899683%;"></div></td><td sorttable_customkey="462.15"><div style="float:middle;">462.15</div><div class="segment segment-blue" style="width:76.9908312811%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=10&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=10"><img class="hero-img-list" src="./user_hero_files/morphling_hphover.png"> 
+					 	Morphling </a></td><td><div>48</div><div class="segment segment-white" style="width:18.1818181818%;"></div></td><td sorttable_customkey="66.67"><div>66.7%</div><div class="segment segment-green" style="width:66.67%;"></div></td><td sorttable_customkey="3.3"><div>3.34  <div style="float:right;"> (9.1 / 5.9 / 10.6)</div></div><div class="segment segment-gold" style="width:67.4878220062%;"></div></td><td sorttable_customkey="2.84"><div style="float:middle;">2.84</div><div class="segment segment-gray" style="width:76.9755828414%;"></div></td><td sorttable_customkey="482.15"><div style="float:middle;">482.15</div><div class="segment segment-gold" style="width:88.6041996973%;"></div></td><td sorttable_customkey="527.00"><div style="float:middle;">527.00</div><div class="segment segment-blue" style="width:87.795161524%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=48&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=48"><img class="hero-img-list" src="./user_hero_files/luna_hphover.png"> 
+					 	Luna </a></td><td><div>47</div><div class="segment segment-white" style="width:17.803030303%;"></div></td><td sorttable_customkey="57.45"><div>57.4%</div><div class="segment segment-green" style="width:57.45%;"></div></td><td sorttable_customkey="2.9"><div>2.88  <div style="float:right;"> (8.3 / 7.1 / 12.1)</div></div><div class="segment segment-gold" style="width:58.0820568202%;"></div></td><td sorttable_customkey="2.34"><div style="float:middle;">2.34</div><div class="segment segment-gray" style="width:63.5482706214%;"></div></td><td sorttable_customkey="527.89"><div style="float:middle;">527.89</div><div class="segment segment-gold" style="width:97.0112945665%;"></div></td><td sorttable_customkey="550.26"><div style="float:middle;">550.26</div><div class="segment segment-blue" style="width:91.6693636131%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=14&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=14"><img class="hero-img-list" src="./user_hero_files/pudge_hphover.png"> 
+					 	Pudge </a></td><td><div>47</div><div class="segment segment-white" style="width:17.803030303%;"></div></td><td sorttable_customkey="55.32"><div>55.3%</div><div class="segment segment-green" style="width:55.32%;"></div></td><td sorttable_customkey="2.2"><div>2.16  <div style="float:right;"> (6.6 / 10.2 / 15.5)</div></div><div class="segment segment-gold" style="width:43.6944588364%;"></div></td><td sorttable_customkey="2.45"><div style="float:middle;">2.45</div><div class="segment segment-gray" style="width:66.4422689544%;"></div></td><td sorttable_customkey="321.09"><div style="float:middle;">321.09</div><div class="segment segment-gold" style="width:59.0059830842%;"></div></td><td sorttable_customkey="414.81"><div style="float:middle;">414.81</div><div class="segment segment-blue" style="width:69.1047062486%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=74&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=74"><img class="hero-img-list" src="./user_hero_files/invoker_hphover.png"> 
+					 	Invoker </a></td><td><div>46</div><div class="segment segment-white" style="width:17.4242424242%;"></div></td><td sorttable_customkey="41.30"><div>41.3%</div><div class="segment segment-green" style="width:41.30%;"></div></td><td sorttable_customkey="2.8"><div>2.83  <div style="float:right;"> (6.2 / 6.6 / 12.4)</div></div><div class="segment segment-gold" style="width:57.2252282366%;"></div></td><td sorttable_customkey="3.21"><div style="float:middle;">3.21</div><div class="segment segment-gray" style="width:87.0287652714%;"></div></td><td sorttable_customkey="418.39"><div style="float:middle;">418.39</div><div class="segment segment-gold" style="width:76.8879955381%;"></div></td><td sorttable_customkey="469.48"><div style="float:middle;">469.48</div><div class="segment segment-blue" style="width:78.2123714327%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=4&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=4"><img class="hero-img-list" src="./user_hero_files/bloodseeker_hphover.png"> 
+					 	Bloodseeker </a></td><td><div>45</div><div class="segment segment-white" style="width:17.0454545455%;"></div></td><td sorttable_customkey="35.56"><div>35.6%</div><div class="segment segment-green" style="width:35.56%;"></div></td><td sorttable_customkey="1.9"><div>1.85  <div style="float:right;"> (7.3 / 9.0 / 9.4)</div></div><div class="segment segment-gold" style="width:37.4373953343%;"></div></td><td sorttable_customkey="2.55"><div style="float:middle;">2.55</div><div class="segment segment-gray" style="width:69.0232180365%;"></div></td><td sorttable_customkey="361.40"><div style="float:middle;">361.40</div><div class="segment segment-gold" style="width:66.4146728164%;"></div></td><td sorttable_customkey="419.36"><div style="float:middle;">419.36</div><div class="segment segment-blue" style="width:69.8622177153%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=19&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=19"><img class="hero-img-list" src="./user_hero_files/tiny_hphover.png"> 
+					 	Tiny </a></td><td><div>44</div><div class="segment segment-white" style="width:16.6666666667%;"></div></td><td sorttable_customkey="56.82"><div>56.8%</div><div class="segment segment-green" style="width:56.82%;"></div></td><td sorttable_customkey="2.1"><div>2.14  <div style="float:right;"> (8.1 / 8.3 / 9.8)</div></div><div class="segment segment-gold" style="width:43.3021323542%;"></div></td><td sorttable_customkey="2.56"><div style="float:middle;">2.56</div><div class="segment segment-gray" style="width:69.3456291327%;"></div></td><td sorttable_customkey="437.00"><div style="float:middle;">437.00</div><div class="segment segment-gold" style="width:80.3077255693%;"></div></td><td sorttable_customkey="515.20"><div style="float:middle;">515.20</div><div class="segment segment-blue" style="width:85.8301068047%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=7&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=7"><img class="hero-img-list" src="./user_hero_files/earthshaker_hphover.png"> 
+					 	Earthshaker </a></td><td><div>44</div><div class="segment segment-white" style="width:16.6666666667%;"></div></td><td sorttable_customkey="54.55"><div>54.5%</div><div class="segment segment-green" style="width:54.55%;"></div></td><td sorttable_customkey="2.4"><div>2.45  <div style="float:right;"> (6.0 / 8.5 / 14.7)</div></div><div class="segment segment-gold" style="width:49.4420135002%;"></div></td><td sorttable_customkey="2.45"><div style="float:middle;">2.45</div><div class="segment segment-gray" style="width:66.3252163628%;"></div></td><td sorttable_customkey="348.80"><div style="float:middle;">348.80</div><div class="segment segment-gold" style="width:64.0983287036%;"></div></td><td sorttable_customkey="432.18"><div style="float:middle;">432.18</div><div class="segment segment-blue" style="width:71.9989991176%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=17&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=17"><img class="hero-img-list" src="./user_hero_files/storm_spirit_hphover.png"> 
+					 	Storm Spirit </a></td><td><div>43</div><div class="segment segment-white" style="width:16.2878787879%;"></div></td><td sorttable_customkey="62.79"><div>62.8%</div><div class="segment segment-green" style="width:62.79%;"></div></td><td sorttable_customkey="4.1"><div>4.07  <div style="float:right;"> (10.1 / 6.1 / 14.8)</div></div><div class="segment segment-gold" style="width:82.1336392314%;"></div></td><td sorttable_customkey="3.06"><div style="float:middle;">3.06</div><div class="segment segment-gray" style="width:83.0217213017%;"></div></td><td sorttable_customkey="485.79"><div style="float:middle;">485.79</div><div class="segment segment-gold" style="width:89.2740183821%;"></div></td><td sorttable_customkey="585.91"><div style="float:middle;">585.91</div><div class="segment segment-blue" style="width:97.608724215%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=58&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=58"><img class="hero-img-list" src="./user_hero_files/enchantress_hphover.png"> 
+					 	Enchantress </a></td><td><div>42</div><div class="segment segment-white" style="width:15.9090909091%;"></div></td><td sorttable_customkey="61.90"><div>61.9%</div><div class="segment segment-green" style="width:61.90%;"></div></td><td sorttable_customkey="3.6"><div>3.55  <div style="float:right;"> (9.0 / 5.4 / 10.0)</div></div><div class="segment segment-gold" style="width:71.6943568174%;"></div></td><td sorttable_customkey="2.45"><div style="float:middle;">2.45</div><div class="segment segment-gray" style="width:66.4915046534%;"></div></td><td sorttable_customkey="411.02"><div style="float:middle;">411.02</div><div class="segment segment-gold" style="width:75.5340670428%;"></div></td><td sorttable_customkey="479.88"><div style="float:middle;">479.88</div><div class="segment segment-blue" style="width:79.9453998607%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=6&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=6"><img class="hero-img-list" src="./user_hero_files/drow_ranger_hphover.png"> 
+					 	Drow Ranger </a></td><td><div>41</div><div class="segment segment-white" style="width:15.5303030303%;"></div></td><td sorttable_customkey="48.78"><div>48.8%</div><div class="segment segment-green" style="width:48.78%;"></div></td><td sorttable_customkey="2.2"><div>2.18  <div style="float:right;"> (4.9 / 8.6 / 14.0)</div></div><div class="segment segment-gold" style="width:43.9715553654%;"></div></td><td sorttable_customkey="2.19"><div style="float:middle;">2.19</div><div class="segment segment-gray" style="width:59.3948505203%;"></div></td><td sorttable_customkey="402.44"><div style="float:middle;">402.44</div><div class="segment segment-gold" style="width:73.9564364511%;"></div></td><td sorttable_customkey="445.98"><div style="float:middle;">445.98</div><div class="segment segment-blue" style="width:74.2969652643%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=75&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=75"><img class="hero-img-list" src="./user_hero_files/silencer_hphover.png"> 
+					 	Silencer </a></td><td><div>40</div><div class="segment segment-white" style="width:15.1515151515%;"></div></td><td sorttable_customkey="40.00"><div>40.0%</div><div class="segment segment-green" style="width:40.00%;"></div></td><td sorttable_customkey="2.3"><div>2.34  <div style="float:right;"> (6.7 / 8.5 / 13.1)</div></div><div class="segment segment-gold" style="width:47.2274178089%;"></div></td><td sorttable_customkey="2.59"><div style="float:middle;">2.59</div><div class="segment segment-gray" style="width:70.2280816753%;"></div></td><td sorttable_customkey="342.75"><div style="float:middle;">342.75</div><div class="segment segment-gold" style="width:62.9873522629%;"></div></td><td sorttable_customkey="410.23"><div style="float:middle;">410.23</div><div class="segment segment-blue" style="width:68.341119803%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=51&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=51"><img class="hero-img-list" src="./user_hero_files/rattletrap_hphover.png"> 
+					 	Clockwerk </a></td><td><div>39</div><div class="segment segment-white" style="width:14.7727272727%;"></div></td><td sorttable_customkey="58.97"><div>59.0%</div><div class="segment segment-green" style="width:58.97%;"></div></td><td sorttable_customkey="3.0"><div>2.97  <div style="float:right;"> (7.2 / 8.2 / 17.1)</div></div><div class="segment segment-gold" style="width:59.8738170347%;"></div></td><td sorttable_customkey="2.66"><div style="float:middle;">2.66</div><div class="segment segment-gray" style="width:72.1683201915%;"></div></td><td sorttable_customkey="346.23"><div style="float:middle;">346.23</div><div class="segment segment-gold" style="width:63.6270151008%;"></div></td><td sorttable_customkey="431.82"><div style="float:middle;">431.82</div><div class="segment segment-blue" style="width:71.9388077276%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=42&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=42"><img class="hero-img-list" src="./user_hero_files/skeleton_king_hphover.png"> 
+					 	Wraith King </a></td><td><div>35</div><div class="segment segment-white" style="width:13.2575757576%;"></div></td><td sorttable_customkey="45.71"><div>45.7%</div><div class="segment segment-green" style="width:45.71%;"></div></td><td sorttable_customkey="2.9"><div>2.86  <div style="float:right;"> (5.7 / 7.2 / 14.7)</div></div><div class="segment segment-gold" style="width:57.6721505147%;"></div></td><td sorttable_customkey="3.08"><div style="float:middle;">3.08</div><div class="segment segment-gray" style="width:83.5472462253%;"></div></td><td sorttable_customkey="425.46"><div style="float:middle;">425.46</div><div class="segment segment-gold" style="width:78.1864884899%;"></div></td><td sorttable_customkey="506.60"><div style="float:middle;">506.60</div><div class="segment segment-blue" style="width:84.3966391424%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=22&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=22"><img class="hero-img-list" src="./user_hero_files/zuus_hphover.png"> 
+					 	Zeus </a></td><td><div>35</div><div class="segment segment-white" style="width:13.2575757576%;"></div></td><td sorttable_customkey="65.71"><div>65.7%</div><div class="segment segment-green" style="width:65.71%;"></div></td><td sorttable_customkey="4.7"><div>4.68  <div style="float:right;"> (9.9 / 6.6 / 21.0)</div></div><div class="segment segment-gold" style="width:94.3914130034%;"></div></td><td sorttable_customkey="3.69"><div style="float:middle;">3.69</div><div class="segment segment-gray" style="width:100.0%;"></div></td><td sorttable_customkey="383.91"><div style="float:middle;">383.91</div><div class="segment segment-gold" style="width:70.5521352386%;"></div></td><td sorttable_customkey="491.97"><div style="float:middle;">491.97</div><div class="segment segment-blue" style="width:81.959603485%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=90&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=90"><img class="hero-img-list" src="./user_hero_files/keeper_of_the_light_hphover.png"> 
+					 	Keeper of the Light </a></td><td><div>34</div><div class="segment segment-white" style="width:12.8787878788%;"></div></td><td sorttable_customkey="64.71"><div>64.7%</div><div class="segment segment-green" style="width:64.71%;"></div></td><td sorttable_customkey="3.1"><div>3.08  <div style="float:right;"> (2.9 / 7.1 / 18.9)</div></div><div class="segment segment-gold" style="width:62.2502628812%;"></div></td><td sorttable_customkey="2.32"><div style="float:middle;">2.32</div><div class="segment segment-gray" style="width:62.7851758398%;"></div></td><td sorttable_customkey="352.41"><div style="float:middle;">352.41</div><div class="segment segment-gold" style="width:64.7628999712%;"></div></td><td sorttable_customkey="413.03"><div style="float:middle;">413.03</div><div class="segment segment-blue" style="width:68.8083186338%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=63&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=63"><img class="hero-img-list" src="./user_hero_files/weaver_hphover.png"> 
+					 	Weaver </a></td><td><div>33</div><div class="segment segment-white" style="width:12.5%;"></div></td><td sorttable_customkey="54.55"><div>54.5%</div><div class="segment segment-green" style="width:54.55%;"></div></td><td sorttable_customkey="3.8"><div>3.81  <div style="float:right;"> (7.5 / 5.5 / 13.4)</div></div><div class="segment segment-gold" style="width:76.8530944455%;"></div></td><td sorttable_customkey="3.23"><div style="float:middle;">3.23</div><div class="segment segment-gray" style="width:87.4734509338%;"></div></td><td sorttable_customkey="413.61"><div style="float:middle;">413.61</div><div class="segment segment-gold" style="width:76.0086087162%;"></div></td><td sorttable_customkey="490.27"><div style="float:middle;">490.27</div><div class="segment segment-blue" style="width:81.6766096427%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=106&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=106"><img class="hero-img-list" src="./user_hero_files/ember_spirit_hphover.png"> 
+					 	Ember Spirit </a></td><td><div>31</div><div class="segment segment-white" style="width:11.7424242424%;"></div></td><td sorttable_customkey="51.61"><div>51.6%</div><div class="segment segment-green" style="width:51.61%;"></div></td><td sorttable_customkey="2.4"><div>2.35  <div style="float:right;"> (5.9 / 7.4 / 11.5)</div></div><div class="segment segment-gold" style="width:47.5197333076%;"></div></td><td sorttable_customkey="3.21"><div style="float:middle;">3.21</div><div class="segment segment-gray" style="width:87.1082861858%;"></div></td><td sorttable_customkey="434.06"><div style="float:middle;">434.06</div><div class="segment segment-gold" style="width:79.768270116%;"></div></td><td sorttable_customkey="491.52"><div style="float:middle;">491.52</div><div class="segment segment-blue" style="width:81.8837532069%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=55&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=55"><img class="hero-img-list" src="./user_hero_files/dark_seer_hphover.png"> 
+					 	Dark Seer </a></td><td><div>30</div><div class="segment segment-white" style="width:11.3636363636%;"></div></td><td sorttable_customkey="60.00"><div>60.0%</div><div class="segment segment-green" style="width:60.00%;"></div></td><td sorttable_customkey="4.0"><div>3.98  <div style="float:right;"> (4.0 / 5.7 / 18.8)</div></div><div class="segment segment-gold" style="width:80.2875797814%;"></div></td><td sorttable_customkey="2.53"><div style="float:middle;">2.53</div><div class="segment segment-gray" style="width:68.6974039487%;"></div></td><td sorttable_customkey="391.07"><div style="float:middle;">391.07</div><div class="segment segment-gold" style="width:71.8665321418%;"></div></td><td sorttable_customkey="433.23"><div style="float:middle;">433.23</div><div class="segment segment-blue" style="width:72.1741754793%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=5&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=5"><img class="hero-img-list" src="./user_hero_files/crystal_maiden_hphover.png"> 
+					 	Crystal Maiden </a></td><td><div>29</div><div class="segment segment-white" style="width:10.9848484848%;"></div></td><td sorttable_customkey="58.62"><div>58.6%</div><div class="segment segment-green" style="width:58.62%;"></div></td><td sorttable_customkey="2.6"><div>2.57  <div style="float:right;"> (5.5 / 8.1 / 15.2)</div></div><div class="segment segment-gold" style="width:51.85364933%;"></div></td><td sorttable_customkey="2.04"><div style="float:middle;">2.04</div><div class="segment segment-gray" style="width:55.2949081754%;"></div></td><td sorttable_customkey="329.17"><div style="float:middle;">329.17</div><div class="segment segment-gold" style="width:60.4921919265%;"></div></td><td sorttable_customkey="390.00"><div style="float:middle;">390.00</div><div class="segment segment-blue" style="width:64.9717514124%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=38&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=38"><img class="hero-img-list" src="./user_hero_files/beastmaster_hphover.png"> 
+					 	Beastmaster </a></td><td><div>28</div><div class="segment segment-white" style="width:10.6060606061%;"></div></td><td sorttable_customkey="46.43"><div>46.4%</div><div class="segment segment-green" style="width:46.43%;"></div></td><td sorttable_customkey="1.7"><div>1.73  <div style="float:right;"> (3.7 / 8.6 / 11.1)</div></div><div class="segment segment-gold" style="width:34.9947423764%;"></div></td><td sorttable_customkey="2.07"><div style="float:middle;">2.07</div><div class="segment segment-gray" style="width:56.1096121348%;"></div></td><td sorttable_customkey="356.14"><div style="float:middle;">356.14</div><div class="segment segment-gold" style="width:65.4485648396%;"></div></td><td sorttable_customkey="413.57"><div style="float:middle;">413.57</div><div class="segment segment-blue" style="width:68.8986155088%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=41&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=41"><img class="hero-img-list" src="./user_hero_files/faceless_void_hphover.png"> 
+					 	Faceless Void </a></td><td><div>27</div><div class="segment segment-white" style="width:10.2272727273%;"></div></td><td sorttable_customkey="48.15"><div>48.1%</div><div class="segment segment-green" style="width:48.15%;"></div></td><td sorttable_customkey="2.9"><div>2.89  <div style="float:right;"> (5.2 / 6.9 / 14.8)</div></div><div class="segment segment-gold" style="width:58.3005786197%;"></div></td><td sorttable_customkey="2.74"><div style="float:middle;">2.74</div><div class="segment segment-gray" style="width:74.3206038051%;"></div></td><td sorttable_customkey="409.67"><div style="float:middle;">409.67</div><div class="segment segment-gold" style="width:75.2846641683%;"></div></td><td sorttable_customkey="484.15"><div style="float:middle;">484.15</div><div class="segment segment-blue" style="width:80.6562900725%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=20&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=20"><img class="hero-img-list" src="./user_hero_files/vengefulspirit_hphover.png"> 
+					 	Vengeful Spirit </a></td><td><div>25</div><div class="segment segment-white" style="width:9.4696969697%;"></div></td><td sorttable_customkey="56.00"><div>56.0%</div><div class="segment segment-green" style="width:56.00%;"></div></td><td sorttable_customkey="1.8"><div>1.77  <div style="float:right;"> (3.0 / 8.4 / 11.8)</div></div><div class="segment segment-gold" style="width:35.7417777308%;"></div></td><td sorttable_customkey="2.28"><div style="float:middle;">2.28</div><div class="segment segment-gray" style="width:61.9453753327%;"></div></td><td sorttable_customkey="296.32"><div style="float:middle;">296.32</div><div class="segment segment-gold" style="width:54.4548861343%;"></div></td><td sorttable_customkey="334.40"><div style="float:middle;">334.40</div><div class="segment segment-blue" style="width:55.7091119803%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=15&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=15"><img class="hero-img-list" src="./user_hero_files/razor_hphover.png"> 
+					 	Razor </a></td><td><div>25</div><div class="segment segment-white" style="width:9.4696969697%;"></div></td><td sorttable_customkey="68.00"><div>68.0%</div><div class="segment segment-green" style="width:68.00%;"></div></td><td sorttable_customkey="2.7"><div>2.74  <div style="float:right;"> (7.0 / 7.7 / 14.1)</div></div><div class="segment segment-gold" style="width:55.3374413625%;"></div></td><td sorttable_customkey="2.09"><div style="float:middle;">2.09</div><div class="segment segment-gray" style="width:56.7638956681%;"></div></td><td sorttable_customkey="434.48"><div style="float:middle;">434.48</div><div class="segment segment-gold" style="width:79.8446238109%;"></div></td><td sorttable_customkey="490.96"><div style="float:middle;">490.96</div><div class="segment segment-blue" style="width:81.7911053165%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=13&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=13"><img class="hero-img-list" src="./user_hero_files/puck_hphover.png"> 
+					 	Puck </a></td><td><div>24</div><div class="segment segment-white" style="width:9.09090909091%;"></div></td><td sorttable_customkey="37.50"><div>37.5%</div><div class="segment segment-green" style="width:37.50%;"></div></td><td sorttable_customkey="2.4"><div>2.40  <div style="float:right;"> (5.3 / 8.8 / 15.8)</div></div><div class="segment segment-gold" style="width:48.5116689342%;"></div></td><td sorttable_customkey="2.36"><div style="float:middle;">2.36</div><div class="segment segment-gray" style="width:64.044846394%;"></div></td><td sorttable_customkey="383.58"><div style="float:middle;">383.58</div><div class="segment segment-gold" style="width:70.4913159412%;"></div></td><td sorttable_customkey="455.92"><div style="float:middle;">455.92</div><div class="segment segment-blue" style="width:75.9530880294%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=88&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=88"><img class="hero-img-list" src="./user_hero_files/nyx_assassin_hphover.png"> 
+					 	Nyx Assassin </a></td><td><div>23</div><div class="segment segment-white" style="width:8.71212121212%;"></div></td><td sorttable_customkey="56.52"><div>56.5%</div><div class="segment segment-green" style="width:56.52%;"></div></td><td sorttable_customkey="2.7"><div>2.67  <div style="float:right;"> (5.3 / 7.5 / 14.7)</div></div><div class="segment segment-gold" style="width:53.8771916954%;"></div></td><td sorttable_customkey="2.35"><div style="float:middle;">2.35</div><div class="segment segment-gray" style="width:63.7429503371%;"></div></td><td sorttable_customkey="341.65"><div style="float:middle;">341.65</div><div class="segment segment-gold" style="width:62.7856041711%;"></div></td><td sorttable_customkey="417.30"><div style="float:middle;">417.30</div><div class="segment segment-blue" style="width:69.5204983341%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=76&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=76"><img class="hero-img-list" src="./user_hero_files/obsidian_destroyer_hphover.png"> 
+					 	Outworld Devourer </a></td><td><div>22</div><div class="segment segment-white" style="width:8.33333333333%;"></div></td><td sorttable_customkey="40.91"><div>40.9%</div><div class="segment segment-green" style="width:40.91%;"></div></td><td sorttable_customkey="2.8"><div>2.76  <div style="float:right;"> (10.5 / 7.6 / 10.5)</div></div><div class="segment segment-gold" style="width:55.7320689851%;"></div></td><td sorttable_customkey="2.26"><div style="float:middle;">2.26</div><div class="segment segment-gray" style="width:61.1550473364%;"></div></td><td sorttable_customkey="457.41"><div style="float:middle;">457.41</div><div class="segment segment-gold" style="width:84.0583152074%;"></div></td><td sorttable_customkey="526.36"><div style="float:middle;">526.36</div><div class="segment segment-blue" style="width:87.6891470112%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=40&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=40"><img class="hero-img-list" src="./user_hero_files/venomancer_hphover.png"> 
+					 	Venomancer </a></td><td><div>22</div><div class="segment segment-white" style="width:8.33333333333%;"></div></td><td sorttable_customkey="40.91"><div>40.9%</div><div class="segment segment-green" style="width:40.91%;"></div></td><td sorttable_customkey="2.5"><div>2.49  <div style="float:right;"> (7.5 / 9.5 / 16.0)</div></div><div class="segment segment-gold" style="width:50.1819946615%;"></div></td><td sorttable_customkey="2.24"><div style="float:middle;">2.24</div><div class="segment segment-gray" style="width:60.7707468607%;"></div></td><td sorttable_customkey="389.32"><div style="float:middle;">389.32</div><div class="segment segment-gold" style="width:71.5452121387%;"></div></td><td sorttable_customkey="443.82"><div style="float:middle;">443.82</div><div class="segment segment-blue" style="width:73.9375502087%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=30&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=30"><img class="hero-img-list" src="./user_hero_files/witch_doctor_hphover.png"> 
+					 	Witch Doctor </a></td><td><div>22</div><div class="segment segment-white" style="width:8.33333333333%;"></div></td><td sorttable_customkey="54.55"><div>54.5%</div><div class="segment segment-green" style="width:54.55%;"></div></td><td sorttable_customkey="2.3"><div>2.32  <div style="float:right;"> (7.1 / 8.5 / 12.7)</div></div><div class="segment segment-gold" style="width:46.821934358%;"></div></td><td sorttable_customkey="2.01"><div style="float:middle;">2.01</div><div class="segment segment-gray" style="width:54.6059949918%;"></div></td><td sorttable_customkey="320.55"><div style="float:middle;">320.55</div><div class="segment segment-gold" style="width:58.9068109751%;"></div></td><td sorttable_customkey="365.32"><div style="float:middle;">365.32</div><div class="segment segment-blue" style="width:60.8599028091%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=79&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=79"><img class="hero-img-list" src="./user_hero_files/shadow_demon_hphover.png"> 
+					 	Shadow Demon </a></td><td><div>21</div><div class="segment segment-white" style="width:7.95454545455%;"></div></td><td sorttable_customkey="38.10"><div>38.1%</div><div class="segment segment-green" style="width:38.10%;"></div></td><td sorttable_customkey="1.9"><div>1.91  <div style="float:right;"> (3.3 / 9.0 / 13.9)</div></div><div class="segment segment-gold" style="width:38.6603127727%;"></div></td><td sorttable_customkey="2.12"><div style="float:middle;">2.12</div><div class="segment segment-gray" style="width:57.3863468046%;"></div></td><td sorttable_customkey="273.33"><div style="float:middle;">273.33</div><div class="segment segment-gold" style="width:50.2306140098%;"></div></td><td sorttable_customkey="325.33"><div style="float:middle;">325.33</div><div class="segment segment-blue" style="width:54.1986575885%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=28&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=28"><img class="hero-img-list" src="./user_hero_files/slardar_hphover.png"> 
+					 	Slardar </a></td><td><div>21</div><div class="segment segment-white" style="width:7.95454545455%;"></div></td><td sorttable_customkey="33.33"><div>33.3%</div><div class="segment segment-green" style="width:33.33%;"></div></td><td sorttable_customkey="2.1"><div>2.06  <div style="float:right;"> (4.0 / 10.0 / 16.5)</div></div><div class="segment segment-gold" style="width:41.6343410864%;"></div></td><td sorttable_customkey="2.22"><div style="float:middle;">2.22</div><div class="segment segment-gray" style="width:60.2456960772%;"></div></td><td sorttable_customkey="329.05"><div style="float:middle;">329.05</div><div class="segment segment-gold" style="width:60.4692583289%;"></div></td><td sorttable_customkey="431.48"><div style="float:middle;">431.48</div><div class="segment segment-blue" style="width:71.8814456103%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=91&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=91"><img class="hero-img-list" src="./user_hero_files/wisp_hphover.png"> 
+					 	Io </a></td><td><div>20</div><div class="segment segment-white" style="width:7.57575757576%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="1.8"><div>1.76  <div style="float:right;"> (2.4 / 10.0 / 15.2)</div></div><div class="segment segment-gold" style="width:35.4321766562%;"></div></td><td sorttable_customkey="1.94"><div style="float:middle;">1.94</div><div class="segment segment-gray" style="width:52.54887242%;"></div></td><td sorttable_customkey="256.15"><div style="float:middle;">256.15</div><div class="segment segment-gold" style="width:47.0728235803%;"></div></td><td sorttable_customkey="326.00"><div style="float:middle;">326.00</div><div class="segment segment-blue" style="width:54.3097204114%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=87&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=87"><img class="hero-img-list" src="./user_hero_files/disruptor_hphover.png"> 
+					 	Disruptor </a></td><td><div>20</div><div class="segment segment-white" style="width:7.57575757576%;"></div></td><td sorttable_customkey="30.00"><div>30.0%</div><div class="segment segment-green" style="width:30.00%;"></div></td><td sorttable_customkey="2.2"><div>2.15  <div style="float:right;"> (5.7 / 11.0 / 17.9)</div></div><div class="segment segment-gold" style="width:43.4207683333%;"></div></td><td sorttable_customkey="2.22"><div style="float:middle;">2.22</div><div class="segment segment-gray" style="width:60.1738808867%;"></div></td><td sorttable_customkey="294.50"><div style="float:middle;">294.50</div><div class="segment segment-gold" style="width:54.1204237532%;"></div></td><td sorttable_customkey="370.50"><div style="float:middle;">370.50</div><div class="segment segment-blue" style="width:61.7231638418%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=44&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=44"><img class="hero-img-list" src="./user_hero_files/phantom_assassin_hphover.png"> 
+					 	Phantom Assassin </a></td><td><div>19</div><div class="segment segment-white" style="width:7.19696969697%;"></div></td><td sorttable_customkey="52.63"><div>52.6%</div><div class="segment segment-green" style="width:52.63%;"></div></td><td sorttable_customkey="2.0"><div>2.04  <div style="float:right;"> (6.6 / 8.8 / 11.4)</div></div><div class="segment segment-gold" style="width:41.2248059087%;"></div></td><td sorttable_customkey="2.67"><div style="float:middle;">2.67</div><div class="segment segment-gray" style="width:72.3444896167%;"></div></td><td sorttable_customkey="398.89"><div style="float:middle;">398.89</div><div class="segment segment-gold" style="width:73.3051008178%;"></div></td><td sorttable_customkey="475.32"><div style="float:middle;">475.32</div><div class="segment segment-blue" style="width:79.1848700412%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=107&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=107"><img class="hero-img-list" src="./user_hero_files/earth_spirit_hphover.png"> 
+					 	Earth Spirit </a></td><td><div>18</div><div class="segment segment-white" style="width:6.81818181818%;"></div></td><td sorttable_customkey="27.78"><div>27.8%</div><div class="segment segment-green" style="width:27.78%;"></div></td><td sorttable_customkey="2.1"><div>2.07  <div style="float:right;"> (4.9 / 9.7 / 15.2)</div></div><div class="segment segment-gold" style="width:41.8783235692%;"></div></td><td sorttable_customkey="2.21"><div style="float:middle;">2.21</div><div class="segment segment-gray" style="width:60.0263868927%;"></div></td><td sorttable_customkey="289.28"><div style="float:middle;">289.28</div><div class="segment segment-gold" style="width:53.1607331604%;"></div></td><td sorttable_customkey="375.56"><div style="float:middle;">375.56</div><div class="segment segment-blue" style="width:62.565390249%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=23&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=23"><img class="hero-img-list" src="./user_hero_files/kunkka_hphover.png"> 
+					 	Kunkka </a></td><td><div>18</div><div class="segment segment-white" style="width:6.81818181818%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.6"><div>2.61  <div style="float:right;"> (2.8 / 6.8 / 14.9)</div></div><div class="segment segment-gold" style="width:52.6245022496%;"></div></td><td sorttable_customkey="2.71"><div style="float:middle;">2.71</div><div class="segment segment-gray" style="width:73.5801688014%;"></div></td><td sorttable_customkey="326.72"><div style="float:middle;">326.72</div><div class="segment segment-gold" style="width:60.0419189007%;"></div></td><td sorttable_customkey="405.44"><div style="float:middle;">405.44</div><div class="segment segment-blue" style="width:67.5447068102%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=9&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=9"><img class="hero-img-list" src="./user_hero_files/mirana_hphover.png"> 
+					 	Mirana </a></td><td><div>18</div><div class="segment segment-white" style="width:6.81818181818%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.9"><div>2.86  <div style="float:right;"> (5.4 / 7.1 / 14.9)</div></div><div class="segment segment-gold" style="width:57.7287066246%;"></div></td><td sorttable_customkey="3.31"><div style="float:middle;">3.31</div><div class="segment segment-gray" style="width:89.7096187081%;"></div></td><td sorttable_customkey="413.56"><div style="float:middle;">413.56</div><div class="segment segment-gold" style="width:75.9993273758%;"></div></td><td sorttable_customkey="466.94"><div style="float:middle;">466.94</div><div class="segment segment-blue" style="width:77.7902522253%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=84&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=84"><img class="hero-img-list" src="./user_hero_files/ogre_magi_hphover.png"> 
+					 	Ogre Magi </a></td><td><div>17</div><div class="segment segment-white" style="width:6.43939393939%;"></div></td><td sorttable_customkey="58.82"><div>58.8%</div><div class="segment segment-green" style="width:58.82%;"></div></td><td sorttable_customkey="2.4"><div>2.39  <div style="float:right;"> (3.0 / 7.5 / 15.0)</div></div><div class="segment segment-gold" style="width:48.2649842271%;"></div></td><td sorttable_customkey="2.28"><div style="float:middle;">2.28</div><div class="segment segment-gray" style="width:61.9239717202%;"></div></td><td sorttable_customkey="294.06"><div style="float:middle;">294.06</div><div class="segment segment-gold" style="width:54.0393485154%;"></div></td><td sorttable_customkey="383.59"><div style="float:middle;">383.59</div><div class="segment segment-blue" style="width:63.9035883802%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=34&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=34"><img class="hero-img-list" src="./user_hero_files/tinker_hphover.png"> 
+					 	Tinker </a></td><td><div>17</div><div class="segment segment-white" style="width:6.43939393939%;"></div></td><td sorttable_customkey="35.29"><div>35.3%</div><div class="segment segment-green" style="width:35.29%;"></div></td><td sorttable_customkey="3.4"><div>3.44  <div style="float:right;"> (7.6 / 6.1 / 13.5)</div></div><div class="segment segment-gold" style="width:69.4976947343%;"></div></td><td sorttable_customkey="3.00"><div style="float:middle;">3.00</div><div class="segment segment-gray" style="width:81.3499621638%;"></div></td><td sorttable_customkey="418.18"><div style="float:middle;">418.18</div><div class="segment segment-gold" style="width:76.8485154223%;"></div></td><td sorttable_customkey="460.47"><div style="float:middle;">460.47</div><div class="segment segment-blue" style="width:76.7117451066%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=33&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=33"><img class="hero-img-list" src="./user_hero_files/enigma_hphover.png"> 
+					 	Enigma </a></td><td><div>17</div><div class="segment segment-white" style="width:6.43939393939%;"></div></td><td sorttable_customkey="52.94"><div>52.9%</div><div class="segment segment-green" style="width:52.94%;"></div></td><td sorttable_customkey="3.2"><div>3.20  <div style="float:right;"> (3.5 / 6.2 / 16.5)</div></div><div class="segment segment-gold" style="width:64.5675852628%;"></div></td><td sorttable_customkey="2.49"><div style="float:middle;">2.49</div><div class="segment segment-gray" style="width:67.5889719236%;"></div></td><td sorttable_customkey="426.88"><div style="float:middle;">426.88</div><div class="segment segment-gold" style="width:78.4484001153%;"></div></td><td sorttable_customkey="474.35"><div style="float:middle;">474.35</div><div class="segment segment-blue" style="width:79.0244650663%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=54&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=54"><img class="hero-img-list" src="./user_hero_files/life_stealer_hphover.png"> 
+					 	Lifestealer </a></td><td><div>16</div><div class="segment segment-white" style="width:6.06060606061%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.8"><div>2.75  <div style="float:right;"> (7.0 / 7.3 / 12.9)</div></div><div class="segment segment-gold" style="width:55.5205047319%;"></div></td><td sorttable_customkey="2.67"><div style="float:middle;">2.67</div><div class="segment segment-gray" style="width:72.3442318862%;"></div></td><td sorttable_customkey="429.56"><div style="float:middle;">429.56</div><div class="segment segment-gold" style="width:78.9409321851%;"></div></td><td sorttable_customkey="523.88"><div style="float:middle;">523.88</div><div class="segment segment-blue" style="width:87.2745545415%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=8&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=8"><img class="hero-img-list" src="./user_hero_files/juggernaut_hphover.png"> 
+					 	Juggernaut </a></td><td><div>16</div><div class="segment segment-white" style="width:6.06060606061%;"></div></td><td sorttable_customkey="62.50"><div>62.5%</div><div class="segment segment-green" style="width:62.50%;"></div></td><td sorttable_customkey="2.7"><div>2.67  <div style="float:right;"> (7.3 / 6.4 / 9.7)</div></div><div class="segment segment-gold" style="width:53.8380651945%;"></div></td><td sorttable_customkey="2.66"><div style="float:middle;">2.66</div><div class="segment segment-gray" style="width:72.1487705313%;"></div></td><td sorttable_customkey="516.75"><div style="float:middle;">516.75</div><div class="segment segment-gold" style="width:94.9634260594%;"></div></td><td sorttable_customkey="549.50"><div style="float:middle;">549.50</div><div class="segment segment-blue" style="width:91.5435317978%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=65&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=65"><img class="hero-img-list" src="./user_hero_files/batrider_hphover.png"> 
+					 	Batrider </a></td><td><div>15</div><div class="segment segment-white" style="width:5.68181818182%;"></div></td><td sorttable_customkey="26.67"><div>26.7%</div><div class="segment segment-green" style="width:26.67%;"></div></td><td sorttable_customkey="2.0"><div>2.02  <div style="float:right;"> (6.2 / 12.3 / 18.5)</div></div><div class="segment segment-gold" style="width:40.7077218489%;"></div></td><td sorttable_customkey="2.24"><div style="float:middle;">2.24</div><div class="segment segment-gray" style="width:60.7803552278%;"></div></td><td sorttable_customkey="334.80"><div style="float:middle;">334.80</div><div class="segment segment-gold" style="width:61.5263764774%;"></div></td><td sorttable_customkey="398.33"><div style="float:middle;">398.33</div><div class="segment segment-blue" style="width:66.360036699%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=12&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=12"><img class="hero-img-list" src="./user_hero_files/phantom_lancer_hphover.png"> 
+					 	Phantom Lancer </a></td><td><div>15</div><div class="segment segment-white" style="width:5.68181818182%;"></div></td><td sorttable_customkey="60.00"><div>60.0%</div><div class="segment segment-green" style="width:60.00%;"></div></td><td sorttable_customkey="2.4"><div>2.37  <div style="float:right;"> (7.7 / 7.7 / 10.5)</div></div><div class="segment segment-gold" style="width:47.9275819503%;"></div></td><td sorttable_customkey="2.52"><div style="float:middle;">2.52</div><div class="segment segment-gray" style="width:68.2520533259%;"></div></td><td sorttable_customkey="463.93"><div style="float:middle;">463.93</div><div class="segment segment-gold" style="width:85.2572787547%;"></div></td><td sorttable_customkey="531.60"><div style="float:middle;">531.60</div><div class="segment segment-blue" style="width:88.5614950022%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=59&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=59"><img class="hero-img-list" src="./user_hero_files/huskar_hphover.png"> 
+					 	Huskar </a></td><td><div>14</div><div class="segment segment-white" style="width:5.30303030303%;"></div></td><td sorttable_customkey="35.71"><div>35.7%</div><div class="segment segment-green" style="width:35.71%;"></div></td><td sorttable_customkey="1.6"><div>1.60  <div style="float:right;"> (10.7 / 12.6 / 9.5)</div></div><div class="segment segment-gold" style="width:32.2800263772%;"></div></td><td sorttable_customkey="1.74"><div style="float:middle;">1.74</div><div class="segment segment-gray" style="width:47.3083194094%;"></div></td><td sorttable_customkey="414.36"><div style="float:middle;">414.36</div><div class="segment segment-gold" style="width:76.1466355063%;"></div></td><td sorttable_customkey="466.43"><div style="float:middle;">466.43</div><div class="segment segment-blue" style="width:77.7043107552%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=16&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=16"><img class="hero-img-list" src="./user_hero_files/sand_king_hphover.png"> 
+					 	Sand King </a></td><td><div>14</div><div class="segment segment-white" style="width:5.30303030303%;"></div></td><td sorttable_customkey="42.86"><div>42.9%</div><div class="segment segment-green" style="width:42.86%;"></div></td><td sorttable_customkey="1.9"><div>1.92  <div style="float:right;"> (5.3 / 9.1 / 12.3)</div></div><div class="segment segment-gold" style="width:38.8012618297%;"></div></td><td sorttable_customkey="2.17"><div style="float:middle;">2.17</div><div class="segment segment-gray" style="width:58.9368581497%;"></div></td><td sorttable_customkey="385.21"><div style="float:middle;">385.21</div><div class="segment segment-gold" style="width:70.7910369394%;"></div></td><td sorttable_customkey="464.71"><div style="float:middle;">464.71</div><div class="segment segment-blue" style="width:77.4187206391%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=64&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=64"><img class="hero-img-list" src="./user_hero_files/jakiro_hphover.png"> 
+					 	Jakiro </a></td><td><div>13</div><div class="segment segment-white" style="width:4.92424242424%;"></div></td><td sorttable_customkey="38.46"><div>38.5%</div><div class="segment segment-green" style="width:38.46%;"></div></td><td sorttable_customkey="2.0"><div>2.04  <div style="float:right;"> (3.2 / 9.9 / 17.1)</div></div><div class="segment segment-gold" style="width:41.1610789133%;"></div></td><td sorttable_customkey="2.06"><div style="float:middle;">2.06</div><div class="segment segment-gray" style="width:55.8440341529%;"></div></td><td sorttable_customkey="329.15"><div style="float:middle;">329.15</div><div class="segment segment-gold" style="width:60.4887797414%;"></div></td><td sorttable_customkey="400.54"><div style="float:middle;">400.54</div><div class="segment segment-blue" style="width:66.7273983441%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=57&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=57"><img class="hero-img-list" src="./user_hero_files/omniknight_hphover.png"> 
+					 	Omniknight </a></td><td><div>13</div><div class="segment segment-white" style="width:4.92424242424%;"></div></td><td sorttable_customkey="46.15"><div>46.2%</div><div class="segment segment-green" style="width:46.15%;"></div></td><td sorttable_customkey="1.8"><div>1.81  <div style="float:right;"> (3.8 / 6.5 / 8.0)</div></div><div class="segment segment-gold" style="width:36.5782148822%;"></div></td><td sorttable_customkey="2.07"><div style="float:middle;">2.07</div><div class="segment segment-gray" style="width:56.1546556305%;"></div></td><td sorttable_customkey="318.69"><div style="float:middle;">318.69</div><div class="segment segment-gold" style="width:58.566257179%;"></div></td><td sorttable_customkey="360.31"><div style="float:middle;">360.31</div><div class="segment segment-blue" style="width:60.0251841451%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=83&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=83"><img class="hero-img-list" src="./user_hero_files/treant_hphover.png"> 
+					 	Treant Protector </a></td><td><div>12</div><div class="segment segment-white" style="width:4.54545454545%;"></div></td><td sorttable_customkey="58.33"><div>58.3%</div><div class="segment segment-green" style="width:58.33%;"></div></td><td sorttable_customkey="2.7"><div>2.68  <div style="float:right;"> (3.3 / 6.6 / 14.4)</div></div><div class="segment segment-gold" style="width:54.1788124426%;"></div></td><td sorttable_customkey="2.34"><div style="float:middle;">2.34</div><div class="segment segment-gray" style="width:63.3600652292%;"></div></td><td sorttable_customkey="325.08"><div style="float:middle;">325.08</div><div class="segment segment-gold" style="width:59.7407394062%;"></div></td><td sorttable_customkey="368.42"><div style="float:middle;">368.42</div><div class="segment segment-blue" style="width:61.3760925202%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=73&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=73"><img class="hero-img-list" src="./user_hero_files/alchemist_hphover.png"> 
+					 	Alchemist </a></td><td><div>12</div><div class="segment segment-white" style="width:4.54545454545%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.5"><div>2.45  <div style="float:right;"> (4.3 / 7.6 / 14.3)</div></div><div class="segment segment-gold" style="width:49.4748154054%;"></div></td><td sorttable_customkey="2.60"><div style="float:middle;">2.60</div><div class="segment segment-gray" style="width:70.4136786795%;"></div></td><td sorttable_customkey="508.00"><div style="float:middle;">508.00</div><div class="segment segment-gold" style="width:93.3554338426%;"></div></td><td sorttable_customkey="479.08"><div style="float:middle;">479.08</div><div class="segment segment-blue" style="width:79.8125211261%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=49&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=49"><img class="hero-img-list" src="./user_hero_files/dragon_knight_hphover.png"> 
+					 	Dragon Knight </a></td><td><div>12</div><div class="segment segment-white" style="width:4.54545454545%;"></div></td><td sorttable_customkey="41.67"><div>41.7%</div><div class="segment segment-green" style="width:41.67%;"></div></td><td sorttable_customkey="2.4"><div>2.35  <div style="float:right;"> (5.8 / 7.8 / 12.6)</div></div><div class="segment segment-gold" style="width:47.4662729042%;"></div></td><td sorttable_customkey="2.56"><div style="float:middle;">2.56</div><div class="segment segment-gray" style="width:69.3993689427%;"></div></td><td sorttable_customkey="434.08"><div style="float:middle;">434.08</div><div class="segment segment-gold" style="width:79.7717281637%;"></div></td><td sorttable_customkey="521.83"><div style="float:middle;">521.83</div><div class="segment segment-blue" style="width:86.9344246463%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=85&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=85"><img class="hero-img-list" src="./user_hero_files/undying_hphover.png"> 
+					 	Undying </a></td><td><div>11</div><div class="segment segment-white" style="width:4.16666666667%;"></div></td><td sorttable_customkey="45.45"><div>45.5%</div><div class="segment segment-green" style="width:45.45%;"></div></td><td sorttable_customkey="2.7"><div>2.74  <div style="float:right;"> (4.5 / 8.2 / 17.9)</div></div><div class="segment segment-gold" style="width:55.408342096%;"></div></td><td sorttable_customkey="2.73"><div style="float:middle;">2.73</div><div class="segment segment-gray" style="width:73.9653330213%;"></div></td><td sorttable_customkey="325.64"><div style="float:middle;">325.64</div><div class="segment segment-gold" style="width:59.8423700831%;"></div></td><td sorttable_customkey="378.36"><div style="float:middle;">378.36</div><div class="segment segment-blue" style="width:63.0332003213%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=102&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=102"><img class="hero-img-list" src="./user_hero_files/abaddon_hphover.png"> 
+					 	Abaddon </a></td><td><div>10</div><div class="segment segment-white" style="width:3.78787878788%;"></div></td><td sorttable_customkey="40.00"><div>40.0%</div><div class="segment segment-green" style="width:40.00%;"></div></td><td sorttable_customkey="2.5"><div>2.49  <div style="float:right;"> (4.5 / 7.8 / 14.9)</div></div><div class="segment segment-gold" style="width:50.214349268%;"></div></td><td sorttable_customkey="2.82"><div style="float:middle;">2.82</div><div class="segment segment-gray" style="width:76.4329494976%;"></div></td><td sorttable_customkey="383.40"><div style="float:middle;">383.40</div><div class="segment segment-gold" style="width:70.4576246757%;"></div></td><td sorttable_customkey="493.70"><div style="float:middle;">493.70</div><div class="segment segment-blue" style="width:82.2475735188%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=29&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=29"><img class="hero-img-list" src="./user_hero_files/tidehunter_hphover.png"> 
+					 	Tidehunter </a></td><td><div>10</div><div class="segment segment-white" style="width:3.78787878788%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.9"><div>2.90  <div style="float:right;"> (3.4 / 7.1 / 17.2)</div></div><div class="segment segment-gold" style="width:58.5773314969%;"></div></td><td sorttable_customkey="2.79"><div style="float:middle;">2.79</div><div class="segment segment-gray" style="width:75.6950708369%;"></div></td><td sorttable_customkey="365.80"><div style="float:middle;">365.80</div><div class="segment segment-gold" style="width:67.2232631882%;"></div></td><td sorttable_customkey="444.40"><div style="float:middle;">444.40</div><div class="segment segment-blue" style="width:74.0344777633%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=96&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=96"><img class="hero-img-list" src="./user_hero_files/centaur_hphover.png"> 
+					 	Centaur Warrunner </a></td><td><div>9</div><div class="segment segment-white" style="width:3.40909090909%;"></div></td><td sorttable_customkey="55.56"><div>55.6%</div><div class="segment segment-green" style="width:55.56%;"></div></td><td sorttable_customkey="2.6"><div>2.55  <div style="float:right;"> (5.1 / 8.7 / 17.0)</div></div><div class="segment segment-gold" style="width:51.5085335275%;"></div></td><td sorttable_customkey="2.94"><div style="float:middle;">2.94</div><div class="segment segment-gray" style="width:79.8264565736%;"></div></td><td sorttable_customkey="455.89"><div style="float:middle;">455.89</div><div class="segment segment-gold" style="width:83.7789468627%;"></div></td><td sorttable_customkey="533.33"><div style="float:middle;">533.33</div><div class="segment segment-blue" style="width:88.8502583418%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=61&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=61"><img class="hero-img-list" src="./user_hero_files/broodmother_hphover.png"> 
+					 	Broodmother </a></td><td><div>9</div><div class="segment segment-white" style="width:3.40909090909%;"></div></td><td sorttable_customkey="33.33"><div>33.3%</div><div class="segment segment-green" style="width:33.33%;"></div></td><td sorttable_customkey="1.4"><div>1.44  <div style="float:right;"> (4.6 / 7.0 / 5.6)</div></div><div class="segment segment-gold" style="width:29.1622853137%;"></div></td><td sorttable_customkey="2.30"><div style="float:middle;">2.30</div><div class="segment segment-gray" style="width:62.4930104332%;"></div></td><td sorttable_customkey="354.33"><div style="float:middle;">354.33</div><div class="segment segment-gold" style="width:65.1160276737%;"></div></td><td sorttable_customkey="417.89"><div style="float:middle;">417.89</div><div class="segment segment-blue" style="width:69.6178795049%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=27&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=27"><img class="hero-img-list" src="./user_hero_files/shadow_shaman_hphover.png"> 
+					 	Shadow Shaman </a></td><td><div>9</div><div class="segment segment-white" style="width:3.40909090909%;"></div></td><td sorttable_customkey="55.56"><div>55.6%</div><div class="segment segment-green" style="width:55.56%;"></div></td><td sorttable_customkey="2.0"><div>1.99  <div style="float:right;"> (3.8 / 9.1 / 14.3)</div></div><div class="segment segment-gold" style="width:40.1323382319%;"></div></td><td sorttable_customkey="1.75"><div style="float:middle;">1.75</div><div class="segment segment-gray" style="width:47.4115355385%;"></div></td><td sorttable_customkey="330.78"><div style="float:middle;">330.78</div><div class="segment segment-gold" style="width:60.7872105314%;"></div></td><td sorttable_customkey="369.78"><div style="float:middle;">369.78</div><div class="segment segment-blue" style="width:61.6028457836%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=18&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=18"><img class="hero-img-list" src="./user_hero_files/sven_hphover.png"> 
+					 	Sven </a></td><td><div>9</div><div class="segment segment-white" style="width:3.40909090909%;"></div></td><td sorttable_customkey="22.22"><div>22.2%</div><div class="segment segment-green" style="width:22.22%;"></div></td><td sorttable_customkey="1.6"><div>1.60  <div style="float:right;"> (5.7 / 9.7 / 9.8)</div></div><div class="segment segment-gold" style="width:32.2564269916%;"></div></td><td sorttable_customkey="2.41"><div style="float:middle;">2.41</div><div class="segment segment-gray" style="width:65.4222924671%;"></div></td><td sorttable_customkey="412.11"><div style="float:middle;">412.11</div><div class="segment segment-gold" style="width:75.7338810416%;"></div></td><td sorttable_customkey="464.11"><div style="float:middle;">464.11</div><div class="segment segment-blue" style="width:77.3182352278%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=109&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=109"><img class="hero-img-list" src="./user_hero_files/terrorblade_hphover.png"> 
+					 	Terrorblade </a></td><td><div>8</div><div class="segment segment-white" style="width:3.0303030303%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.0"><div>2.02  <div style="float:right;"> (5.0 / 7.3 / 9.6)</div></div><div class="segment segment-gold" style="width:40.7266398347%;"></div></td><td sorttable_customkey="2.55"><div style="float:middle;">2.55</div><div class="segment segment-gray" style="width:69.2567525116%;"></div></td><td sorttable_customkey="431.63"><div style="float:middle;">431.63</div><div class="segment segment-gold" style="width:79.3199589219%;"></div></td><td sorttable_customkey="494.75"><div style="float:middle;">494.75</div><div class="segment segment-blue" style="width:82.4224974649%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=69&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=69"><img class="hero-img-list" src="./user_hero_files/doom_bringer_hphover.png"> 
+					 	Doom </a></td><td><div>8</div><div class="segment segment-white" style="width:3.0303030303%;"></div></td><td sorttable_customkey="25.00"><div>25.0%</div><div class="segment segment-green" style="width:25.00%;"></div></td><td sorttable_customkey="2.1"><div>2.06  <div style="float:right;"> (4.8 / 10.0 / 15.9)</div></div><div class="segment segment-gold" style="width:41.6403785489%;"></div></td><td sorttable_customkey="2.33"><div style="float:middle;">2.33</div><div class="segment segment-gray" style="width:63.0748867511%;"></div></td><td sorttable_customkey="374.38"><div style="float:middle;">374.38</div><div class="segment segment-gold" style="width:68.7990955607%;"></div></td><td sorttable_customkey="397.88"><div style="float:middle;">397.88</div><div class="segment segment-blue" style="width:66.2836810083%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=60&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=60"><img class="hero-img-list" src="./user_hero_files/night_stalker_hphover.png"> 
+					 	Night Stalker </a></td><td><div>8</div><div class="segment segment-white" style="width:3.0303030303%;"></div></td><td sorttable_customkey="62.50"><div>62.5%</div><div class="segment segment-green" style="width:62.50%;"></div></td><td sorttable_customkey="3.6"><div>3.59  <div style="float:right;"> (7.4 / 7.0 / 17.8)</div></div><div class="segment segment-gold" style="width:72.4650743578%;"></div></td><td sorttable_customkey="2.65"><div style="float:middle;">2.65</div><div class="segment segment-gray" style="width:71.9752520674%;"></div></td><td sorttable_customkey="379.13"><div style="float:middle;">379.13</div><div class="segment segment-gold" style="width:69.6720056212%;"></div></td><td sorttable_customkey="463.50"><div style="float:middle;">463.50</div><div class="segment segment-blue" style="width:77.2164276402%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=43&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=43"><img class="hero-img-list" src="./user_hero_files/death_prophet_hphover.png"> 
+					 	Death Prophet </a></td><td><div>8</div><div class="segment segment-white" style="width:3.0303030303%;"></div></td><td sorttable_customkey="37.50"><div>37.5%</div><div class="segment segment-green" style="width:37.50%;"></div></td><td sorttable_customkey="2.6"><div>2.60  <div style="float:right;"> (8.5 / 7.5 / 11.0)</div></div><div class="segment segment-gold" style="width:52.4921135647%;"></div></td><td sorttable_customkey="1.95"><div style="float:middle;">1.95</div><div class="segment segment-gray" style="width:52.9219101668%;"></div></td><td sorttable_customkey="437.88"><div style="float:middle;">437.88</div><div class="segment segment-gold" style="width:80.468524791%;"></div></td><td sorttable_customkey="538.25"><div style="float:middle;">538.25</div><div class="segment segment-blue" style="width:89.6693466609%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=103&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=103"><img class="hero-img-list" src="./user_hero_files/elder_titan_hphover.png"> 
+					 	Elder Titan </a></td><td><div>7</div><div class="segment segment-white" style="width:2.65151515152%;"></div></td><td sorttable_customkey="57.14"><div>57.1%</div><div class="segment segment-green" style="width:57.14%;"></div></td><td sorttable_customkey="2.7"><div>2.66  <div style="float:right;"> (3.9 / 6.7 / 14.0)</div></div><div class="segment segment-gold" style="width:53.6948788509%;"></div></td><td sorttable_customkey="2.62"><div style="float:middle;">2.62</div><div class="segment segment-gray" style="width:70.9758516043%;"></div></td><td sorttable_customkey="314.14"><div style="float:middle;">314.14</div><div class="segment segment-gold" style="width:57.7302021991%;"></div></td><td sorttable_customkey="323.43"><div style="float:middle;">323.43</div><div class="segment segment-blue" style="width:53.8813352373%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=70&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=70"><img class="hero-img-list" src="./user_hero_files/ursa_hphover.png"> 
+					 	Ursa </a></td><td><div>7</div><div class="segment segment-white" style="width:2.65151515152%;"></div></td><td sorttable_customkey="28.57"><div>28.6%</div><div class="segment segment-green" style="width:28.57%;"></div></td><td sorttable_customkey="2.0"><div>2.02  <div style="float:right;"> (8.9 / 8.1 / 7.6)</div></div><div class="segment segment-gold" style="width:40.7327466932%;"></div></td><td sorttable_customkey="2.82"><div style="float:middle;">2.82</div><div class="segment segment-gray" style="width:76.3622205529%;"></div></td><td sorttable_customkey="402.14"><div style="float:middle;">402.14</div><div class="segment segment-gold" style="width:73.9020096364%;"></div></td><td sorttable_customkey="516.86"><div style="float:middle;">516.86</div><div class="segment segment-blue" style="width:86.1054200037%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=120&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=120"><img class="hero-img-list" src="./user_hero_files/pangolier_hphover.png"> 
+					 	Pangolier </a></td><td><div>6</div><div class="segment segment-white" style="width:2.27272727273%;"></div></td><td sorttable_customkey="33.33"><div>33.3%</div><div class="segment segment-green" style="width:33.33%;"></div></td><td sorttable_customkey="2.6"><div>2.61  <div style="float:right;"> (7.2 / 7.7 / 12.8)</div></div><div class="segment segment-gold" style="width:52.6676724729%;"></div></td><td sorttable_customkey="2.38"><div style="float:middle;">2.38</div><div class="segment segment-gray" style="width:64.4962116296%;"></div></td><td sorttable_customkey="374.67"><div style="float:middle;">374.67</div><div class="segment segment-gold" style="width:68.8526953012%;"></div></td><td sorttable_customkey="482.50"><div style="float:middle;">482.50</div><div class="segment segment-blue" style="width:80.3817180936%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=66&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=66"><img class="hero-img-list" src="./user_hero_files/chen_hphover.png"> 
+					 	Chen </a></td><td><div>6</div><div class="segment segment-white" style="width:2.27272727273%;"></div></td><td sorttable_customkey="16.67"><div>16.7%</div><div class="segment segment-green" style="width:16.67%;"></div></td><td sorttable_customkey="1.3"><div>1.33  <div style="float:right;"> (2.5 / 8.0 / 8.2)</div></div><div class="segment segment-gold" style="width:26.9190325973%;"></div></td><td sorttable_customkey="2.09"><div style="float:middle;">2.09</div><div class="segment segment-gray" style="width:56.5850305682%;"></div></td><td sorttable_customkey="266.00"><div style="float:middle;">266.00</div><div class="segment segment-gold" style="width:48.88296339%;"></div></td><td sorttable_customkey="265.67"><div style="float:middle;">265.67</div><div class="segment segment-blue" style="width:44.2585349365%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=46&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=46"><img class="hero-img-list" src="./user_hero_files/templar_assassin_hphover.png"> 
+					 	Templar Assassin </a></td><td><div>6</div><div class="segment segment-white" style="width:2.27272727273%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="2.0"><div>2.00  <div style="float:right;"> (6.5 / 6.7 / 6.8)</div></div><div class="segment segment-gold" style="width:40.3785488959%;"></div></td><td sorttable_customkey="2.59"><div style="float:middle;">2.59</div><div class="segment segment-gray" style="width:70.2633572616%;"></div></td><td sorttable_customkey="453.00"><div style="float:middle;">453.00</div><div class="segment segment-gold" style="width:83.2480541943%;"></div></td><td sorttable_customkey="535.33"><div style="float:middle;">535.33</div><div class="segment segment-blue" style="width:89.1834468106%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=31&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=31"><img class="hero-img-list" src="./user_hero_files/lich_hphover.png"> 
+					 	Lich </a></td><td><div>6</div><div class="segment segment-white" style="width:2.27272727273%;"></div></td><td sorttable_customkey="16.67"><div>16.7%</div><div class="segment segment-green" style="width:16.67%;"></div></td><td sorttable_customkey="1.7"><div>1.66  <div style="float:right;"> (6.0 / 9.8 / 10.3)</div></div><div class="segment segment-gold" style="width:33.5347270491%;"></div></td><td sorttable_customkey="2.60"><div style="float:middle;">2.60</div><div class="segment segment-gray" style="width:70.4829499175%;"></div></td><td sorttable_customkey="283.83"><div style="float:middle;">283.83</div><div class="segment segment-gold" style="width:52.1602046699%;"></div></td><td sorttable_customkey="366.50"><div style="float:middle;">366.50</div><div class="segment segment-blue" style="width:61.0567869042%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=97&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=97"><img class="hero-img-list" src="./user_hero_files/magnataur_hphover.png"> 
+					 	Magnus </a></td><td><div>5</div><div class="segment segment-white" style="width:1.89393939394%;"></div></td><td sorttable_customkey="40.00"><div>40.0%</div><div class="segment segment-green" style="width:40.00%;"></div></td><td sorttable_customkey="1.5"><div>1.48  <div style="float:right;"> (4.8 / 10.4 / 10.6)</div></div><div class="segment segment-gold" style="width:29.8956563941%;"></div></td><td sorttable_customkey="2.51"><div style="float:middle;">2.51</div><div class="segment segment-gray" style="width:68.0332420786%;"></div></td><td sorttable_customkey="377.60"><div style="float:middle;">377.60</div><div class="segment segment-gold" style="width:69.3917555491%;"></div></td><td sorttable_customkey="427.80"><div style="float:middle;">427.80</div><div class="segment segment-blue" style="width:71.2690134724%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=81&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=81"><img class="hero-img-list" src="./user_hero_files/chaos_knight_hphover.png"> 
+					 	Chaos Knight </a></td><td><div>5</div><div class="segment segment-white" style="width:1.89393939394%;"></div></td><td sorttable_customkey="100.00"><div>100.0%</div><div class="segment segment-green" style="width:100.00%;"></div></td><td sorttable_customkey="2.5"><div>2.47  <div style="float:right;"> (6.8 / 8.6 / 14.4)</div></div><div class="segment segment-gold" style="width:49.7689091042%;"></div></td><td sorttable_customkey="2.75"><div style="float:middle;">2.75</div><div class="segment segment-gray" style="width:74.6384935304%;"></div></td><td sorttable_customkey="417.40"><div style="float:middle;">417.40</div><div class="segment segment-gold" style="width:76.7058230037%;"></div></td><td sorttable_customkey="498.20"><div style="float:middle;">498.20</div><div class="segment segment-blue" style="width:82.9972475735%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=108&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=108"><img class="hero-img-list" src="./user_hero_files/abyssal_underlord_hphover.png"> 
+					 	Underlord </a></td><td><div>4</div><div class="segment segment-white" style="width:1.51515151515%;"></div></td><td sorttable_customkey="25.00"><div>25.0%</div><div class="segment segment-green" style="width:25.00%;"></div></td><td sorttable_customkey="2.9"><div>2.88  <div style="float:right;"> (6.8 / 6.0 / 10.5)</div></div><div class="segment segment-gold" style="width:58.0441640379%;"></div></td><td sorttable_customkey="2.54"><div style="float:middle;">2.54</div><div class="segment segment-gray" style="width:68.7496926835%;"></div></td><td sorttable_customkey="472.00"><div style="float:middle;">472.00</div><div class="segment segment-gold" style="width:86.7396944364%;"></div></td><td sorttable_customkey="539.75"><div style="float:middle;">539.75</div><div class="segment segment-blue" style="width:89.9192380125%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=3&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=3"><img class="hero-img-list" src="./user_hero_files/bane_hphover.png"> 
+					 	Bane </a></td><td><div>4</div><div class="segment segment-white" style="width:1.51515151515%;"></div></td><td sorttable_customkey="100.00"><div>100.0%</div><div class="segment segment-green" style="width:100.00%;"></div></td><td sorttable_customkey="3.6"><div>3.56  <div style="float:right;"> (5.3 / 6.3 / 17.0)</div></div><div class="segment segment-gold" style="width:71.8738170347%;"></div></td><td sorttable_customkey="2.06"><div style="float:middle;">2.06</div><div class="segment segment-gray" style="width:55.8302941978%;"></div></td><td sorttable_customkey="312.00"><div style="float:middle;">312.00</div><div class="segment segment-gold" style="width:57.3364081868%;"></div></td><td sorttable_customkey="394.50"><div style="float:middle;">394.50</div><div class="segment segment-blue" style="width:65.7214254672%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=114&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=114"><img class="hero-img-list" src="./user_hero_files/monkey_king_hphover.png"> 
+					 	Monkey King </a></td><td><div>3</div><div class="segment segment-white" style="width:1.13636363636%;"></div></td><td sorttable_customkey="0.00"><div>0.0%</div><div class="segment segment-green" style="width:0.00%;"></div></td><td sorttable_customkey="0.9"><div>0.86  <div style="float:right;"> (3.0 / 12.3 / 7.7)</div></div><div class="segment segment-gold" style="width:17.4609941171%;"></div></td><td sorttable_customkey="2.41"><div style="float:middle;">2.41</div><div class="segment segment-gray" style="width:65.2446458182%;"></div></td><td sorttable_customkey="261.33"><div style="float:middle;">261.33</div><div class="segment segment-gold" style="width:48.0253675411%;"></div></td><td sorttable_customkey="316.33"><div style="float:middle;">316.33</div><div class="segment segment-blue" style="width:52.699309479%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=92&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=92"><img class="hero-img-list" src="./user_hero_files/visage_hphover.png"> 
+					 	Visage </a></td><td><div>3</div><div class="segment segment-white" style="width:1.13636363636%;"></div></td><td sorttable_customkey="0.00"><div>0.0%</div><div class="segment segment-green" style="width:0.00%;"></div></td><td sorttable_customkey="1.6"><div>1.58  <div style="float:right;"> (3.7 / 8.0 / 9.0)</div></div><div class="segment segment-gold" style="width:31.9663512093%;"></div></td><td sorttable_customkey="2.83"><div style="float:middle;">2.83</div><div class="segment segment-gray" style="width:76.7430743357%;"></div></td><td sorttable_customkey="234.00"><div style="float:middle;">234.00</div><div class="segment segment-gold" style="width:43.0023061401%;"></div></td><td sorttable_customkey="262.67"><div style="float:middle;">262.67</div><div class="segment segment-blue" style="width:43.7587522333%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=77&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=77"><img class="hero-img-list" src="./user_hero_files/lycan_hphover.png"> 
+					 	Lycan </a></td><td><div>2</div><div class="segment segment-white" style="width:0.757575757576%;"></div></td><td sorttable_customkey="50.00"><div>50.0%</div><div class="segment segment-green" style="width:50.00%;"></div></td><td sorttable_customkey="1.5"><div>1.47  <div style="float:right;"> (4.5 / 8.5 / 8.0)</div></div><div class="segment segment-gold" style="width:29.6901094823%;"></div></td><td sorttable_customkey="2.41"><div style="float:middle;">2.41</div><div class="segment segment-gray" style="width:65.3589339739%;"></div></td><td sorttable_customkey="478.50"><div style="float:middle;">478.50</div><div class="segment segment-gold" style="width:87.9342029403%;"></div></td><td sorttable_customkey="494.00"><div style="float:middle;">494.00</div><div class="segment segment-blue" style="width:82.2975517891%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=113&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=113"><img class="hero-img-list" src="./user_hero_files/arc_warden_hphover.png"> 
+					 	Arc Warden </a></td><td><div>1</div><div class="segment segment-white" style="width:0.378787878788%;"></div></td><td sorttable_customkey="0.00"><div>0.0%</div><div class="segment segment-green" style="width:0.00%;"></div></td><td sorttable_customkey="0.4"><div>0.42  <div style="float:right;"> (1.0 / 12.0 / 4.0)</div></div><div class="segment segment-gold" style="width:8.41219768665%;"></div></td><td sorttable_customkey="2.85"><div style="float:middle;">2.85</div><div class="segment segment-gray" style="width:77.3091820829%;"></div></td><td sorttable_customkey="294.00"><div style="float:middle;">294.00</div><div class="segment segment-gold" style="width:54.0285384837%;"></div></td><td sorttable_customkey="288.00"><div style="float:middle;">288.00</div><div class="segment segment-blue" style="width:47.9791395046%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=95&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=95"><img class="hero-img-list" src="./user_hero_files/troll_warlord_hphover.png"> 
+					 	Troll Warlord </a></td><td><div>1</div><div class="segment segment-white" style="width:0.378787878788%;"></div></td><td sorttable_customkey="0.00"><div>0.0%</div><div class="segment segment-green" style="width:0.00%;"></div></td><td sorttable_customkey="1.6"><div>1.60  <div style="float:right;"> (7.0 / 10.0 / 9.0)</div></div><div class="segment segment-gold" style="width:32.3028391167%;"></div></td><td sorttable_customkey="2.32"><div style="float:middle;">2.32</div><div class="segment segment-gray" style="width:62.8114754835%;"></div></td><td sorttable_customkey="358.00"><div style="float:middle;">358.00</div><div class="segment segment-gold" style="width:65.7898529836%;"></div></td><td sorttable_customkey="423.00"><div style="float:middle;">423.00</div><div class="segment segment-blue" style="width:70.4693611473%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=82&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=82"><img class="hero-img-list" src="./user_hero_files/meepo_hphover.png"> 
+					 	Meepo </a></td><td><div>1</div><div class="segment segment-white" style="width:0.378787878788%;"></div></td><td sorttable_customkey="100.00"><div>100.0%</div><div class="segment segment-green" style="width:100.00%;"></div></td><td sorttable_customkey="2.7"><div>2.71  <div style="float:right;"> (2.0 / 7.0 / 17.0)</div></div><div class="segment segment-gold" style="width:54.7994592159%;"></div></td><td sorttable_customkey="2.37"><div style="float:middle;">2.37</div><div class="segment segment-gray" style="width:64.3273406747%;"></div></td><td sorttable_customkey="357.00"><div style="float:middle;">357.00</div><div class="segment segment-gold" style="width:65.6060824445%;"></div></td><td sorttable_customkey="576.00"><div style="float:middle;">576.00</div><div class="segment segment-blue" style="width:95.9582790091%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=80&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=80"><img class="hero-img-list" src="./user_hero_files/lone_druid_hphover.png"> 
+					 	Lone Druid </a></td><td><div>1</div><div class="segment segment-white" style="width:0.378787878788%;"></div></td><td sorttable_customkey="0.00"><div>0.0%</div><div class="segment segment-green" style="width:0.00%;"></div></td><td sorttable_customkey="0.0"><div>0.00  <div style="float:right;"> (0.0 / 8.0 / 0.0)</div></div><div class="segment segment-gold" style="width:0.0%;"></div></td><td sorttable_customkey="2.08"><div style="float:middle;">2.08</div><div class="segment segment-gray" style="width:56.5078089328%;"></div></td><td sorttable_customkey="262.00"><div style="float:middle;">262.00</div><div class="segment segment-gold" style="width:48.1478812338%;"></div></td><td sorttable_customkey="312.00"><div style="float:middle;">312.00</div><div class="segment segment-blue" style="width:51.9774011299%;"></div></td></tr></tbody><tfoot></tfoot></table>
+    
+                        
+                    <script type="text/javascript">
+                        $('#indicatorContainer0').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  4707;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer02').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  51.3+'%';
+                            },
+                            initValue:51.3,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer03').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.7 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer1').radialIndicator({
+                            barColor: '#999',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  4515;
+                            },
+                            initValue:95.92,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer12').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  51.3+'%';
+                            },
+                            initValue:51.3,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer13').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.7 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer2').radialIndicator({
+                            barColor: '#E6E8FA',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  182;
+                            },
+                            initValue:3.87,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer22').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  52.7+'%';
+                            },
+                            initValue:52.7,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer23').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.6 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer3').radialIndicator({
+                            barColor: '#f0a868',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  10;
+                            },
+                            initValue:0.21,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer32').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  60.0+'%';
+                            },
+                            initValue:60.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer33').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  1.9 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer4').radialIndicator({
+                            barColor: '#9c3627',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer42').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer43').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                    </script>
+<!--
+                    <div style="display: table;">
+                        <div style="margin-left:35px;margin-top:4px;;cursor: pointer;width: 280px;float:right;text-align: center;font-size: 14px;font-weight: bold;margin-top: 20px;margin-bottom: 12px;" onclick="AddFavorite(window.location,document.title)">
+                            数据来自 www.dotamax.com
+                        </div>
+                    </div>
+-->
+<!--
+                    <table class="table-list-small" style="width: 95%; margin-left: auto;margin-right: auto;margin-bottom: 10px;margin-top: 25px;text-align: left !important;">
+                        <thead>
+                            <tr>
+                                <th style="width: 46%;padding-left: 10px;text-align: left;">天梯比赛</th>
+                                <th style="width: 25%;"></th>
+                                <th style="width: 25%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer0t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;">
+                                                天梯比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                94场(100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer02t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer03t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer1t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="12px;color:#ccc;margin-bottom: 3px;color:#999">
+                                                Normal 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                94场 (100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer12t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer13t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer2t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="12px;color:#ccc;margin-bottom: 3px;color:#E6E8FA">
+                                                High 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场 (0.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer22t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer23t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer3t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size:12px;color:#ccc;margin-bottom: 3px;color:#f0a868">
+                                                Very High 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场 (0.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer32t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer33t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer5" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color:#a9cf54">
+                                                Solo 比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场(100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer52" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer53" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+-->
+                    <script type="text/javascript">
+                        $('#indicatorContainer0t').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  94;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer02t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  62.8+'%';
+                            },
+                            initValue:62.8,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer03t').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  3.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer1t').radialIndicator({
+                            barColor: '#999',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  94;
+                            },
+                            initValue:100.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer12t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  62.8+'%';
+                            },
+                            initValue:62.8,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer13t').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  3.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer2t').radialIndicator({
+                            barColor: '#E6E8FA',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer22t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer23t').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer3t').radialIndicator({
+                            barColor: '#f0a868',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer32t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer33t').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+
+                        $('#indicatorContainer5').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer52').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer53').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                    </script>
+            
+
+                    
+        <script type="text/javascript">
+				$(function  () {
+					var status;
+					var userLog = function myFunction3(userAccount,loginStatus){
+						status=loginStatus;
+					}
+					maxjia.user.getCurrentUser(function(data){
+						status=data.loginStatus;
+					});
+					maxjia.user.loginStatusChanged.addListener(userLog);
+					if(status =="Offline")
+					$(".tem_log").hide();
+				})				
+        </script>
+                    
+    </div><!--modal-->
+    <div style="margin-left: auto;margin-right: auto;text-align: center;margin-bottom: 20px;">
+<!--
+            <div class="filterbox">
+                <div class="nabtn active pagerwidth">1</div>
+                <div class="nabtn pagerwidth" onclick="DoNav(&#39;/player/match/180999306/?skill=&amp;ladder=&amp;hero=-1&amp;p=2&#39;)">2</div>
+                <div class="nabtn pagerwidth" onclick="DoNav(&#39;/player/match/180999306/?skill=&amp;ladder=&amp;hero=-1&amp;p=3&#39;)">3</div>
+                <div class="nabtn pagerwidth" onclick="DoNav(&#39;/player/match/180999306/?skill=&amp;ladder=&amp;hero=-1&amp;p=4&#39;)">4</div>
+                <div class="nabtn pagerwidth">...</div>
+                <div class="nabtn pagerwidth" onclick="DoNav(&#39;/player/match/180999306/?skill=&amp;ladder=&amp;hero=-1&amp;p=2&#39;)">&gt;</div>
+                <div class="nabtn pagerwidth" onclick="DoNav(&#39;/player/match/180999306/?skill=&amp;ladder=&amp;hero=-1&amp;p=97&#39;)">&gt;&gt;</div>
+            </div>
+-->
+        </div>
+        </div>
+        <div class="stitle">Unused Heroes</div>
+    <div style="margin-left:20px;">
+        <div class="unusedhero" style="background-image:url(&#39;http://cdn.dota2.com/apps/dota2/images/heroes/warlock_hphover.png&#39;);">
+            <div class="unusedhero-text" onclick="DoNav(&#39;/hero/detail/warlock/&#39;)">Warlock</div>
+        </div>
+        <div class="unusedhero" style="background-image:url(&#39;http://cdn.dota2.com/apps/dota2/images/heroes/grimstroke_hphover.png&#39;);">
+            <div class="unusedhero-text" onclick="DoNav(&#39;/hero/detail/grimstroke/&#39;)">Grimstroke</div>
+        </div>
+        <div class="unusedhero" style="background-image:url(&#39;http://cdn.dota2.com/apps/dota2/images/heroes/dark_willow_hphover.png&#39;);">
+            <div class="unusedhero-text" onclick="DoNav(&#39;/hero/detail/dark_willow/&#39;)">Dark Willow</div>
+        </div>
+        <div class="unusedhero" style="background-image:url(&#39;http://cdn.dota2.com/apps/dota2/images/heroes/brewmaster_hphover.png&#39;);">
+            <div class="unusedhero-text" onclick="DoNav(&#39;/hero/detail/brewmaster/&#39;)">Brewmaster</div>
+        </div>
+    </div>
+            <!-- footbar -->
+        <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+            </div>
+        <div style="width:100%;min-width:1100px;text-align: center; display: table;position: absolute;">
+            <div style="background-color: rgb(10,10,10);border-top:1px rgb(15,15,15) solid;cursor: pointer;margin-top: -1px;height:23px;" onclick="GoToTop(this)">
+                <ion-icon name="arrow-up"></ion-icon>
+<!--                <span class="fa fa-chevron-up" style="font-size: 16px;line-height: 25px;"></span>-->
+            </div>
+<!--
+            <div style="background-color: rgb(0,0,0);padding-top: 15px;padding-bottom: 15px;position: relative;">
+                <div style="width:1100px;margin: 0 auto;line-height: 20px;position: relative;height: 30px;">
+                    <span style="line-height: 30px;position: absolute;right:25px;top:0px;">
+                        <img src="./user_hero_files/zh-cn.gif" style="margin-right: 3px;height: 15px;">
+                        <a href="http://dotamax.com/set_language/?language=en">
+                            <img src="./user_hero_files/en.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ru">
+                            <img src="./user_hero_files/ru.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ko">
+                            <img src="./user_hero_files/ko.gif" style="margin-right: 3px;">
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+-->
+        
+            </div>
+            
+            <div style="width:100%;min-width:1100px;text-align: center; display: table;position: absolute;">
+            <div style="background-color: rgb(10,10,10);border-top:1px rgb(15,15,15) solid;cursor: pointer;margin-top: -1px;height:23px;" onclick="GoToTop(this)">
+                <ion-icon name="arrow-up"></ion-icon>
+<!--                <span class="fa fa-chevron-up" style="font-size: 16px;line-height: 25px;"></span>-->
+            </div>
+<!--
+            <div style="background-color: rgb(0,0,0);padding-top: 15px;padding-bottom: 15px;position: relative;">
+                <div style="width:1100px;margin: 0 auto;line-height: 20px;position: relative;height: 30px;">
+                    <span style="line-height: 30px;position: absolute;right:25px;top:0px;">
+                        <img src="./user_hero_files/zh-cn.gif" style="margin-right: 3px;height: 15px;">
+                        <a href="http://dotamax.com/set_language/?language=en">
+                            <img src="./user_hero_files/en.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ru">
+                            <img src="./user_hero_files/ru.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ko">
+                            <img src="./user_hero_files/ko.gif" style="margin-right: 3px;">
+                        </a>
+                    </span>
+                </div>
+            </div>
+-->
+        
+            <div class="footbar" style="padding-bottom:10px;">
+                <div style="position: relative;width: 1100px;height: 40px;margin: 0 auto;">
+                    <div style="position: absolute;top: 0;left: 0;">
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/rohame">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Chengwei Ye
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/fegan104">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Frank Egan
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/ReinaFeng">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Ruonan Feng
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/Echo226">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Xinting Yao
+                            </a>
+                        </div>
+<!--
+                        <div style="float:left;margin-left: 20px">
+                            <a href="http://xiaoheihe.cn/" target="_blank" style="color:#ccc">小黑盒APP</a>
+                        </div>
+-->
+                    </div>
+                    <div style="position: absolute;top: 0;right: 0;margin-top: 5px">
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="mailto:cye3@wpi.edu">Contact us</a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://store.steampowered.com/">
+                                <ion-icon name="logo-steam"></ion-icon>
+                                Steam
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://dotamax.com">
+                                DotaMax
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://opendota.com">
+                                OpenDota
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://dota2.com">
+                                DOTA2
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="site-record" style="position: relative;text-align: center;height: 60px;line-height: 40px;">
+                    Credit to
+<!--                    <span class="c-divider">|</span>-->
+                    <a target="_blank" class="c-link" href="http://www.dotamax.com">DOTAMAX</a><br>
+<!--                    <span>违法和不良信息举报电话：010-84158300　举报邮箱：jubao@dotamax.com</span>-->
+                </div>
+            </div>
+        </div>
+                    <!-- end of footbar -->
+        </div>
+        
+    </div>
+    </body>
+</html>

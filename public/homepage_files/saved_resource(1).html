@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://snapwidget.com/p/widget/?id=IKDEYwHqYk&t=941 -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./a53393d12f"></script><script src="./nr-1099.min.js"></script><script async="" src="./analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQICUlZUGwcFV1BRAA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(16),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(17),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,n){i(w,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(19)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(19)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(19)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(19)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(19)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(w,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(16),s=t(17),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],16:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],17:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],18:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],19:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(17),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([b,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},b={on:p,addEventListener:p,removeEventListener:h,emit:e,get:v,listeners:m,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(16),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=x.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+x.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(16),u=t("ee"),d=t(15),l=window,p=l.document,h="addEventListener",m="attachEvent",v=l.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:v,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(12),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(18)},{}]},{},["loader",2,10,4,3]);</script>
+<title>165766</title>
+<meta name="cachedAt" content="2018-11-20 19:54:41">
+<link rel="stylesheet" href="./embed.vendor.min.6acb0cd62131ce2d.css">
+<link rel="stylesheet" href="./embed.style.min.db8e485fba6f9b99.css">
+
+
+<link rel="stylesheet" href="./embed.grid.min.80c1a3a5392c245a.css">
+
+<script type="text/javascript">
+                if (!window.ga) {
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                }
+
+                ga('create', 'UA-26211480-8', 'auto', {'name': 'snapwidget', 'sampleRate': 10});
+		        ga('snapwidget.set', 'anonymizeIp', true);
+                ga('snapwidget.send', 'pageview');
+            </script>
+
+<script type="text/javascript">
+                    if (!window.ga) {
+                        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                    }
+
+                    ga('create', 'UA-26211480-7', 'auto', {'name': 'pro'});
+                    ga('pro.send', {
+                        hitType: 'pageview',
+                        title: '165766'
+                    });
+                </script>
+
+
+<style>
+    
+    </style> </head>
+<body>
+<div class="widget-container" style="margin-left: -8px;
+                ">
+<ul class="media-grid clearfix">
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm7jAa8F-Pn/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm7jAa8F-Pn/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39665580_263536014272893_4182717449545711616_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm7jAa8F-Pn/" onerror="embed.imageError(this, 0, &quot;1854229632146465767_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm7jAa8F-Pn/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm7jAa8F-Pn/&#39;, &#39;late game is strong... #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm7jAa8F-Pn/&#39;, &#39;late game is strong... #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/f401b0ea47a91ee312bc6307d5412e6e/5C812759/t51.2885-15/sh0.08/e35/s640x640/39665580_263536014272893_4182717449545711616_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm7glrnlyip/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm7glrnlyip/" target="_self">
+<figure class="thumbnail-image">
+<img src="./37527275_321173135118589_5341004192938983424_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm7glrnlyip/" onerror="embed.imageError(this, 0, &quot;1854218998537201833_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm7glrnlyip/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm7glrnlyip/&#39;, &#39;#ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm7glrnlyip/&#39;, &#39;#ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/b65eb62a07aa6f8c9e074a2f86b9806c/5C78BF4B/t51.2885-15/sh0.08/e35/s640x640/37527275_321173135118589_5341004192938983424_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm7WQbIlnBq/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm7WQbIlnBq/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39506371_2294912090538006_4651288799467274240_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm7WQbIlnBq/" onerror="embed.imageError(this, 0, &quot;1854173557263069290_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm7WQbIlnBq/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm7WQbIlnBq/&#39;, &#39;OG have claimed The Aegis of Champions! #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm7WQbIlnBq/&#39;, &#39;OG have claimed The Aegis of Champions! #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/97b0f547aee2613fc95b67773eeec586/5CB1B3C7/t51.2885-15/sh0.08/e35/p640x640/39506371_2294912090538006_4651288799467274240_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm7WJh6ldg7/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm7WJh6ldg7/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39486190_2183283755017170_5625927766395322368_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm7WJh6ldg7/" onerror="embed.imageError(this, 0, &quot;1854173083508004923_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm7WJh6ldg7/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm7WJh6ldg7/&#39;, &#39;Boom! OG. #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm7WJh6ldg7/&#39;, &#39;Boom! OG. #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/64f62afc6129043e53dbda03955a8b59/5C6F752A/t51.2885-15/sh0.08/e35/s640x640/39486190_2183283755017170_5625927766395322368_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6xT6BFfyE/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6xT6BFfyE/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39328443_238789873485118_1790315928601231360_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6xT6BFfyE/" onerror="embed.imageError(this, 0, &quot;1854011068860726404_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6xT6BFfyE/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6xT6BFfyE/&#39;, &#39;🎤 #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6xT6BFfyE/&#39;, &#39;🎤 #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/0a90e6e0875d2dc8eb6cc2d2eb5afc81/5C6BE27F/t51.2885-15/sh0.08/e35/s640x640/39328443_238789873485118_1790315928601231360_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6wIW1lopA/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6wIW1lopA/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39687794_324625751617136_6505868880609542144_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6wIW1lopA/" onerror="embed.imageError(this, 0, &quot;1854005877126105664_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6wIW1lopA/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6wIW1lopA/&#39;, &#39;... #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6wIW1lopA/&#39;, &#39;... #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/60d7084c148e0084c816444e8cf1efb0/5C70BD83/t51.2885-15/sh0.08/e35/s640x640/39687794_324625751617136_6505868880609542144_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6r_M0F3sz/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6r_M0F3sz/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38718991_2062069057156987_5667085939776684032_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6r_M0F3sz/" onerror="embed.imageError(this, 0, &quot;1853987655702248243_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6r_M0F3sz/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6r_M0F3sz/&#39;, &#39;OG vs PSG.LGD on stage at the Grand Final! #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6r_M0F3sz/&#39;, &#39;OG vs PSG.LGD on stage at the Grand Final! #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/0ff19f0c5cbb5968169462758c86d26e/5C8172B8/t51.2885-15/sh0.08/e35/s640x640/38718991_2062069057156987_5667085939776684032_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6nKGWl3L6/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6nKGWl3L6/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39907540_296662107811019_9093397611989172224_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6nKGWl3L6/" onerror="embed.imageError(this, 0, &quot;1853966414446555898_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6nKGWl3L6/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6nKGWl3L6/&#39;, &#39;#ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6nKGWl3L6/&#39;, &#39;#ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/d706d93286ec0a8e15bd74852d2851d6/5CB18ED1/t51.2885-15/sh0.08/e35/p640x640/39907540_296662107811019_9093397611989172224_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6i99RFWAh/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6i99RFWAh/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39809493_234065180591391_7045440626959056896_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6i99RFWAh/" onerror="embed.imageError(this, 0, &quot;1853947987870703649_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6i99RFWAh/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6i99RFWAh/&#39;, &#39;Evil Geniuses fall to PSG.LGD. PSG.LGD advances to the Grand Final. #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6i99RFWAh/&#39;, &#39;Evil Geniuses fall to PSG.LGD. PSG.LGD advances to the Grand Final. #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/eb998fceda3651720256cdfa286fcea6/5C7365BB/t51.2885-15/sh0.08/e35/s640x640/39809493_234065180591391_7045440626959056896_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6iwF5F8lq/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6iwF5F8lq/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39779035_755333218192155_9183071692996476928_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6iwF5F8lq/" onerror="embed.imageError(this, 0, &quot;1853947035059210602_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6iwF5F8lq/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6iwF5F8lq/&#39;, &#39;#ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6iwF5F8lq/&#39;, &#39;#ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/dd792cddb498410dc7e0c92682d829ea/5C8E8E91/t51.2885-15/sh0.08/e35/s640x640/39779035_755333218192155_9183071692996476928_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6cdJAlfOY/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6cdJAlfOY/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39637509_238659763447313_6748211671551967232_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6cdJAlfOY/" onerror="embed.imageError(this, 0, &quot;1853919344457020312_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6cdJAlfOY/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6cdJAlfOY/&#39;, &#39;Evil Geniuses #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6cdJAlfOY/&#39;, &#39;Evil Geniuses #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/4efcbd59b058af0f6cc7121bee75db2a/5C8CD3CA/t51.2885-15/sh0.08/e35/s640x640/39637509_238659763447313_6748211671551967232_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6cUmCFbGJ/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6cUmCFbGJ/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39850981_307272356672608_8129569004730712064_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6cUmCFbGJ/" onerror="embed.imageError(this, 0, &quot;1853918757145391497_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6cUmCFbGJ/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6cUmCFbGJ/&#39;, &#39;PSG.LGD #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6cUmCFbGJ/&#39;, &#39;PSG.LGD #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/98e4919e616a14f3c0e720d0c20b9564/5C7908A4/t51.2885-15/sh0.08/e35/s640x640/39850981_307272356672608_8129569004730712064_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6cL7-lhZY/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6cL7-lhZY/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39108960_1393024600800940_86953906420056064_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6cL7-lhZY/" onerror="embed.imageError(this, 0, &quot;1853918162233726552_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6cL7-lhZY/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6cL7-lhZY/&#39;, &#39;#ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6cL7-lhZY/&#39;, &#39;#ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/f337634510e0ae5b4bd6288e09e877af/5CAFCC30/t51.2885-15/sh0.08/e35/p640x640/39108960_1393024600800940_86953906420056064_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6cG_AFus3/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6cG_AFus3/" target="_self">
+<figure class="thumbnail-image">
+<img src="./40000388_1949831785038216_8038618163090292736_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6cG_AFus3/" onerror="embed.imageError(this, 0, &quot;1853917821882788663_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6cG_AFus3/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6cG_AFus3/&#39;, &#39;#ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6cG_AFus3/&#39;, &#39;#ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/a863ce49858c5e81f0a25b449bd86d20/5C76DB7F/t51.2885-15/sh0.08/e35/p640x640/40000388_1949831785038216_8038618163090292736_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6Z38PFouL/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6Z38PFouL/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39754827_2210723859163835_8232441941145419776_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6Z38PFouL/" onerror="embed.imageError(this, 0, &quot;1853907992028023691_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6Z38PFouL/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6Z38PFouL/&#39;, &#39;The crowd goes wild for PSG.LGD taking Game 1 #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6Z38PFouL/&#39;, &#39;The crowd goes wild for PSG.LGD taking Game 1 #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/1f596c1fe583384eecd634effc91b25d/5CAB30FE/t51.2885-15/sh0.08/e35/s640x640/39754827_2210723859163835_8232441941145419776_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm6T3RjF7xt/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm6T3RjF7xt/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39498699_271473903577737_3710659251899727872_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm6T3RjF7xt/" onerror="embed.imageError(this, 0, &quot;1853881557913681005_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm6T3RjF7xt/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm6T3RjF7xt/&#39;, &#39;PSG.LGD and Evil Geniuses square it off in the Lower Bracket Final #ti8&#39;, false)"></a>
+ <a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm6T3RjF7xt/&#39;, &#39;PSG.LGD and Evil Geniuses square it off in the Lower Bracket Final #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/0e84992fc86aff79d5d1f6bbbbee7ea7/5C713241/t51.2885-15/sh0.08/e35/s640x640/39498699_271473903577737_3710659251899727872_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5ilZHFEJi/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5ilZHFEJi/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39232783_239883690045044_1113312938246012928_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5ilZHFEJi/" onerror="embed.imageError(this, 0, &quot;1853664824804000354_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5ilZHFEJi/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5ilZHFEJi/&#39;, &#39;Focused on some serious Dota #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5ilZHFEJi/&#39;, &#39;Focused on some serious Dota #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/1a04f9dcebf5c05714fbdea9f242c8f8/5C91A2E2/t51.2885-15/sh0.08/e35/s640x640/39232783_239883690045044_1113312938246012928_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5hpJkFUzR/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5hpJkFUzR/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38875291_1017326448449936_3139692677595922432_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5hpJkFUzR/" onerror="embed.imageError(this, 0, &quot;1853660684942134481_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5hpJkFUzR/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5hpJkFUzR/&#39;, &#39;Bruno cast a special OpenAI match and even brought a friend. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5hpJkFUzR/&#39;, &#39;Bruno cast a special OpenAI match and even brought a friend. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/f9640bc2d9ba5e7143ebb5e53882832d/5C792FC5/t51.2885-15/sh0.08/e35/p640x640/38875291_1017326448449936_3139692677595922432_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5hF_iFAKb/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5hF_iFAKb/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39269274_2219777548063649_586689444552114176_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5hF_iFAKb/" onerror="embed.imageError(this, 0, &quot;1853658268989391515_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5hF_iFAKb/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5hF_iFAKb/&#39;, &#39;This Late Game is never stressful and everyone always wins. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5hF_iFAKb/&#39;, &#39;This Late Game is never stressful and everyone always wins. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/2928529711fc419528198549e16444cd/5C6CB6F9/t51.2885-15/sh0.08/e35/p640x640/39269274_2219777548063649_586689444552114176_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5f-12lKFn/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5f-12lKFn/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39613363_237940740200202_2009177149788913664_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5f-12lKFn/" onerror="embed.imageError(this, 0, &quot;1853653379513098599_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5f-12lKFn/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5f-12lKFn/&#39;, &#39;A fierce advocate. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5f-12lKFn/&#39;, &#39;A fierce advocate. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/c09b015a98c4ef33d59cc077cdef44ed/5C6E1480/t51.2885-15/sh0.08/e35/p640x640/39613363_237940740200202_2009177149788913664_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5ftmtl8Rv/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5ftmtl8Rv/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39486065_284924412299447_2793380569642172416_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5ftmtl8Rv/" onerror="embed.imageError(this, 0, &quot;1853652195025077359_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5ftmtl8Rv/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5ftmtl8Rv/&#39;, &#39;Every night this week the event has gone to Late Game. It’s the current meta. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5ftmtl8Rv/&#39;, &#39;Every night this week the event has gone to Late Game. It’s the current meta. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/57fd3e939e9a9d0b56185759862bd39f/5C753CC2/t51.2885-15/sh0.08/e35/s640x640/39486065_284924412299447_2793380569642172416_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5fkLdF1xS/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5fkLdF1xS/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39314934_480265775822692_6687009886527553536_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5fkLdF1xS/" onerror="embed.imageError(this, 0, &quot;1853651547281906770_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5fkLdF1xS/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5fkLdF1xS/&#39;, &#39;It is a tradition. Each year, fans from around the world gather... to watch someone eat the world’s most prestigious cheese in the aftermath of The International All-Star Match. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5fkLdF1xS/&#39;, &#39;It is a tradition. Each year, fans from around the world gather... to watch someone eat the world’s most prestigious cheese in the aftermath of The International All-Star Match. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/7a5f13f9849c32ce6d894dffc2d36a01/5C900845/t51.2885-15/sh0.08/e35/s640x640/39314934_480265775822692_6687009886527553536_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5e_40FRIj/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5e_40FRIj/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39320114_652862461755860_3047117968950427648_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5e_40FRIj/" onerror="embed.imageError(this, 0, &quot;1853649053365375523_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5e_40FRIj/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5e_40FRIj/&#39;, &#39;Ladies and gentlemen! Your 2018 All-Star Match hype master, Mr. John! Patrick! Loooooooowriiiiiiiieeeeee! #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5e_40FRIj/&#39;, &#39;Ladies and gentlemen! Your 2018 All-Star Match hype master, Mr. John! Patrick! Loooooooowriiiiiiiieeeeee! #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/dc352c6066d9d6c433c302306efe5d05/5C8E510E/t51.2885-15/sh0.08/e35/s640x640/39320114_652862461755860_3047117968950427648_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm5eoValdM4/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm5eoValdM4/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39178507_273983259881456_8308473848810962944_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm5eoValdM4/" onerror="embed.imageError(this, 0, &quot;1853647434808677176_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm5eoValdM4/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm5eoValdM4/&#39;, &#39;Enthusiastic fist bump from Kaci to Dota fans everywhere. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm5eoValdM4/&#39;, &#39;Enthusiastic fist bump from Kaci to Dota fans everywhere. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/cf1bc0fb5c98b5d7fa08b4d1ab7a66a4/5C7379E3/t51.2885-15/sh0.08/e35/s640x640/39178507_273983259881456_8308473848810962944_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4ywSpl8Id/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4ywSpl8Id/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39214887_1871148899605368_3089335272677048320_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4ywSpl8Id/" onerror="embed.imageError(this, 0, &quot;1853454467548561949_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4ywSpl8Id/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4ywSpl8Id/&#39;, &#39;Evil Geniuses advance to play against PSG.LGD tomorrow  #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4ywSpl8Id/&#39;, &#39;Evil Geniuses advance to play against PSG.LGD tomorrow  #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/8c5c3f0c368ae0712f1240e8c2897ecc/5C8024BE/t51.2885-15/sh0.08/e35/p640x640/39214887_1871148899605368_3089335272677048320_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4i-Ncl-SC/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4i-Ncl-SC/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39114694_268563383867443_1972213256785231872_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4i-Ncl-SC/" onerror="embed.imageError(this, 0, &quot;1853385055290254466_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4i-Ncl-SC/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4i-Ncl-SC/&#39;, &#39;Evil Geniuses vs Team Liquid #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4i-Ncl-SC/&#39;, &#39;Evil Geniuses vs Team Liquid #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/54294ea96b85979157221f692f500ddf/5C7B2EF2/t51.2885-15/sh0.08/e35/s640x640/39114694_268563383867443_1972213256785231872_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4cVSmF0TO/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4cVSmF0TO/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38541203_1784976654946962_495538895522365440_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4cVSmF0TO/" onerror="embed.imageError(this, 0, &quot;1853355855040693454_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4cVSmF0TO/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4cVSmF0TO/&#39;, &#39;OG continues through to the Grand Finals! #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4cVSmF0TO/&#39;, &#39;OG continues through to the Grand Finals! #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/8f610fb905e05ec7de197c209ebba6b8/5C754A79/t51.2885-15/sh0.08/e35/s640x640/38541203_1784976654946962_495538895522365440_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4cOFjlhJr/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4cOFjlhJr/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38835560_371756156693737_8482371534118191104_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4cOFjlhJr/" onerror="embed.imageError(this, 0, &quot;1853355360003691115_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4cOFjlhJr/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4cOFjlhJr/&#39;, &#39;Matches are exciting until the very end! #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4cOFjlhJr/&#39;, &#39;Matches are exciting until the very end! #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/612e92e1fa0c1f483f453f2c911b6ee5/5C75CB5C/t51.2885-15/sh0.08/e35/s640x640/38835560_371756156693737_8482371534118191104_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4TxBNFYW4/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4TxBNFYW4/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39281837_282825838988809_1220910527664881664_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4TxBNFYW4/" onerror="embed.imageError(this, 0, &quot;1853318178094286264_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4TxBNFYW4/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4TxBNFYW4/&#39;, &#39;PSG.LGD and OG battle in the Upper Bracket Final. #ti8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4TxBNFYW4/&#39;, &#39;PSG.LGD and OG battle in the Upper Bracket Final. #ti8&#39;, &#39;https://scontent.cdninstagram.com/vp/23dac50d4c80023a3e07838f497d1159/5C91B53C/t51.2885-15/sh0.08/e35/s640x640/39281837_282825838988809_1220910527664881664_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4SARvldJ0/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4SARvldJ0/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39101430_267553673969100_610907901845831680_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4SARvldJ0/" onerror="embed.imageError(this, 0, &quot;1853310430552117876_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4SARvldJ0/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4SARvldJ0/&#39;, &#39;#TI8 Cosplay!&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4SARvldJ0/&#39;, &#39;#TI8 Cosplay!&#39;, &#39;https://scontent.cdninstagram.com/vp/c4fbee951f10328e88e91eb3ee1de239/5C81146B/t51.2885-15/sh0.08/e35/s640x640/39101430_267553673969100_610907901845831680_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm4LDOHl_Tc/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm4LDOHl_Tc/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39326809_1153487211479667_7529440418530852864_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm4LDOHl_Tc/" onerror="embed.imageError(this, 0, &quot;1853279846492796124_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm4LDOHl_Tc/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm4LDOHl_Tc/&#39;, &#39;BurNIng and AA bring the action of PSG.LGD and OG to cheering Chinese fans around the world. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm4LDOHl_Tc/&#39;, &#39;BurNIng and AA bring the action of PSG.LGD and OG to cheering Chinese fans around the world. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/e8f4c60aa692d703ae2e6eae325446e3/5C8F2115/t51.2885-15/sh0.08/e35/s640x640/39326809_1153487211479667_7529440418530852864_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm1r1yrlrQM/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm1r1yrlrQM/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39172388_1824164630996464_229241877969240064_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm1r1yrlrQM/" onerror="embed.imageError(this, 0, &quot;1852579634283459596_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm1r1yrlrQM/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm1r1yrlrQM/&#39;, &#39;OpTic Gaming bid farewell to the main stage, ending their run with a top-8 placement after a loss to VP. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm1r1yrlrQM/&#39;, &#39;OpTic Gaming bid farewell to the main stage, ending their run with a top-8 placement after a loss to VP. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/78058a8f94eabb94ac8d4eff5823e924/5C6E9C25/t51.2885-15/sh0.08/e35/s640x640/39172388_1824164630996464_229241877969240064_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm1b2veFmVR/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm1b2veFmVR/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38765611_306310509948667_8918066700390236160_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm1b2veFmVR/" onerror="embed.imageError(this, 0, &quot;1852509330811020625_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm1b2veFmVR/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm1b2veFmVR/&#39;, &#39;Evil Geniuses aren’t eliminated, but a trip through the Upper Bracket slipped through their fingers vs OG. They’ll need to harness the resiliency shown in their second game to set up a rematch. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm1b2veFmVR/&#39;, &#39;Evil Geniuses aren’t eliminated, but a trip through the Upper Bracket slipped through their fingers vs OG. They’ll need to harness the resiliency shown in their second game to set up a rematch. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/891c84e2e48f9c729e4133c04e7ab256/5C8DAE15/t51.2885-15/sh0.08/e35/s640x640/38765611_306310509948667_8918066700390236160_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm1bLcHFQii/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm1bLcHFQii/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39042942_317917485422934_1330812663390797824_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm1bLcHFQii/" onerror="embed.imageError(this, 0, &quot;1852506355086461090_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm1bLcHFQii/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm1bLcHFQii/&#39;, &#39;Evil Geniuses vs OG offered intense competition and massive momentum swings. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm1bLcHFQii/&#39;, &#39;Evil Geniuses vs OG offered intense competition and massive momentum swings. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/a8aa0b1387292c6cadcede6b3bc2d772/5C6F538D/t51.2885-15/sh0.08/e35/s640x640/39042942_317917485422934_1330812663390797824_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm1a3czlqWM/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm1a3czlqWM/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38934804_571590249922986_9017424158828527616_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm1a3czlqWM/" onerror="embed.imageError(this, 0, &quot;1852504981443618188_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm1a3czlqWM/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm1a3czlqWM/&#39;, &#39;OG ended the night in celebration after downing EG and earning a series against PSG.LGD in the UB Final. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm1a3czlqWM/&#39;, &#39;OG ended the night in celebration after downing EG and earning a series against PSG.LGD in the UB Final. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/d5704a448650404e595136df8418c754/5C926011/t51.2885-15/sh0.08/e35/s640x640/38934804_571590249922986_9017424158828527616_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm1abAzltye/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm1abAzltye/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39304311_1062121730664294_6032407770551025664_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm1abAzltye/" onerror="embed.imageError(this, 0, &quot;1852503027233512606_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm1abAzltye/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm1abAzltye/&#39;, &#39;OG.N0tail vs Evil Geniuses, Upper Bracket Semifinal #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm1abAzltye/&#39;, &#39;OG.N0tail vs Evil Geniuses, Upper Bracket Semifinal #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/99da6d86443aeb07a224838c45b35845/5CAFCC10/t51.2885-15/sh0.08/e35/p640x640/39304311_1062121730664294_6032407770551025664_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm0FkIulwBI/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm0FkIulwBI/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39056913_1601021743530796_4588138288996417536_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm0FkIulwBI/" onerror="embed.imageError(this, 0, &quot;1852129820261417032_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm0FkIulwBI/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm0FkIulwBI/&#39;, &#39;Guests enjoy Late Game so much one even became a stand-in host. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm0FkIulwBI/&#39;, &#39;Guests enjoy Late Game so much one even became a stand-in host. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/e01c4f92f6448ddff6ffd222812fb37e/5C6DF674/t51.2885-15/sh0.08/e35/s640x640/39056913_1601021743530796_4588138288996417536_n.jpg&#39;)"></a>
+</span>
+</div>
+ </div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bm0BCq_l0Y_/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bm0BCq_l0Y_/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38923039_739200379748941_6859201851342979072_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bm0BCq_l0Y_/" onerror="embed.imageError(this, 0, &quot;1852109928405616191_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bm0BCq_l0Y_/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bm0BCq_l0Y_/&#39;, &#39;EG couldn’t close OG out. Now they face life in the Lower Bracket. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bm0BCq_l0Y_/&#39;, &#39;EG couldn’t close OG out. Now they face life in the Lower Bracket. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/6f1e7f741da2fb93bfb6be15a5aee5ff/5C8C18EC/t51.2885-15/sh0.08/e35/p640x640/38923039_739200379748941_6859201851342979072_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bmzpvq1F3IQ/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bmzpvq1F3IQ/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39322158_2158671531012801_7975098946856943616_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bmzpvq1F3IQ/" onerror="embed.imageError(this, 0, &quot;1852007467489653264_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bmzpvq1F3IQ/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bmzpvq1F3IQ/&#39;, &#39;OG prepare to face off against Evil Geniuses. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bmzpvq1F3IQ/&#39;, &#39;OG prepare to face off against Evil Geniuses. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/15e01845d84eab566d26af58acf968d3/5C7A7652/t51.2885-15/sh0.08/e35/s640x640/39322158_2158671531012801_7975098946856943616_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzpaX-FKT6/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzpaX-FKT6/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38868653_295568834567502_8224240211467436032_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzpaX-FKT6/" onerror="embed.imageError(this, 0, &quot;1852006004130358522_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzpaX-FKT6/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzpaX-FKT6/&#39;, &#39;EG are no strangers to the big stage. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzpaX-FKT6/&#39;, &#39;EG are no strangers to the big stage. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/a37ad0f59a68139bba395c0c99994d23/5C9011B1/t51.2885-15/sh0.08/e35/s640x640/38868653_295568834567502_8224240211467436032_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmziPNTlyy1/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmziPNTlyy1/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39019257_483939355420057_6571121872061071360_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmziPNTlyy1/" onerror="embed.imageError(this, 0, &quot;1851974450440252597_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmziPNTlyy1/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmziPNTlyy1/&#39;, &#39;Some trees do better with motion than others. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmziPNTlyy1/&#39;, &#39;Some trees do better with motion than others. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/fed737588a7c01d5c97800c005d5bc1d/5C8CDBE7/t51.2885-15/sh0.08/e35/p640x640/39019257_483939355420057_6571121872061071360_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzRUHSFl--/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzRUHSFl--/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39260141_747700128912906_8354204044943687680_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzRUHSFl--/" onerror="embed.imageError(this, 0, &quot;1851900020779278270_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzRUHSFl--/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzRUHSFl--/&#39;, &#39;It’s not graffiti, it’s art. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzRUHSFl--/&#39;, &#39;It’s not graffiti, it’s art. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/e0a33dcd8de52dedcf92108b4da1a591/5C90551F/t51.2885-15/sh0.08/e35/s640x640/39260141_747700128912906_8354204044943687680_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzROu0lm-a/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzROu0lm-a/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39323480_2181782678777696_2293493255955808256_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzROu0lm-a/" onerror="embed.imageError(this, 0, &quot;1851899650917167002_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzROu0lm-a/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzROu0lm-a/&#39;, &#39;Vici Gaming’s journey ends at the hands of Team Secret. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzROu0lm-a/&#39;, &#39;Vici Gaming’s journey ends at the hands of Team Secret. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/e1c514602b765a3473ab90134a499842/5C82A90D/t51.2885-15/sh0.08/e35/p640x640/39323480_2181782678777696_2293493255955808256_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzQwLBlHaj/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzQwLBlHaj/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39523535_1330897210375413_1899416125213507584_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzQwLBlHaj/" onerror="embed.imageError(this, 0, &quot;1851897550896133795_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzQwLBlHaj/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzQwLBlHaj/&#39;, &#39;Team Secret were the first to force and survive a third game on the main stage. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzQwLBlHaj/&#39;, &#39;Team Secret were the first to force and survive a third game on the main stage. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/c5e7149eb109e86ffb40e159cf429e01/5CAB4FDF/t51.2885-15/sh0.08/e35/p640x640/39523535_1330897210375413_1899416125213507584_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzQol-F5nx/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzQol-F5nx/" target="_self">
+<figure class="thumbnail-image">
+<img src="./37970498_1891371517832860_2927720867418865664_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzQol-F5nx/" onerror="embed.imageError(this, 0, &quot;1851897030072834545_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzQol-F5nx/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzQol-F5nx/&#39;, &#39;Allegiances may differ, but we’re all Dota fans here. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzQol-F5nx/&#39;, &#39;Allegiances may differ, but we’re all Dota fans here. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/4c87f97336dece8079338f1d7e9f1893/5C7C7251/t51.2885-15/sh0.08/e35/s640x640/37970498_1891371517832860_2927720867418865664_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmzQXlyFdF1/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmzQXlyFdF1/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38701095_1873086206113596_300195321814712320_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmzQXlyFdF1/" onerror="embed.imageError(this, 0, &quot;1851895861640286581_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmzQXlyFdF1/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmzQXlyFdF1/&#39;, &#39;Trade thrives at #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmzQXlyFdF1/&#39;, &#39;Trade thrives at #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/aa3f9adcb4091bb9c2e3e6bcee97bb29/5C7E93B6/t51.2885-15/sh0.08/e35/s640x640/38701095_1873086206113596_300195321814712320_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bmy0Ku6FqT4/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bmy0Ku6FqT4/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38790082_493703381101992_3534201864868331520_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bmy0Ku6FqT4/" onerror="embed.imageError(this, 0, &quot;1851771832782726392_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bmy0Ku6FqT4/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bmy0Ku6FqT4/&#39;, &#39;VGJ.Storm have no margin for error in the Lower Bracket. They survive the first test against Winstrike. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bmy0Ku6FqT4/&#39;, &#39;VGJ.Storm have no margin for error in the Lower Bracket. They survive the first test against Winstrike. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/9676c6e5d9985b0e58a679838b43c696/5C80B829/t51.2885-15/sh0.08/e35/p640x640/38790082_493703381101992_3534201864868331520_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmyzYTnFAIT/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmyzYTnFAIT/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39047049_882103191998259_4246788491767185408_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmyzYTnFAIT/" onerror="embed.imageError(this, 0, &quot;1851768367498920467_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmyzYTnFAIT/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmyzYTnFAIT/&#39;, &#39;Winstrike experienced both the highs and the lows of the main stage. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmyzYTnFAIT/&#39;, &#39;Winstrike experienced both the highs and the lows of the main stage. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/71de76cf9deb122596c6b1e01e45db08/5C7DD4A0/t51.2885-15/sh0.08/e35/s640x640/39047049_882103191998259_4246788491767185408_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmyyT7Xl_sg/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmyyT7Xl_sg/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39086515_503627440108743_6656317526244327424_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmyyT7Xl_sg/" onerror="embed.imageError(this, 0, &quot;1851763668544912160_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmyyT7Xl_sg/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmyyT7Xl_sg/&#39;, &#39;Some teammates are easy to support. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmyyT7Xl_sg/&#39;, &#39;Some teammates are easy to support. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/a51681b058f9434848e493415f2cec86/5CB05EF0/t51.2885-15/sh0.08/e35/p640x640/39086515_503627440108743_6656317526244327424_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmyyBzTlDb6/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmyyBzTlDb6/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39763812_312660012616285_6876101516860588032_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmyyBzTlDb6/" onerror="embed.imageError(this, 0, &quot;1851762422937040634_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmyyBzTlDb6/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmyyBzTlDb6/&#39;, &#39;Dota’s newest stars walk on four legs. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmyyBzTlDb6/&#39;, &#39;Dota’s newest stars walk on four legs. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/10ef385e4b87b584390a8a4a0d0473f7/5C7FEDEF/t51.2885-15/sh0.08/e35/s640x640/39763812_312660012616285_6876101516860588032_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxzKLBFGpl/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxzKLBFGpl/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38806742_244569119537388_1245174430007558144_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxzKLBFGpl/" onerror="embed.imageError(this, 0, &quot;1851485921222093413_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxzKLBFGpl/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxzKLBFGpl/&#39;, &#39;Fans cheer from prime seats behind the Chinese casting desk #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxzKLBFGpl/&#39;, &#39;Fans cheer from prime seats behind the Chinese casting desk #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/6786fb763383f28f5f68d841fc1b4423/5C6C528B/t51.2885-15/sh0.08/e35/s640x640/38806742_244569119537388_1245174430007558144_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bmxy-g1FLiA/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bmxy-g1FLiA/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38813886_1869011069812855_1814212808808595456_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bmxy-g1FLiA/" onerror="embed.imageError(this, 0, &quot;1851485120009386112_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bmxy-g1FLiA/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bmxy-g1FLiA/&#39;, &#39;Team Serenity’s XinQ #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bmxy-g1FLiA/&#39;, &#39;Team Serenity’s XinQ #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/fb33e077439e4c1e4f6f0e4eafd679e9/5C7739F5/t51.2885-15/sh0.08/e35/s640x640/38813886_1869011069812855_1814212808808595456_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxyuaOFdHw/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxyuaOFdHw/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39192487_2170383149905836_7620646282444406784_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxyuaOFdHw/" onerror="embed.imageError(this, 0, &quot;1851484013401068016_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxyuaOFdHw/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxyuaOFdHw/&#39;, &#39;Busy planning Optic’s draft #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxyuaOFdHw/&#39;, &#39;Busy planning Optic’s draft #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/992cfa58d96ff9b69728d32486c72287/5C6FC7DA/t51.2885-15/sh0.08/e35/s640x640/39192487_2170383149905836_7620646282444406784_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxyWZtlJFJ/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxyWZtlJFJ/" target="_self">
+<figure class="thumbnail-image">
+ <img src="./38934824_313268592571099_1482249920302809088_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxyWZtlJFJ/" onerror="embed.imageError(this, 0, &quot;1851482363588284745_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxyWZtlJFJ/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxyWZtlJFJ/&#39;, &#39;Team Serenity vs Optic Gaming, Lower Bracket Round 2 #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxyWZtlJFJ/&#39;, &#39;Team Serenity vs Optic Gaming, Lower Bracket Round 2 #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/46ea5e0da3df27460af8b23cac6daa20/5CAC30D6/t51.2885-15/sh0.08/e35/s640x640/38934824_313268592571099_1482249920302809088_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxyCUil44E/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxyCUil44E/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38858173_1857967587630414_6856600759018979328_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxyCUil44E/" onerror="embed.imageError(this, 0, &quot;1851480983645687300_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxyCUil44E/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxyCUil44E/&#39;, &#39;Optic take the stage against Team Serenity #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxyCUil44E/&#39;, &#39;Optic take the stage against Team Serenity #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/25a630e4e97182d690f5defdfe29b10c/5C900F35/t51.2885-15/sh0.08/e35/s640x640/38858173_1857967587630414_6856600759018979328_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bmxu3Ftlpc1/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bmxu3Ftlpc1/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39167055_235389777122678_3739008037508087808_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bmxu3Ftlpc1/" onerror="embed.imageError(this, 0, &quot;1851467017670268725_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bmxu3Ftlpc1/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bmxu3Ftlpc1/&#39;, &#39;Team Secret vs Evil Geniuses, Upper Bracket Quarterfinal #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bmxu3Ftlpc1/&#39;, &#39;Team Secret vs Evil Geniuses, Upper Bracket Quarterfinal #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/10c6b05e32059dcd51f1574c376d861d/5C6E3289/t51.2885-15/sh0.08/e35/s640x640/39167055_235389777122678_3739008037508087808_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxuPJ5lJtc/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxuPJ5lJtc/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38896287_224952464866119_7000018452995899392_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxuPJ5lJtc/" onerror="embed.imageError(this, 0, &quot;1851464273387363164_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxuPJ5lJtc/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxuPJ5lJtc/&#39;, &#39;Nowhere we’d rather be. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxuPJ5lJtc/&#39;, &#39;Nowhere we’d rather be. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/3df2630c90369ddf830392b800dd5e62/5CB02A11/t51.2885-15/sh0.08/e35/s640x640/38896287_224952464866119_7000018452995899392_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxuIfolCtr/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxuIfolCtr/" target="_self">
+<figure class="thumbnail-image">
+<img src="./39493982_1895719500724801_2729785598775656448_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxuIfolCtr/" onerror="embed.imageError(this, 0, &quot;1851463815688104811_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxuIfolCtr/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxuIfolCtr/&#39;, &#39;Evil Geniuses are now top-6, on the hunt for more. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxuIfolCtr/&#39;, &#39;Evil Geniuses are now top-6, on the hunt for more. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/821f157f793b0d7212fef73c88b2bba2/5C7386AE/t51.2885-15/sh0.08/e35/s640x640/39493982_1895719500724801_2729785598775656448_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/Bmxt87uFIXM/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/Bmxt87uFIXM/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38917447_466241720522048_2306604141843054592_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/Bmxt87uFIXM/" onerror="embed.imageError(this, 0, &quot;1851463021211452876_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/Bmxt87uFIXM/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/Bmxt87uFIXM/&#39;, &#39;Team Secret couldn’t break through a formidable EG. #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/Bmxt87uFIXM/&#39;, &#39;Team Secret couldn’t break through a formidable EG. #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/156d3e4191f4deda4243ed2a67c12a4b/5C6D76BC/t51.2885-15/sh0.08/e35/p640x640/38917447_466241720522048_2306604141843054592_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+<li class="media-list-item no-border responsives-grid-item" data-src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13712144_1784436645173543_1718745179_n.jpg?ig_cache_key=MTMwNTA1MjEwNTQ1NDkzMzQ0MQ%3D%3D.2" style="width: 33.333333333333%;">
+<div class="media-image-wrapper" style="margin: 0 0 8px 8px">
+<div class="thumbnail-wrapper">
+<a href="javascript:void(0);" onclick="embed.popup(&quot;https://www.instagram.com/p/BmxtvT8lbPX/&quot;, &quot;SnapWidget&quot;);" class="thumbnail hover-none " data-link="https://www.instagram.com/p/BmxtvT8lbPX/" target="_self">
+<figure class="thumbnail-image">
+<img src="./38720802_328260501076599_8514042292246413312_n.jpg" class="object-fit" data-link="https://www.instagram.com/p/BmxtvT8lbPX/" onerror="embed.imageError(this, 0, &quot;1851462085151929303_205247289&quot;)" alt="dota2ti" width="100%">
+</figure>
+</a>
+<span class="share-overlay">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Facebook" class="icon facebook" onclick="embed.shareFB(&#39;https://www.instagram.com/p/BmxtvT8lbPX/&#39;)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Twitter" class="icon twitter" onclick="embed.shareTwitter(&#39;https://www.instagram.com/p/BmxtvT8lbPX/&#39;, &#39;VGJ.Storm’s Resolution will need to recapture past Lower Bracket magic #TI8&#39;, false)"></a>
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" title="Share this photo on Pinterest" class="icon pinterest" onclick="embed.sharePinterest(&#39;https://www.instagram.com/p/BmxtvT8lbPX/&#39;, &#39;VGJ.Storm’s Resolution will need to recapture past Lower Bracket magic #TI8&#39;, &#39;https://scontent.cdninstagram.com/vp/b2c045514b2e5b9821ff24b05516b37e/5C7473F5/t51.2885-15/sh0.08/e35/p640x640/38720802_328260501076599_8514042292246413312_n.jpg&#39;)"></a>
+</span>
+</div>
+</div>
+</li>
+</ul>
+<div class="embed-pagination">
+<ul>
+<li class="prev">
+<a href="https://snapwidget.com/p/widget/?id=IKDEYwHqYk&amp;t=941#" class="disabled"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+</li>
+<li class="next">
+<a href="https://snapwidget.com/embed/165766?pid=1851462085151929303_205247289"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+</li>
+</ul>
+</div>
+</div>
+
+<script src="./embed.vendor.min.83843d64691524af.js" type="text/javascript"></script>
+<script src="./embed.main.min.f86255a575d17f4a.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+            objectFitImages('img.object-fit');
+        </script>
+
+
+<script type="text/javascript">
+                setTimeout(function() {
+                    window.location.reload(true);
+                }, 60000 * 30)
+            </script>
+
+
+<script type="text/javascript">
+            function responsiveImageLoading() {
+                var images = document.getElementsByClassName('thumbnail-image-responsive');
+                            
+                for (var i = images.length - 1; i >= 0; i--) {
+                    var size = 'large';
+                    
+                    size = images[i].offsetWidth < 151 && images[i].offsetWidth > 0 ? 'small' : size;
+                    size = images[i].offsetWidth > 150 && images[i].offsetWidth > 0 ? 'medium' : size;
+                    size = images[i].offsetWidth > 300 ? 'large' : size;
+
+                    images[i].setAttribute('src', images[i].getAttribute('data-src-' + size));
+                }
+            }
+
+            setTimeout(function() {
+                responsiveImageLoading(); // Update imagesizes
+            }, 300);
+        </script>
+
+<script type="text/javascript">
+                window.SnapWidget = window.SnapWidget || {};
+                window.SnapWidget.options = window.SnapWidget.options || {};
+                window.SnapWidget.options['auto_start']  = 'onStart';
+            </script>
+<script type="text/javascript">window.SnapWidget = window.SnapWidget || {};SnapWidget.config = {"app_url":"https:\/\/snapwidget.com"};SnapWidget.services = {"instagram":{"client_id":"bdc5471ed28b489abdafdcf3e51bb50b","redirect":"https:\/\/snapwidget.com\/auth\/instagram\/callback"},"facebook":{"app_id":"150937331669032"},"stripe":{"key":"pk_live_VFyxq7OZqmrouzoz7rNhUeH0"}};</script>
+<script type="text/javascript">
+                var thumbnails = document.getElementsByClassName('thumbnail');
+
+                for (var i = 0; i < thumbnails.length; i++) {
+                    thumbnails[i].addEventListener('click', function(element) {
+                        var targetElement = event.target || event.srcElement,
+                            link = targetElement.getAttribute('data-link');
+                        
+                        if (ga) {
+                            ga('pro.send', 'event', '165766', 'Click', link);
+                        }
+                    }, false);
+                }
+            </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a53393d12f","applicationID":"453137","transactionName":"ZlNSMUNXWBcFW0FRCV8ZcQZFX1kKS3lFSDp5QkQVbXVZChBKWlQKVERDOXRbVAEAe1pWEkNZXAlURHYXDFdCbldhRF8gXFRTAA==","queueTime":0,"applicationTime":68,"atts":"ShRRRwtNSxk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+</body></html>

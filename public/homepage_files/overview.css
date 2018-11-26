@@ -1,0 +1,590 @@
+
+:root
+{
+    --main-text-color: #a39180;
+    --grey-text-color: #d7d7d7;
+    --live-match-border-color: #1a5766;
+    --live-match-background-color: #1e3338;
+}
+
+a, a:active, a:visited, a:focus {
+    color: var(--grey-text-color);
+    text-decoration: none;
+}
+
+*, html, li, a, body
+{
+    font-family:'Radiance','arial',sans-serif;
+}
+
+body
+{
+    min-width: 1000px;
+}
+
+.Container
+{
+    background-position:top center;
+    background-repeat:no-repeat;
+    margin-right:auto;
+    margin-left:auto;
+    position:relative;
+}
+
+.Content
+{
+    background-position:top center;
+    background-repeat:no-repeat;
+    margin-right:auto;
+    margin-left:auto;
+    position:relative;
+    max-width: 1000px;
+    width: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    text-rendering: optimizeLegibility;
+}
+
+#HeaderBuffer
+{
+    height: 75px;
+    margin-top: -80px;
+    width: 100%;
+    display: block;
+}
+
+#Header
+{
+    height: 290px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_overview_header.jpg?v=4827651');
+}
+
+#HeaderContainer
+{
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+}
+
+#HeaderContent
+{
+    margin-right:auto;
+    margin-left:auto;
+    text-align: center;
+    width: 1600px;
+
+    position: relative;
+    left: 0px;
+    top: 0px;
+    display: block;
+}
+
+#HeaderVideo
+{
+    overflow: visible;
+    display: block;
+    margin-left: -300px;
+}
+
+#VideoSideFade
+{
+    overflow: visible;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -300px;
+    width: 1600px;
+    height: 348px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/header_side_fade.png');
+}
+
+#HeaderLogoContainer
+{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    height: 218px;
+    width: 100%;
+}
+
+#HeaderTILogo
+{
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/ti_logo.png');
+    width: 624px;
+    height: 218px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+#NewcomerStreamCallout
+{
+    color: #78afb5;
+    font-size: 16px;
+    position: absolute;
+    top: 160px;
+    left: 720px;
+    width: 260px;
+    border: #78afb5 1px solid;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/newcomer_button.jpg');
+    text-shadow: 1px 1px 2px #000000;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#NewcomerStreamCallout:hover
+{
+    -webkit-filter: brightness( 150% );
+    filter: brightness( 150% );
+}
+
+#NavBar
+{
+    height: 42px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_overview_navbar.jpg');
+    overflow-x: visible;
+}
+
+#NavBarContent
+{
+    text-transform: uppercase;
+    color:#4d443a;
+    font-size: 16px;
+    width: 800px;
+    text-align: center;
+    padding-top: 10px;
+    letter-spacing: 4px;
+}
+
+.NavBarSelected
+{
+    color: #ffffff !important;
+    text-shadow: 0 0 3px #ffffff;
+}
+
+#NavBarContent a
+{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c2c2c2;
+}
+
+#NavBarContent a:hover
+{
+    color: #FFFFFF;
+}
+
+.NavBarSpacer
+{
+    padding-right: 10px;
+    padding-left: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color:#795f41;
+}
+
+#OverviewMainContainer
+{
+    height: 644px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_overview_main.jpg');
+}
+
+#OverviewMainContent
+{
+    width: 1000px;
+    text-align: center;
+    font-family:'Radiance','arial',sans-serif;
+    height: 155px;
+    padding-top: 30px;
+}
+
+.OverviewHeaderBox
+{
+    display: inline-block;
+    width: 336px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    height: 155px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    text-align: center;
+}
+
+.BoxLargeText
+{
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    color: var(--grey-text-color);
+    font-size: 24px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.LinkBox
+{
+    background: #624d35;
+    width: 158px;
+    height: 27px;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding-top: 1px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    text-shadow: 1px 1px 2px #000000;
+    display: inline-block;
+    line-height: 24px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.LinkBox:hover
+{
+    background: #7c6143;
+    color: #ffffff !important;
+}
+
+.BoxLeft
+{
+    float: left;
+    margin-left: 20px;
+}
+
+.BoxRight
+{
+    float: right;
+    margin-right: 50px;
+}
+
+#HowToWatchContainer
+{
+    height: 612px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_overview_main_how_to_watch.jpg');
+    z-index: 2;
+}
+
+#HowToWatchContainer h1
+{
+    height: 50px;
+    color: var(--grey-text-color);
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 10px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    font-weight: normal;
+}
+
+#HowToWatchSection
+{
+    padding-top: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.HowToWatchRow
+{
+    width: 1000px;
+    height: 275px;
+}
+
+.HowToWatchCell
+{
+    display: inline-block;
+    width: 330px;
+    padding-right: 14px;
+    padding-left: 14px;
+    color: var(--main-text-color);
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    vertical-align: top;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+#HowToWatchContainer h2
+{
+    color: var(--grey-text-color);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: Radiance-SemiBold;
+}
+
+#PrizePoolContainer
+{
+    min-height: 670px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_prize_pool.jpg');
+    z-index: 1;
+}
+
+#PrizePoolContent
+{
+    padding-top: 65px;
+}
+
+#PrizePoolHeader
+{
+    color: var(--grey-text-color);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    padding-bottom: 20px;
+}
+
+.PrizePoolRow
+{
+    margin-bottom: 38px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.PrizePoolRow.BottomRow
+{
+    margin-bottom: 16px;
+}
+
+.PrizePoolCell
+{
+    display: inline-block;
+    width: 210px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: var(--grey-text-color);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px #000000;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    text-align: center;
+}
+
+.LargePrizeCell
+{
+    font-size: 48px;
+    width: 350px;
+}
+
+.PrizePoolPlace
+{
+    color: var(--main-text-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    padding-top: 2px;
+}
+
+#USD
+{
+    text-align: center;
+    width: 470px;
+    color: var(--main-text-color);
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    line-height: 24px;
+}
+
+#BattlePassContainer
+{
+    min-height: 946px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_battlepass.jpg');
+}
+
+#BattlePassContent
+{
+    padding-top: 30px;
+    text-align: center;
+}
+
+#BattlePassLogo
+{
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/battlepass_logo.png');
+    width: 470px;
+    height: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22px;
+}
+
+#BattlePassProceeds
+{
+    text-align: center;
+    width: 380px;
+    color: var(--main-text-color);
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 24px;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.ContentHeaderLargeText
+{
+    color: var(--grey-text-color);
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px #000000;
+    text-transform: uppercase;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+}
+
+#Container07
+{
+    background-image:url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/footer.jpg');
+    height: 300px;
+	z-index: -1;
+}
+
+#ChangeContent
+{
+    padding-top: 30px;
+    position: relative;
+    display: block;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    z-index: 5;
+}
+
+.ContentSelector
+{
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+    z-index: 10;
+    cursor: pointer;
+    display: inline-block;
+    width: 120px;
+}
+
+.ContentSelector:hover
+{
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: color .15s ease-in-out;
+    -moz-transition: color .15s ease-in-out;
+    -o-transition: color .15s ease-in-out;
+    transition: color .15s ease-in-out;
+}
+
+.ContentSelected
+{
+    color: #FFFFFF !important;
+    text-shadow: 0 0 3px #FFFFFF;
+}
+
+.Seperator
+{
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 3px;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+#GameInProgressCallout {
+    height: 140px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2016/overview/bg_in_progress_callout.jpg');
+    position: relative;
+    vertical-align: middle;
+}
+
+#GameInProgressCallout:hover {
+    -webkit-filter: brightness(120%); /* Chrome, Safari, Opera */
+    filter: brightness(120%);
+}
+
+#GameInProgressCalloutContent {
+    text-transform: uppercase;
+    color:#4d443a;
+    font-size: 16px;
+    width: 800px;
+    cursor: default;
+    height: 140px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+#GameInProgressCallout:hover #GameInProgressCalloutBotText {
+
+}
+
+#GameInProgressCallout:hover #GameInProgressCalloutTop {
+
+}
+
+
+#GameInProgressCalloutTop {
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+    width: 800px;
+    height: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin-top: 18px;
+}
+
+.GameInProgressCalloutTopText {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 36px;
+    vertical-align: middle;
+    position: relative;
+    letter-spacing: 8px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+    margin-top: 6px;
+}
+
+#GameInProgressCalloutBotText {
+    line-height: 20px;
+    background: rgba(0, 0, 0, .6);
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    padding-top: 5px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f1583a;
+    font-size: 20px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+
+}

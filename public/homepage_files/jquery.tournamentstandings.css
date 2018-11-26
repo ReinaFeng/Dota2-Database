@@ -1,0 +1,48 @@
+
+.StandingsHeader
+{
+
+    color: #a39180;
+}
+
+.StandingsRightText
+{
+    color: #a39180;
+}
+
+.StandingsTable
+{
+    background: #111110;
+}
+
+.StandingsRow
+{
+    color: #b9b9ba;
+}
+
+.StandingsRow img
+{
+    height: 44px;
+    width: 69px;
+}
+
+.ReplaysGroupStageStandingsRow
+{
+    color: #a39180;
+}
+
+.ReplaysGroupStageStandingsRowBottom
+{
+    background: #222220;
+}
+
+.StandingsNotAvailable
+{
+    padding-bottom: 400px;
+    text-align: center;
+    padding-top: 200px;
+    color: var(--grey-text-color);
+    font-size: 28px;
+    line-height: 24px;
+}
+

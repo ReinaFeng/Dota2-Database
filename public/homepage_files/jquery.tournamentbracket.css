@@ -1,0 +1,72 @@
+
+.ReplaysWildCardAreaUpperBracket
+{
+    color: var(--main-text-color);
+}
+
+.PrizePoolBracketText
+{
+    color: #393735;
+}
+
+.PrizePoolHover
+{
+    background: #000000;
+    border-color: #392f26;
+    color: var(--main-text-color);
+}
+
+.PrizePoolTeamText
+{
+    color: var(--main-text-color);
+}
+
+div.line
+{
+    background: #392f26;
+}
+
+.match
+{
+    background: linear-gradient(0deg, #111d20 0%, #192b2f 100%);
+    color: #74675a;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.matchhover
+{
+    background: #1e3338;
+}
+
+.linehover
+{
+    background: #6b5f54 !important;
+}
+
+.BracketWrapperTop, .BracketWrapperBot
+{
+    border-color: #3d332a;
+    color: #392f26;
+}
+
+.BracketStageName
+{
+    color: var(--main-text-color);
+}
+
+.AdvancesBracketText
+{
+    color: var(--main-text-color);
+}
+
+.LiveBracketMatchLetters
+{
+    color: var(--main-text-color);
+}
+
+.winner
+{
+    color: #FFFFFF !important;
+}
