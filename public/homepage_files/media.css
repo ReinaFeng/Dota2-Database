@@ -1,0 +1,98 @@
+
+#MediaContainer
+{
+    height: 162px;
+    background-image: url('http://cdn.dota2.com/apps/dota2/images/international2017/overview/bg_titlebar.jpg');
+}
+
+#MediaContent
+{
+    text-align: center;
+    font-family:'Radiance','arial',sans-serif;
+    height: 165px;
+    max-width: 1040px;
+    min-width: 980px;
+    width: 100%;
+    text-shadow: 1px 1px 2px #000000;
+    text-transform: uppercase;
+}
+
+.RulesContainer
+{
+    display: inline-block;
+    margin-top: 56px;
+    color: var(--grey-text-color);
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    letter-spacing: 3px;
+    font-size: 24px;
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+}
+
+#MediaTopContent
+{
+    display: inline-block;
+    text-transform: uppercase;
+    height: 155px;
+    line-height: 24px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px #000000;
+    color: var(--main-text-color);
+    font-family: 'Radiance-SemiBold','arial',sans-serif;
+}
+
+#ReplayBottomContainer
+{
+    background: url('http://cdn.dota2.com/apps/dota2/images/international2018/overview/bg_standard.jpg') no-repeat top;
+}
+
+#MediaBottomContent {
+    width: 976px;
+}
+
+#MediaPlaylist {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 48px;
+    width: 976px;
+}
+
+.OverviewBottomTableCellLargeFont
+{
+    color: var(--grey-text-color);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    height: 16px;
+}
+
+#MediaTwitter {
+    padding-right: 16px;
+    float: left;
+    width: 480px;
+}
+
+.MediaNavText {
+    display: inline-block;
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    text-align: right;
+    z-index: 20;
+    position: relative;
+    margin-top: -6px;
+    margin-bottom: 12px;
+    line-height: 36px;
+}
+
+.MediaNavText a {
+    color: var(--main-text-color);
+}
+
+.MediaNavText a:hover, a:active, a:focus {
+    color: #ffffff;
+}

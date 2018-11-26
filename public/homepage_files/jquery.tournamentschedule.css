@@ -1,0 +1,80 @@
+
+.GamesTodayHeader
+{
+    font-size: 14px;
+    color: var(--main-text-color);
+    background: #251f17;
+}
+
+.SpoilerButton
+{
+    background: #696055;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.ScheduleGroup
+{
+    background: linear-gradient(0deg, #040c04 0%, #041107 100%);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.SpecialEventRow
+{
+    background: linear-gradient(0deg, #040c04 15%, #052217 100%);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.SeriesTime
+{
+    color: var(--main-text-color);
+}
+
+.MatchInfo a
+{
+    color: var(--main-text-color);
+}
+
+.Scoreboard
+{
+    color: var(--main-text-color);
+}
+
+.GameWinner
+{
+    color: var(--main-text-color);
+}
+
+.TeamName, .TeamTag
+{
+    color: var(--grey-text-color);
+}
+
+.VSText
+{
+    color: var(--main-text-color);
+}
+
+.TeamLogo img
+{
+    height: 44px;
+    width: 44px;
+}
+
+.IsLive
+{
+    background: var(--live-match-background-color);
+}
+
+.isWatching
+{
+    height: 62px !important;
+    outline: 2px solid var(--live-match-border-color);
+    margin-bottom: 2px;
+}
