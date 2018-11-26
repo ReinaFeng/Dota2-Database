@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html xmlns:http="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            user_overview
+		</title>
+        <meta http-equiv="Cache-Control" content="no-siteapp-platform">
+        <link rel="apple-touch-icon" sizes="57x57" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+        <link rel="stylesheet" type="text/css" href="./overview_file/dotamax_style_2016051401.css">
+        <link rel="stylesheet" type="text/css" href="./overview_file/font-awesome.min.css">
+        <style type="text/css">
+			.nav-head li{border: 0;}
+			#top-nav .nav-right{display: table;float: right;width: 320px;height: 46px;font-size: 12px;}
+			#top-nav .nav-right *{box-sizing: border-box;}
+			#top-nav .nav-right .account-wrap{display: table-cell;vertical-align: middle;}
+			#top-nav .nav-right .account-wrap .btn{
+			    float: right;
+			    width: 70px;
+			    text-align: center;
+			    border: 0;
+			    border-radius: 0;
+			    cursor: pointer;
+			    background: transparent;
+			    box-shadow: none;
+			    text-shadow: none;
+			    padding: 0;
+			    color: #d2d2d2;
+			    line-height: 46px;
+			    -webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .account-wrap .btn:hover{color: #fff;background: #913232;}
+			#top-nav .nav-right .account-wrap .btn.sign-in{border-color: transparent;}
+			#top-nav .nav-right .account-wrap .btn.login{border-color: #913232;}
+			#top-nav .nav-right .account-info-wrap{display: block;position: relative;float: right;cursor: pointer;}
+			#top-nav .nav-right .account-wrap .avator{position: relative;z-index: 1;float: right;width: 30px;height: 30px;border: 1px solid #913232;border-radius: 50%;overflow: hidden;margin-top: 5px;}
+			#top-nav .nav-right .account-wrap .avator img{display: block;width: 30px;margin: -1px 0 0 -1px;border-radius: 50%;}
+			#top-nav .nav-right .account-wrap .name{max-width: 130px;float: right;padding-left: 15px;line-height: 40px;text-align: center;}
+			#top-nav .nav-right .account-wrap .arrow{float: right;line-height: 40px;}
+			#top-nav .nav-right .account-wrap .arrow i{top: 2px;line-height: 20px;margin-left: 8px;
+				-webkit-transition: all 200ms ease;
+			    -moz-transition: all 200ms ease;
+			    transition: all 200ms ease;
+			}
+			#top-nav .nav-right .account-wrap .arrow i.open{
+				-webkit-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+			#top-nav .nav-right .menu-wrap{position: absolute;z-index: 1000;top: 60px;right: -5px;width: 120px;background: #1b1b1b;box-shadow: 0 0 5px rgba(0,0,0,.5);padding: 5px 1px;}
+			#top-nav .nav-right .menu{overflow: hidden;}
+			#top-nav .nav-right .menu i{margin-right: 10px;color: #913232;
+				-webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .menu li{width: 100%;padding: 0;line-height: 34px;border: 0;}
+			#top-nav .nav-right .menu li a{display: block;line-height: 34px;padding-left: 20px;
+				-webkit-transition: all 300ms ease;
+			    -moz-transition: all 300ms ease;
+			    transition: all 300ms ease;
+			}
+			#top-nav .nav-right .menu li a:hover{color: #fff;background: #913232;}
+			#top-nav .nav-right .menu li a:hover i{color: #fff;}
+			.ellipsis{display: block;overflow: hidden;white-space: nowrap;-o-text-overflow: ellipsis;text-overflow: ellipsis;word-berak: normal;word-wrap: normal;}
+			.n-modal{padding: 20px;background: #1b1b1b;box-shadow: 0 0 5px rgba(0,0,0,.5);}
+			.n-modal a{color: #C23C2A;}
+			.n-modal i{margin-right: 10px;}
+			.n-modal i.fail{color: #913232;}
+			.n-modal i.success{color: #57BA35;}
+			.n-modal i.warn{color: #BAB135;}
+			.s-notice{line-height: 40px;text-align: center;}
+			.steam_login{
+				height: 28px;
+				font-size: 12px;
+				margin: 7px 7px 7px 0;
+				float: right;
+				padding: 0 12px;
+				background-color: rgba(145,50,50,.6);
+				border: 2px solid transparent;
+				box-sizing: content-box !important;
+				-moz-transition: border .4s ease;
+				-webkit-transition: border .4s ease;
+				-o-transition: border .4s ease;
+			}
+			.steam_login:hover{
+				border: 2px solid rgba(145,50,50,1);
+			}
+			.steam_loginDec{float: left;height: 28px;line-height: 28px;color: #fff;}
+			.steam_loginImgDiv{float: left;height: 28px;width: 32px;overflow: hidden;margin-left: 4px;}
+			.steam_loginImg{
+				height: 28px;
+				width: 32px;
+				position: relative;
+				left: -32px;
+				border-right: 32px solid transparent;
+				-webkit-filter: drop-shadow(rgb(255, 255, 255) 32px 0px);
+				filter: drop-shadow(rgb(255, 255, 255) 32px 0px);
+				background: url('/static/image/steamLogo.png') no-repeat center;
+				background-size: cover;
+				box-sizing: content-box !important;
+				overflow: hidden;
+			}
+			.not-login-wrap{float: right;}
+			.not-login-wrap:after,.account-wrap:after,.steam_login:after{content: ".";display: block;height: 0;clear: both;visibility: hidden}
+
+			.footbar {padding-bottom:10px;}
+			.footbar .c-divider {padding: 0 8px;}
+			.footbar a.c-link {margin: 0 !important;transition: none;}
+			.footbar a.c-link:hover {color: rgba(255, 255, 255, .3) !important;}
+
+
+		</style>
+        
+        <link rel="stylesheet" type="text/css" href="./overview_file/popModal.css">
+        <script src="./overview_file/hm.js"></script>
+        <script async="" src="./overview_file/analytics.js"></script>
+        <script type="text/javascript" src="./overview_file/sorttable.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/jquery.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/underscore-min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/highcharts.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/highcharts-more.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/bootstrap_plus_select.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/dotamax_v1205.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/dotamax_extend_v20160201.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/popModal.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./overview_file/common.js" charset="utf-8"></script>
+        <script type="text/javascript">
+		/* top nav right */
+		$(function(){
+			var menuTimer,
+				$wrap = $("#top-nav .account-info-wrap"),
+				$menu = $("#top-nav .account-info-wrap .menu-wrap"),
+				$arrow = $("#top-nav .account-info-wrap .arrow i");
+			$wrap.hover(function(){
+				clearTimeout(menuTimer);
+				$menu.fadeIn(200);
+				$arrow.addClass("open");
+			},function(){
+				menuTimer = setTimeout(function(){
+					$menu.fadeOut(200);
+					$arrow.removeClass("open");
+				},500);
+			});
+			$menu.mouseenter(function(){
+				clearTimeout(menuTimer);
+			});
+		});
+		var language = "zh-cn",
+			account_type = "5";
+		function bindCheck(){
+			if(account_type==1||account_type==5){
+				$("#notice-11").notifyModal({
+					duration: -1,
+					type: "notify"
+				});
+			}else{
+				$("#notice-10").notifyModal({
+					duration: -1,
+					type: "notify"
+				});
+			}
+		}
+		</script>
+        
+        <script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-47132172-1', 'dotamax.com');
+			ga('send', 'pageview');
+		</script>
+        <script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?575895fe09d48554a608faa5ef059555";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+        <link rel="stylesheet" type="text/css">
+    </head>
+    <body style="">
+        <script type="text/javascript">
+            function closeApp() {
+                $("#android_app").hide();
+                setCookie('androidHide','True');
+            }
+        </script>
+    <div class="nav-head" style="background-color: rgb(27,27,40)">
+        <div id="top-nav" class="nav-container">
+            <a class="nav-logo" href="/">
+                <img src="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
+            </a>
+            <a href="/home/">
+                <li>Home</li>
+            </a>
+            <div class="nav-item-box">
+                <a href="/hero/rate/">
+                    <li>Stats</li>
+                </a>
+                <ul class="nav-item-list">
+                    <a href="/hero/rate/">
+                        <li>Hero</li>
+                    </a>
+                    <a href="/item/">
+                        <li>Item</li>
+                    </a>
+                </ul>
+            </div><!--  --><!--  -->
+            <a href="/match/tour_famous_team_list/">
+                <li>Player</li>
+            </a>
+            <a href="/player/">
+                <li>Match</li>
+            </a>
+<!--
+            <a href="/ladder/">
+                <li>天梯</li>
+            </a>
+            <a href="/live/">
+                <li>直播</li>
+            </a>
+            <a href="/app" id="appdownload">
+                <li>APP</li>
+            </a>
+-->
+            <a href="https://www.youtube.com/watch?v=cEM6725JmM4&t=40070s">
+                <li style="background-color: #F7B018;text-align: center;
+							background-image: -webkit-gradient(linear,left top,left bottom,from(#B78B36),to(#F7B018));
+							background-image: -webkit-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -moz-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -o-linear-gradient(top,#B78B36,#F7B018);
+							background-image: -ms-linear-gradient(top,#B78B36,#F7B018);
+							background-image: linear-gradient(top,#B78B36,#F7B018);color: #fff">Youtube</li>
+            </a>
+            <script type="text/javascript">
+					    var href = '';
+					    if ((navigator.userAgent.match(/(pod|iPhone|iPod|ios|iPad)/i))) {
+					        href = "https://itunes.apple.com/cn/app/id990892583";
+					        document.getElementById("appdownload").setAttribute("href",href);
+
+					    } else if ((navigator.userAgent.match(/(Android|android)/i))) {
+					        href = "//cdn.max-c.com/app/Maxjia_release.apk";
+					        document.getElementById("appdownload").setAttribute("href",href); 
+
+					    } else {
+					     
+					    }
+            </script>
+<!--            <div class="nav-right"><div class="account-wrap"><div href="/bets/account/" class="account-info-wrap clearfix"><div class="arrow"><i class="glyphicon glyphicon-chevron-down"></i></div><div class="name ellipsis">MatRix</div><div class="avator"><img src="http://cdn.maxjia.com/avatar/d32ebb98f73b8010d68a449a89d3e458"></div><div class="menu-wrap" style="display: none;"><ul class="menu"><li><a href="/player/detail/180999306/"><i class="fa fa-pie-chart"></i>数据主页</a></li><li><a href="/bets/account/"><i class="glyphicon glyphicon-user"></i>竞猜主页</a></li><li><a href="/accounts/logout/?src=bets"><i class="glyphicon glyphicon-off"></i>注销账号</a></li></ul></div></div></div></div>-->
+        </div>
+    </div>
+<!--
+    <div class="nav-right">
+        <div class="account-wrap">
+            <div href="/bets/account/" class="account-info-wrap clearfix">
+                <div class="arrow">
+                    <i class="glyphicon glyphicon-chevron-down"></i>
+                </div>
+                <div class="name ellipsis">MatRix</div>
+                <div class="avator">
+                    <img src="./overview_file/d32ebb98f73b8010d68a449a89d3e458">
+                </div>
+                <div class="menu-wrap" style="display: none;">
+                    <ul class="menu">
+                        <li>
+                            <a href="http://dotamax.com/player/detail/180999306/"><i class="fa fa-pie-chart"></i>数据主页</a>
+                        </li>
+                        <li>
+                            <a href="http://dotamax.com/bets/account/"><i class="glyphicon glyphicon-user"></i>竞猜主页</a>
+                        </li>
+                        <li>
+                            <a href="http://dotamax.com/accounts/logout/?src=bets"><i class="glyphicon glyphicon-off"></i>注销账号</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+<!--
+    </div>
+    </div>
+-->
+    <div class="maxtopmainbar">
+        <div style="width:100%;height:160px;background: url('http://cdn.max-c.com/image/back_new_2.jpg') repeat-x;background-position: center;"></div>
+        <div style="position: absolute;top:19px;width:100%;display: table;height: 130px;">
+            <div style="margin-left: auto;margin-right: auto;position: relative;text-align: center;width:1080px;padding-left:20px;">
+<!--
+                <div style="position: absolute;top:0px;right:20px;">
+                    <div class="player-update" style="line-height: 20px;">
+                        已同步. 如果因为中途关闭共享而缺少数据，请点<a href="http://dotamax.com/verify_data/?acc=180999306">修复数据</a>
+                    </div>
+                </div>
+-->
+                <div class="new-box" style="width:300px;margin:0 auto;">
+                    <div style="margin: 0px auto 5px auto;" class="circle-img">
+                        <img src="./overview_file/4b6ad59000481a499bcac3013f50704856095351_medium.jpg" style="width:90px;">
+                    </div>
+                    <span style="font-size:16px;font-weight: bold;color:#fff;text-shadow: rgb(17, 17, 17) 1px 1px 1px;display: block;width:300px;">只能祝他长生不老了
+<!--                        <span class="glyphicon glyphicon-ok" style="font-size:14px;color:rgb(87,186,53)"></span>-->
+<!--
+                        <a href="http://dotamax.com/wechat_login_redirect/?code=071YpLnY0chLL12lt2lY0MLMnY0YpLnM&amp;state=dotamax#" onclick="FollowAJAX(&#39;/accounts/follow/?type=steam_id&amp;steam_id=180999306&#39;);">
+                            <span style="position: absolute;top:40px;right:610px;" id="ajax_box" class="follow-circle">
+                                <span class="glyphicon glyphicon-plus" style="font-size: 12px;padding-right: 3px;"></span>
+                                关注
+                            </span>
+                        </a>
+-->
+                    </span>
+                </div>
+                <div style="position: absolute;left:10px;top:10px;font-size: 10px;color:#999;padding: 3px 8px;text-align: left;">
+                    <div style="float: left;text-align: center;padding: 0px 10px;">
+                        <span style="font-size: 14px;font-weight: bold;color: #ccc;">
+                            <!-- JiaThis Button BEGIN -->
+                            <div class="jiathis_style_24x24" style="display: table;margin-top: 8px;">
+                                <a class="jiathis_button_tsina"></a>
+                                <a class="jiathis_button_tqq"></a>
+                                <a class="jiathis_button_weixin"></a>
+                            </div>
+                            <script type="text/javascript">
+                                var jiathis_config={
+                                url:"http://dotamax.com/player/detail/180999306/",
+                                summary:" 我的Dota2个人主页, 小伙伴们快来看看吧！",
+                                title:"只能祝他长生不老了 －dotamax.com",
+                                shortUrl:false,
+                                hideMore:false
+                                }
+                            </script>
+                            <script type="text/javascript" src="./overview_file/jia.js" charset="utf-8"></script>
+                            <!-- JiaThis Button END -->
+                        </span>
+                    </div>
+                </div>
+                <div style="position: absolute;top:40px;left:20px;text-align: left;font-size: 28px;color:#fff;font-weight: 500;width:450px;"></div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="main-shadow-box" style="background-color: rgb(33,33,33)">
+        <div class="main-container" style="margin-top:0px;margin-bottom:1px;padding-bottom:1px;">
+            <div class="secoundbar-outer">
+                <div style="padding:0 30%; margin-left:0">
+                    <ul class="secoundbar" style="margin-top: 20px;margin-bottom: 0px; width:100%">
+                        <a href="user_overview.html">
+                            <li class="active-s">Overview</li>
+                        </a>
+                        <a href="http://dotamax.com/player/hero/180999306/">
+                            <li>Hero Stats</li>
+                        </a>
+                        <a href="http://dotamax.com/player/items/180999306/">
+                            <li>Item</li>
+                        </a>
+                        <a href="user_match.html">
+                            <li>Match Stats</li>
+                        </a>
+                        <a href="http://dotamax.com/player/activity/180999306/">
+                            <li style="position: relative;">
+                                Allies/Opponents 
+                                <div style="position: absolute;top:-13px;right:-5px;color:#c23c2a">New</div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div><!-- Where content to be added -->
+            <script language="javascript"> 
+                if(top.location!==self.location){ 
+                    top.location.href=self.location.href;
+                } 
+            </script>
+            <script>
+                function show_r20 () {
+                    $(".recent_m").hide();
+                    $(".recent_r20").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_r20").addClass("left-select-active")
+
+                }
+                function show_r100 () {
+                    $(".recent_m").hide();
+                    $(".recent_r100").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_r100").addClass("left-select-active")
+                }
+                function show_all () {
+                    $(".recent_m").hide();
+                    $(".recent_all").show();
+                    $(".left-select").removeClass("left-select-active");
+                    $("#show_all").addClass("left-select-active")
+                }
+                Highcharts.createElement('link', {
+                    rel: 'stylesheet',
+                    type: 'text/css'
+                }, null, document.getElementsByTagName('head')[0]);
+
+                Highcharts.theme = {
+                    colors: ["rgb(223,223,223)"],
+                    chart: {
+                        height: 250,
+                        width:300,
+                        backgroundColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+                            stops: [
+                                [0, 'rgb(18,18,18)'],
+                                [1, 'rgb(18,18,18)']
+                            ]
+                        },
+                        style: {
+                        },
+                        plotBorderColor: 'rgb(80,80,80)'
+                    },
+                     xAxis: {
+                      gridLineColor: 'rgb(150,150,150)',
+                      categories: ['KDA', '发育', '推进', '生存', '输出', '综合'],
+                      labels: {
+                         style: {
+                            color: '#999'
+                         }
+                      },
+                      lineColor: '#707073',
+                      minorGridLineColor: '#505053',
+                      tickColor: '#707073',
+                      title: {
+                         style: {
+                            color: '#A0A0A3'
+
+                         }
+                      }
+                   },
+                   yAxis: {
+                      gridLineColor: 'rgb(80,80,80)',
+                      labels: {
+                         formatter: function() {
+                            return "";
+                        }
+                      },
+                      lineColor: '#707073',
+                      minorGridLineColor: 'rgb(40,40,40)',
+                      tickColor: '#707073',
+                      tickWidth: 1,
+                      title: {
+                         style: {
+                            color: '#A0A0A3'
+                         }
+                      }
+                   },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                        style: {
+                            color: '#F0F0F0'
+                        }
+                    },
+
+                    plotOptions: {
+                        series: {
+                            dataLabels: {
+                                color: '#B0B0B3'
+                            },
+                            marker: {
+                                radius:0,
+                                lineColor:'#fff',
+                                states: {
+                                    hover: {
+                                        fillColor: '#fff',
+                                        radius: 4
+                                    }
+                                }
+                            },
+                        },
+                        boxplot: {
+                            fillColor: '#505053'
+                        },
+                        candlestick: {
+                        },
+                        errorbar: {
+                        }
+                    },
+                    legend: {
+                        enabled: false,
+                    },
+                };
+
+                Highcharts.setOptions(Highcharts.theme);
+                $(function () {
+
+                var colors = Highcharts.getOptions().colors,
+                    categories = ['all','N', 'H', 'VH'],
+                    data = [{
+                            y: 55.11,
+                            color: colors[0]
+                        }, {
+                            y: 21.63,
+                            color: colors[1]
+                        }, {
+                            y: 11.94,
+                            color: colors[2]
+                        }, {
+                            y: 7.15,
+                            color: colors[3]
+                        }];
+
+                function setChart(name, categories, data, color) {
+                chart.xAxis[0].setCategories(categories, false);
+                chart.series[0].remove(false);
+                chart.addSeries({
+                    color: color 
+                }, false);
+                chart.redraw();
+                }
+
+                var chart = $('#container').highcharts({
+                    chart: {
+                        polar: true,
+                        type: 'area'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    pane: {
+                        size: '85%'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+
+                        tickmarkPlacement: 'on',
+                        lineWidth: 0
+                    },
+
+                    yAxis: {
+                        gridLineInterpolation: 'polygon',
+                        lineWidth: 0,
+                        min: 0,
+                        max: 100,
+                        minorTickInterval: 50
+                    },
+
+                    tooltip: {
+                        borderWidth:0,
+                        backgroundColor: '#333',
+                        formatter: function() {
+                            var point = this.point,
+                                s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                            return s;
+                        }
+                    },
+                    series: [{
+                        name: 'Allocated Budget',
+                        data: [50.0, 60.8, 65.3, 52.1, 40.2, 52.0],
+                        fillColor: 'rgba(70,70,70,0.7)',
+                        fillOpacity: 0.8
+                    }],
+                    exporting: {
+                        enabled: false
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                })
+                var chart = $('#container_r20').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'area'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        pane: {
+                            size: '85%'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0,
+                            max: 100,
+                            minorTickInterval: 50
+                        },
+
+                        tooltip: {
+                            borderWidth:0,
+                            backgroundColor: '#333',
+                            formatter: function() {
+                                var point = this.point,
+                                    s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                                return s;
+                            }
+                        },
+                        series: [{
+                            name: 'Allocated Budget',
+                            data: [26.9, 31.8, 67.5, 26.2, 44.3, 36.9],
+                            fillColor: 'rgba(70,70,70,0.7)',
+                            fillOpacity: 0.8
+                        }],
+                        exporting: {
+                            enabled: false
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    })
+                var chart = $('#container_r100').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'area'
+                        },
+                        title: {
+                            text: ''
+                        },
+                        pane: {
+                            size: '85%'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0,
+                            max: 100,
+                            minorTickInterval: 50
+                        },
+
+                        tooltip: {
+                            borderWidth:0,
+                            backgroundColor: '#333',
+                            formatter: function() {
+                                var point = this.point,
+                                    s = this.x +'能力值: <b style="color:#ccc;font-size:12px;">'+ this.y +'<br/>';
+                                return s;
+                            }
+                        },
+                        series: [{
+                            name: 'Allocated Budget',
+                            data: [53.3, 36.5, 67.0, 39.1, 51.8, 48.4],
+                            fillColor: 'rgba(70,70,70,0.7)',
+                            fillOpacity: 0.8
+                        }],
+                        exporting: {
+                            enabled: false
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    })
+                    .highcharts(); // return chart
+                });             
+            </script>
+            <div class="container xuning-box" style="margin-top:0px;">
+                                <div style="float:left;width:720px;">
+                    <div class="flat-grey-box">
+                        <div class="stitle" style="text-align: left;margin-top:0px;margin-left:5px;color: rgb(221, 221, 221);">Most played Heroes</div>
+                        <table class="table table-list table-thead-left" style="width: 100%; margin-left: auto;margin-right: auto;margin-bottom: 0px;margin-top: 10px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:27%;">Hero</th>
+                                    <th style="width:18%;">Matches Played</th>
+                                    <th style="width:17%;">Win Rate</th>
+                                    <th style="width:22%;">KDA (K / D / A)</th>
+                                    <th style="width:15%;">Avg. KDA</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-player-detail">
+                                <tr onclick="DoNav(&#39;/player/match/180999306/?hero=86&#39;);">
+                                    <td>
+                                        <a href="http://dotamax.com/player/match/180999306/?hero=86">
+                                            <img class="hero-img-list" src="./overview_file/rubick_hphover.png"> 拉比克 
+                                        </a></td><td><div>264</div><div class="segment segment-white" style="width:100.0%;"></div></td><td sorttable_customkey="48.11"><div>48.1%</div><div class="segment segment-green" style="width:48.11%;"></div></td><td sorttable_customkey="2.2"><div>2.21  <div style="float:right;"> (3.9 / 8.5 / 15.0)</div></div><div class="segment segment-gold" style="width:64.850364385%;"></div></td><td sorttable_customkey="2.29"><div style="float:middle;">2.29</div><div class="segment segment-gray" style="width:74.0293185562%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=35&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=35"><img class="hero-img-list" src="./overview_file/sniper_hphover.png"> 
+							 	狙击手 </a></td><td><div>236</div><div class="segment segment-white" style="width:89.3939393939%;"></div></td><td sorttable_customkey="52.54"><div>52.5%</div><div class="segment segment-green" style="width:52.54%;"></div></td><td sorttable_customkey="2.6"><div>2.59  <div style="float:right;"> (7.5 / 7.3 / 11.3)</div></div><div class="segment segment-gold" style="width:75.7386337845%;"></div></td><td sorttable_customkey="2.70"><div style="float:middle;">2.70</div><div class="segment segment-gray" style="width:87.2634509016%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=53&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=53"><img class="hero-img-list" src="./overview_file/furion_hphover.png"> 
+							 	先知 </a></td><td><div>172</div><div class="segment segment-white" style="width:65.1515151515%;"></div></td><td sorttable_customkey="44.77"><div>44.8%</div><div class="segment segment-green" style="width:44.77%;"></div></td><td sorttable_customkey="2.0"><div>2.03  <div style="float:right;"> (5.3 / 8.0 / 10.8)</div></div><div class="segment segment-gold" style="width:59.3948639715%;"></div></td><td sorttable_customkey="1.93"><div style="float:middle;">1.93</div><div class="segment segment-gray" style="width:62.3624124883%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=72&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=72"><img class="hero-img-list" src="./overview_file/gyrocopter_hphover.png"> 
+							 	矮人直升机 </a></td><td><div>151</div><div class="segment segment-white" style="width:57.196969697%;"></div></td><td sorttable_customkey="50.33"><div>50.3%</div><div class="segment segment-green" style="width:50.33%;"></div></td><td sorttable_customkey="2.9"><div>2.87  <div style="float:right;"> (8.9 / 7.7 / 13.3)</div></div><div class="segment segment-gold" style="width:84.1384899374%;"></div></td><td sorttable_customkey="2.36"><div style="float:middle;">2.36</div><div class="segment segment-gray" style="width:76.2769826959%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=62&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=62"><img class="hero-img-list" src="./overview_file/bounty_hunter_hphover.png"> 
+							 	赏金猎人 </a></td><td><div>139</div><div class="segment segment-white" style="width:52.6515151515%;"></div></td><td sorttable_customkey="50.36"><div>50.4%</div><div class="segment segment-green" style="width:50.36%;"></div></td><td sorttable_customkey="2.2"><div>2.23  <div style="float:right;"> (6.8 / 7.3 / 9.3)</div></div><div class="segment segment-gold" style="width:65.3808434129%;"></div></td><td sorttable_customkey="2.61"><div style="float:middle;">2.61</div><div class="segment segment-gray" style="width:84.3517212797%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=32&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=32"><img class="hero-img-list" src="./overview_file/riki_hphover.png"> 
+							 	力丸 </a></td><td><div>122</div><div class="segment segment-white" style="width:46.2121212121%;"></div></td><td sorttable_customkey="56.56"><div>56.6%</div><div class="segment segment-green" style="width:56.56%;"></div></td><td sorttable_customkey="3.4"><div>3.41  <div style="float:right;"> (11.0 / 6.3 / 10.5)</div></div><div class="segment segment-gold" style="width:100.0%;"></div></td><td sorttable_customkey="3.09"><div style="float:middle;">3.09</div><div class="segment segment-gray" style="width:100.0%;"></div></td></tr><tr onclick="DoNav(&#39;/player/match/180999306/?hero=52&#39;);"><td><a href="http://dotamax.com/player/match/180999306/?hero=52"><img class="hero-img-list" src="./overview_file/leshrac_hphover.png"> 
+							 	拉席克 </a></td><td><div>112</div><div class="segment segment-white" style="width:42.4242424242%;"></div></td><td sorttable_customkey="53.57"><div>53.6%</div><div class="segment segment-green" style="width:53.57%;"></div></td><td sorttable_customkey="2.8"><div>2.82  <div style="float:right;"> (6.9 / 7.4 / 14.0)</div></div><div class="segment segment-gold" style="width:82.6136582945%;"></div></td><td sorttable_customkey="1.91"><div style="float:middle;">1.91</div>
+                                <div class="segment segment-gray" style="width:61.820573172%;"></div>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flat-grey-box">
+                        <div class="stitle" style="text-align: left;margin-top:0px;margin-left:5px;color: rgb(221, 221, 221);">Latest Matches</div>
+                        <table class="table table-list table-thead-left" style="width: 100%; margin-left: auto;margin-right: auto;margin-bottom: 0px;margin-top: 10px;">
+                            <thead>
+                                <tr>
+                                    <th style="width:25%;">Hero</th>
+                                    <th style="width:14%;">Match ID</th>
+                                    <th style="width:15%;">Time Finished</th>
+                                    <th style="width:8%;">Result</th>
+                                    <th style="width:18%;">KDA(K/D/A)</th>
+                                    <th style="width:13%;">Level</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-player-detail">
+                                <tr onclick="DoNav(&#39;/match/detail/4098459214&#39;);">
+                                    <td>
+                                        <a href="http://dotamax.com/match/detail/4098459214"><img class="hero-img-list" src="./overview_file/spectre_hphover.png"> 
+							 	幽鬼 </a></td><td sorttable_customkey="4098459214"><a href="http://dotamax.com/match/detail/4098459214">4098459214<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">2个月前</div></td><td><font style="color: #c23c2a !important;">失败</font></td><td>
+	                             1.6 (6 / 8 / 7)
+							</td><td><font style="color: #f0a868;">Very High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4091555258&#39;);"><td><a href="http://dotamax.com/match/detail/4091555258"><img class="hero-img-list" src="./overview_file/spectre_hphover.png"> 
+							 	幽鬼 </a></td><td sorttable_customkey="4091555258"><a href="http://dotamax.com/match/detail/4091555258">4091555258<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #499249 !important;">胜利</font></td><td>
+	                             2.9 (14 / 15 / 29)
+							</td><td><font style="color: #E6E8FA;">High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4089478693&#39;);"><td><a href="http://dotamax.com/match/detail/4089478693"><img class="hero-img-list" src="./overview_file/spectre_hphover.png"> 
+							 	幽鬼 </a></td><td sorttable_customkey="4089478693"><a href="http://dotamax.com/match/detail/4089478693">4089478693<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #499249 !important;">胜利</font></td><td>
+	                             2.6 (16 / 16 / 26)
+							</td><td><font style="color: #E6E8FA;">High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4087553862&#39;);"><td><a href="http://dotamax.com/match/detail/4087553862"><img class="hero-img-list" src="./overview_file/spectre_hphover.png"> 
+							 	幽鬼 </a></td><td sorttable_customkey="4087553862"><a href="http://dotamax.com/match/detail/4087553862">4087553862<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #c23c2a !important;">失败</font></td><td>
+	                             0.3 (1 / 9 / 2)
+							</td><td><font style="color: #E6E8FA;">High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4085408185&#39;);"><td><a href="http://dotamax.com/match/detail/4085408185"><img class="hero-img-list" src="./overview_file/spectre_hphover.png"> 
+							 	幽鬼 </a></td><td sorttable_customkey="4085408185"><a href="http://dotamax.com/match/detail/4085408185">4085408185<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #c23c2a !important;">失败</font></td><td>
+	                             1.1 (4 / 12 / 9)
+							</td><td><font style="color: #f0a868;">Very High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4082404880&#39;);"><td><a href="http://dotamax.com/match/detail/4082404880"><img class="hero-img-list" src="./overview_file/earthshaker_hphover.png"> 
+							 	撼地者 </a></td><td sorttable_customkey="4082404880"><a href="http://dotamax.com/match/detail/4082404880">4082404880<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #499249 !important;">胜利</font></td><td>
+	                             2.4 (2 / 8 / 17)
+							</td><td><font style="color: #f0a868;">Very High</font></td></tr><tr onclick="DoNav(&#39;/match/detail/4080057945&#39;);"><td><a href="http://dotamax.com/match/detail/4080057945"><img class="hero-img-list" src="./overview_file/pugna_hphover.png"> 
+							 	帕格纳 </a></td><td sorttable_customkey="4080057945"><a href="http://dotamax.com/match/detail/4080057945">4080057945<br>
+	                            	
+                                        全阵营
+	                                
+	                            </a></td><td><div class="fromnow">3个月前</div></td><td><font style="color: #c23c2a !important;">失败</font></td><td>
+	                             1.4 (4 / 13 / 14)
+							</td><td><font style="color: #E6E8FA;">High</font>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        <script type="text/javascript">
+			$('#indicatorContainer_win1').radialIndicator({
+			        barColor: 'rgb(97,156,26)',
+			        barBgColor: 'rgb(65,70,65)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return  51.3+'%';
+				    },
+				    initValue:51.3,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_rating1').radialIndicator({
+			        barColor: 'rgb(44,139,199)',
+			        barBgColor: 'rgb(15,45,70)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return   52.0;
+				    },
+				    initValue: 52.0,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_match1').radialIndicator({
+		        barColor: '#ccc',
+		        barBgColor: '#555',
+		        barWidth: 2,
+		        fontSize: 12,
+		        fontFamily: 'Arial',
+		        format: function (value) {
+			        return  4707;
+			    },
+			    initValue:0,
+		        radius: 22,
+		        roundCorner: true
+		    });
+
+		    $('#indicatorContainer_win2').radialIndicator({
+			        barColor: 'rgb(97,156,26)',
+			        barBgColor: 'rgb(65,70,65)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return  60.0+'%';
+				    },
+				    initValue:60.0,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_rating2').radialIndicator({
+			        barColor: 'rgb(44,139,199)',
+			        barBgColor: 'rgb(15,45,70)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return   36.9;
+				    },
+				    initValue: 36.9,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_match2').radialIndicator({
+		        barColor: '#ccc',
+		        barBgColor: '#555',
+		        barWidth: 2,
+		        fontSize: 12,
+		        fontFamily: 'Arial',
+		        format: function (value) {
+			        return  20;
+			    },
+			    initValue:0,
+		        radius: 22,
+		        roundCorner: true
+		    });
+
+		    $('#indicatorContainer_win3').radialIndicator({
+			        barColor: 'rgb(97,156,26)',
+			        barBgColor: 'rgb(65,70,65)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return  52.0+'%';
+				    },
+				    initValue:52.0,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_rating3').radialIndicator({
+			        barColor: 'rgb(44,139,199)',
+			        barBgColor: 'rgb(15,45,70)',
+			        barWidth: 2,
+			        fontSize: 12,
+			        fontFamily: 'Arial',
+			        format: function (value) {
+				        return   48.4;
+				    },
+				    initValue: 48.4,
+			        radius: 22,
+			        roundCorner: true
+			    });
+		    $('#indicatorContainer_match3').radialIndicator({
+		        barColor: '#ccc',
+		        barBgColor: '#555',
+		        barWidth: 2,
+		        fontSize: 12,
+		        fontFamily: 'Arial',
+		        format: function (value) {
+			        return  100;
+			    },
+			    initValue:0,
+		        radius: 22,
+		        roundCorner: true
+		    });
+		</script>
+        <div class="flat-grey-box">
+            <div class="stitle" style="text-align: left;margin-top:0px;margin-left:5px;color: rgb(221, 221, 221);">
+                Records
+            </div>
+            <table class="table table-list table-thead-left" style="width: 100%; margin-left: auto;margin-right: auto;margin-bottom: 40px;margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th style="width:25%;">Record Type</th>
+                        <th style="width:20%;">Match ID</th>
+                        <th style="width:15%;">Result</th>
+                        <th style="width:25%;">Hero</th>
+                        <th style="width:15%;">Record</th>
+                    </tr>
+                </thead>
+                <tbody class="table-player-detail">
+                    <tr onclick="DoNav(&#39;/match/detail/1387986465&#39;);">
+                        <td>
+                            Most Killes
+                        </td>
+                        <td>
+                            <a href="http://dotamax.com/match/detail/1387986465">1387986465</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/riki"><img class="hero-img-list" src="./overview_file/riki_hphover.png"> 
+							 	力丸</a></td><td>
+								39
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/1870043743&#39;);"><td>
+								Most Deaths
+							</td><td><a href="http://dotamax.com/match/detail/1870043743">1870043743</a></td><td><font style="color: #c23c2a !important;"> 失败</font></td><td><a href="http://dotamax.com/hero/detail/ogre_magi"><img class="hero-img-list" src="./overview_file/ogre_magi_hphover.png"> 
+							 	食人魔魔法师</a></td><td>
+								23
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3894124823&#39;);"><td>
+								Most Assists
+							</td><td><a href="http://dotamax.com/match/detail/3894124823">3894124823</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/zuus"><img class="hero-img-list" src="./overview_file/zuus_hphover.png"> 
+							 	宙斯</a></td><td>
+								50
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3527929183&#39;);"><td>
+								Most Last Hits
+							</td><td><a href="http://dotamax.com/match/detail/3527929183">3527929183</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/furion"><img class="hero-img-list" src="./overview_file/furion_hphover.png"> 
+							 	先知</a></td><td>
+								890
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3673232992&#39;);"><td>
+								Most Dinies
+							</td><td><a href="http://dotamax.com/match/detail/3673232992">3673232992</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/sniper"><img class="hero-img-list" src="./overview_file/sniper_hphover.png"> 
+							 	狙击手</a></td><td>
+								69
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/2223839148&#39;);"><td>
+								Most Gold
+							</td><td><a href="http://dotamax.com/match/detail/2223839148">2223839148</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/clinkz"><img class="hero-img-list" src="./overview_file/clinkz_hphover.png"> 
+							 	克林克兹</a></td><td>
+								875
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3548598339&#39;);"><td>
+								Most Experience
+							</td><td><a href="http://dotamax.com/match/detail/3548598339">3548598339</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/nevermore"><img class="hero-img-list" src="./overview_file/nevermore_hphover.png"> 
+							 	影魔</a></td><td>
+								989
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3133713128&#39;);"><td>
+								Most Hero Damage
+							</td><td><a href="http://dotamax.com/match/detail/3133713128">3133713128</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/zuus"><img class="hero-img-list" src="./overview_file/zuus_hphover.png"> 
+							 	宙斯</a></td><td>
+								89032
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3144222929&#39;);"><td>
+								Most Tower Damage
+							</td><td><a href="http://dotamax.com/match/detail/3144222929">3144222929</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/furion"><img class="hero-img-list" src="./overview_file/furion_hphover.png"> 
+							 	先知</a></td><td>
+								19355
+							</td></tr><tr onclick="DoNav(&#39;/match/detail/3088520812&#39;);"><td>
+								Most Hero Healing
+							</td><td><a href="http://dotamax.com/match/detail/3088520812">3088520812</a></td><td><font style="color: #499249 !important;">胜利</font></td><td><a href="http://dotamax.com/hero/detail/oracle"><img class="hero-img-list" src="./overview_file/oracle_hphover.png"> 
+							 	神谕者</a></td><td>
+								30177
+							</td></tr></tbody></table>
+                        </div>
+                </div>
+                <div style="width:360px;float: right;padding-top: 10px;">
+                    <div style="width:330px;height: 47px;margin-left: auto;margin-right: auto;color:#777;margin-top: 30px;background-color: rgb(25,25,25);padding-top: 8px;">
+                        <div style="float: left;text-align: center;width: 80px;">
+                            <span style="font-size: 18px;font-weight: bold;color: #a9cf54;">11</span>
+                            <div style="font-size: 10px;color: #a9cf54;">Winning Streak</div>
+                        </div>
+                        <div class="v-separator" style="float: left;"></div>
+                        <div style="float: left;text-align: center;width: 80px;">
+                            <span style="font-size: 18px;font-weight: bold;color: #c23c2a;">12</span>
+                            <div style="font-size: 10px;color: #c23c2a;">Losing Streak</div>
+                        </div>
+                        <div class="v-separator" style="float: left;"></div>
+                        <div style="float: left;text-align: center;width: 85px;">
+                            <span style="font-size: 12px;font-weight: bold;color: #999;">2014-06-20</span>
+                            <div style="font-size: 10px;">MMR</div>
+                        </div>
+                        <div class="v-separator" style="float: left;"></div>
+                        <div style="float: left;text-align: center;width: 80px;">
+                            <span style="font-size: 12px;font-weight: bold;color: #999;">180999306</span>
+                            <div style="font-size: 10px;">Steam ID</div>
+                        </div>
+                    </div>
+                    <table class="table-list-small" style="width: 90%; margin-left: auto;margin-right: auto;margin-bottom: 10px;margin-top: 20px;text-align: left !important;">
+                        <thead>
+                            <tr>
+                                <th style="width: 45%;padding-left: 10px;text-align: left;">All Matches </th>
+                                <th style="width: 25%;"></th>
+                                <th style="width: 25%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    <div id="indicatorContainer02" style="float: left;margin-top: 0px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 0px;"></canvas>
+                                    </div>
+                                    
+                                    <div style="margin-top: 0px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer03" style="float: left;margin-top: 0px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 0px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 0px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                                <td></td>
+                            </tr>
+<!--
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer1" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color:#999">
+                                                Normal 比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                4515场 (95.92%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer12" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer13" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer2" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color:#E6E8FA">
+                                                High 比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                182场 (3.87%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer22" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer23" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer3" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color: #f0a868">
+                                                Very High 比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                10场 (0.21%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer32" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div><
+                                    div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer33" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+-->
+<!--
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer4" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color:#9c3627">
+                                                职业比赛 
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场 (0.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer42" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer43" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+-->
+                        </tbody>
+                    </table>
+                    <script type="text/javascript">
+                        $('#indicatorContainer0').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  4707;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer02').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  51.3+'%';
+                            },
+                            initValue:51.3,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer03').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.7 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer1').radialIndicator({
+                            barColor: '#999',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  4515;
+                            },
+                            initValue:95.92,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer12').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  51.3+'%';
+                            },
+                            initValue:51.3,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer13').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.7 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer2').radialIndicator({
+                            barColor: '#E6E8FA',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  182;
+                            },
+                            initValue:3.87,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer22').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  52.7+'%';
+                            },
+                            initValue:52.7,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer23').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  2.6 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer3').radialIndicator({
+                            barColor: '#f0a868',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  10;
+                            },
+                            initValue:0.21,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer32').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  60.0+'%';
+                            },
+                            initValue:60.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer33').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  1.9 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer4').radialIndicator({
+                            barColor: '#9c3627',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer42').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer43').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                    </script>
+<!--
+                    <div style="display: table;">
+                        <div style="margin-left:35px;margin-top:4px;;cursor: pointer;width: 280px;float:right;text-align: center;font-size: 14px;font-weight: bold;margin-top: 20px;margin-bottom: 12px;" onclick="AddFavorite(window.location,document.title)">
+                            数据来自 www.dotamax.com
+                        </div>
+                    </div>
+-->
+<!--
+                    <table class="table-list-small" style="width: 95%; margin-left: auto;margin-right: auto;margin-bottom: 10px;margin-top: 25px;text-align: left !important;">
+                        <thead>
+                            <tr>
+                                <th style="width: 46%;padding-left: 10px;text-align: left;">天梯比赛</th>
+                                <th style="width: 25%;"></th>
+                                <th style="width: 25%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer0t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;">
+                                                天梯比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                94场(100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer02t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer03t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer1t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="12px;color:#ccc;margin-bottom: 3px;color:#999">
+                                                Normal 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                94场 (100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer12t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer13t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer2t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="12px;color:#ccc;margin-bottom: 3px;color:#E6E8FA">
+                                                High 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场 (0.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer22t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer23t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer3t" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size:12px;color:#ccc;margin-bottom: 3px;color:#f0a868">
+                                                Very High 天梯
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场 (0.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer32t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer33t" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="float: left;">
+                                        <div id="indicatorContainer5" style="float: left;margin-top: 5px;">
+                                            <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                        </div>
+                                        <div style="float: left;margin:8px 0px 0px 5px;">
+                                            <div style="font-size: 12px;color:#ccc;margin-bottom: 3px;color:#a9cf54">
+                                                Solo 比赛
+                                            </div>
+                                            <div style="font-size: 11px;color:#777;">
+                                                0场(100.00%)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer52" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">win%</div>
+                                </td>
+                                <td>
+                                    <div id="indicatorContainer53" style="float: left;margin-top: 5px;margin-left: 0px;">
+                                        <canvas width="80" height="80" style="width: 40px; height: 40px;"></canvas>
+                                    </div>
+                                    <div style="margin-top: 15px;float: left;margin-left: 5px;font-size: 11px;color: #777">KDA</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+-->
+                    <script type="text/javascript">
+                        $('#indicatorContainer0t').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  94;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer02t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  62.8+'%';
+                            },
+                            initValue:62.8,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer03t').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  3.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer1t').radialIndicator({
+                            barColor: '#999',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  94;
+                            },
+                            initValue:100.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer12t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  62.8+'%';
+                            },
+                            initValue:62.8,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer13t').radialIndicator({
+                                barColor: 'rgb(200,148,94)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  3.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer2t').radialIndicator({
+                            barColor: '#E6E8FA',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer22t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer23t').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                        $('#indicatorContainer3t').radialIndicator({
+                            barColor: '#f0a868',
+                            barBgColor: '#333',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0.00,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer32t').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer33t').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+
+                        $('#indicatorContainer5').radialIndicator({
+                            barColor: '#ccc',
+                            barBgColor: '#555',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0;
+                            },
+                            initValue:0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer52').radialIndicator({
+                            barColor: 'rgb(97,156,26)',
+                            barBgColor: 'rgb(65,70,65)',
+                            barWidth: 2,
+                            fontSize: 10,
+                            fontFamily: 'Arial',
+                            format: function (value) {
+                                return  0.0+'%';
+                            },
+                            initValue:0.0,
+                            radius: 18,
+                            roundCorner: true
+                        });
+                        $('#indicatorContainer53').radialIndicator({
+                                barColor: 'rgb(100,74,48)',
+                                barBgColor: '#333',
+                                barWidth: 2,
+                                fontSize: 12,
+                                fontFamily: 'Arial',
+                                format: function (value) {
+                                    return  0.0 ;
+                                },
+                                initValue:100,
+                                radius: 18,
+                                roundCorner: true
+                            });
+                    </script>
+                    <div style="margin-top: 20px;width:330px;margin-left: 10px;">
+                        <div class="title-hori">
+                            Recent teammates
+                            <span style="float:right;margin-right:12px;">
+                                <a href="http://dotamax.com/player/teammates/180999306/" class="more-circle">More</a>
+                            </span>
+                        </div>
+                        <div style="margin-left: 5px;display:table;">
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/185735256">
+                                    <img class="match-avatars-img" src="./overview_file/da98f3a1fdc37694245d3b9f7b3eaad0b43872fd_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;"> 
+                                        欧皇
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/225859777">
+                                    <img class="match-avatars-img" src="./overview_file/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;"> 
+                                        =.=
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/129719196">
+                                    <img class="match-avatars-img" src="./overview_file/97baf0b1848bd18519f6ec5eded38f50a91e3912_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                        Icarus
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/199192198">
+                                    <img class="match-avatars-img" src="./overview_file/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                        Cremationist
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/138979137">
+                                    <img class="match-avatars-img" src="./overview_file/0e508c54d7fa802411952330008703ab83428739_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                        OverMan
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                                <a href="http://dotamax.com/player/detail/180954891">
+                                    <img class="match-avatars-img" src="./overview_file/1619059ba511b1c76eda854eda371af6aa027071_medium.jpg" style="margin-left: 3px;">
+                                    <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                        MiniTail
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 40px;width:330px;margin-left: 10px;">
+                        <div class="title-hori">
+                            Recent opponents
+                            <span style="float:right;margin-right:12px;">
+                                <a href="http://dotamax.com/player/teammates/180999306/" class="more-circle">More</a>
+                            </span>
+                        </div>
+                        <div style="display: table;margin-left: 5px;">
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/144795648">
+                                <img class="match-avatars-img" src="./overview_file/9eb8c3512cf31bc506bdd5a839066b1701d5bf28_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                    别杀我，杀我队友
+                                </div>
+                            </a>
+                        </div>
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/138418693">
+                                <img class="match-avatars-img" src="./overview_file/813103b912f8ca0becd97be3a1fde6b20a065485_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                    冲钅
+                                </div>
+                            </a>
+                        </div>
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/138545160">
+                                <img class="match-avatars-img" src="./overview_file/bbfd5c882e75d4644b1fd6d501b638fae128738e_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;"> 
+                                    매산동최시원
+                                </div>
+                            </a>
+                        </div>
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/247140780">
+                                <img class="match-avatars-img" src="./overview_file/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                    让开我要水了
+                                </div>
+                            </a>
+                        </div>
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/157838218">
+                                <img class="match-avatars-img" src="./overview_file/3bbbac1ae8f97362a876404afea765c317c5ebfd_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;">
+                                    你有ROTZ   我有ATME
+                                </div>
+                            </a>
+                        </div>
+                        <div style="float: left;text-align: center;margin: 5px;width: 95px;">
+                            <a href="http://dotamax.com/player/detail/144001680">
+                                <img class="match-avatars-img" src="./overview_file/b84d46f31bacb92f59166220b74e175ba2a1c994_medium.jpg" style="margin-left: 3px;">
+                                <div class="overflow-text" style="width:100px;text-align: center;font-size: 10px;color:#a9cf54;height: 20px;"> 
+                                    自闭
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+
+                    
+        <script type="text/javascript">
+				$(function  () {
+					var status;
+					var userLog = function myFunction3(userAccount,loginStatus){
+						status=loginStatus;
+					}
+					maxjia.user.getCurrentUser(function(data){
+						status=data.loginStatus;
+					});
+					maxjia.user.loginStatusChanged.addListener(userLog);
+					if(status =="Offline")
+					$(".tem_log").hide();
+				})				
+        </script>
+                    
+    </div><!--modal-->
+    
+        </div>
+            
+            <!-- footbar -->
+        <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
+        <div style="width:100%;min-width:1100px;text-align: center; display: table;position: absolute;">
+            <div style="background-color: rgb(10,10,10);border-top:1px rgb(15,15,15) solid;cursor: pointer;margin-top: -1px;height:23px;" onclick="GoToTop(this)">
+                <ion-icon name="arrow-up"></ion-icon>
+<!--                <span class="fa fa-chevron-up" style="font-size: 16px;line-height: 25px;"></span>-->
+            </div>
+<!--
+            <div style="background-color: rgb(0,0,0);padding-top: 15px;padding-bottom: 15px;position: relative;">
+                <div style="width:1100px;margin: 0 auto;line-height: 20px;position: relative;height: 30px;">
+                    <span style="line-height: 30px;position: absolute;right:25px;top:0px;">
+                        <img src="./overview_file/zh-cn.gif" style="margin-right: 3px;height: 15px;">
+                        <a href="http://dotamax.com/set_language/?language=en">
+                            <img src="./overview_file/en.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ru">
+                            <img src="./overview_file/ru.gif" style="margin-right: 3px;">
+                        </a>
+                        <a href="http://dotamax.com/set_language/?language=ko">
+                            <img src="./overview_file/ko.gif" style="margin-right: 3px;">
+                        </a>
+                    </span>
+                </div>
+            </div>
+-->
+            <div class="footbar" style="padding-bottom:10px;">
+                <div style="position: relative;width: 1100px;height: 40px;margin: 0 auto;">
+                    <div style="position: absolute;top: 0;left: 0;">
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/rohame">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Chengwei Ye
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/fegan104">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Frank Egan
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/ReinaFeng">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Ruonan Feng
+                            </a>
+                        </div>
+                        <div style="float:left;margin-left: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://github.com/Echo226">
+                                <ion-icon name="logo-github"></ion-icon>
+                                Xinting Yao
+                            </a>
+                        </div>
+<!--
+                        <div style="float:left;margin-left: 20px">
+                            <a href="http://xiaoheihe.cn/" target="_blank" style="color:#ccc">小黑盒APP</a>
+                        </div>
+-->
+                    </div>
+                    <div style="position: absolute;top: 0;right: 0;margin-top: 5px">
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="mailto:cye3@wpi.edu">Contact us</a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="https://store.steampowered.com/">
+                                <ion-icon name="logo-steam"></ion-icon>
+                                Steam
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://dotamax.com">
+                                DotaMax
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://opendota.com">
+                                OpenDota
+                            </a>
+                        </div>
+                        <div style="float:right;margin-right: 20px;margin-top: 5px">
+                            <a target="_blank" href="http://dota2.com">
+                                DOTA2
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="site-record" style="position: relative;text-align: center;height: 60px;line-height: 40px;">
+                    Credit to
+<!--                    <span class="c-divider">|</span>-->
+                    <a target="_blank" class="c-link" href="http://www.dotamax.com">DOTAMAX</a><br>
+<!--                    <span>违法和不良信息举报电话：010-84158300　举报邮箱：jubao@dotamax.com</span>-->
+                </div>
+            </div>
+        </div>
+                    <!-- end of footbar -->
+        </div>
+        
+    </div>
+    </body>
+</html>
