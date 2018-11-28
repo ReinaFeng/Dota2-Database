@@ -90,7 +90,7 @@ app.get('/users-win', asyncHandler(async (req, res) => {
   }
 }))
 
-app.get('/match-winners/:match', asyncHandler(async (req, res) => {
+app.get('/matches/:match/winners', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery(`
       SELECT * 
@@ -101,6 +101,25 @@ app.get('/match-winners/:match', asyncHandler(async (req, res) => {
     `)
     res.render('pages/match_winners', {
       viewName: "Match Winners",
+      results: rows
+    })
+  } catch (error) {
+    console.error(error)
+    res.end(JSON.stringify(error));
+  }
+}))
+
+app.get('/matches', asyncHandler(async (req, res) => {
+  try {
+    const { rows } = await runQuery(`
+      SELECT *
+      FROM
+        match
+      ORDER BY
+        start_time;
+      `)
+    res.render('pages/matches', {
+      viewName: "Most Recent Matches",
       results: rows
     })
   } catch (error) {
