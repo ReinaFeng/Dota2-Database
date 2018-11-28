@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+<h2>Database Results For <%= viewName %> </h2>
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><%= r.steam_id %> - <%= r.win_rate %> <a href="/users/<%= r.steam_id %>">open</a></li>
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>

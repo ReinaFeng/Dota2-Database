@@ -13,7 +13,7 @@
 
 <ul>
     <% results.forEach(function(r) { %>
-        <li><%= r.steam_id %> - <%= r.win_rate %> <a href="/users-win/<%= r.steam_id %>">open</a></li>
+        <li><%= r.name %> - <%= r.personaname %> <a href="<%= r.profileurl %>">(steam profile)</a></li>
     <% }); %>
 </ul>
 

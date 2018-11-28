@@ -24,9 +24,6 @@ app.set('view engine', 'ejs')
 
 /**************** UI PAGES *****************/
 app.get('/', (req, res) => res.render('pages/index'))
-app.get('/user_match', (req, res) => res.render('pages/user_match'))
-app.get('/user_overview', (req, res) => res.render('pages/user_overview'))
-
 
 
 /**************** REST API *****************/
@@ -35,7 +32,7 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
     const { rows } = await runQuery('SELECT * FROM hero_view1;')
     rows.reverse()
     res.render('pages/simple_hero_view1', {
-      viewName: "Hero View One",
+      viewName: "Heroes By Win Rate",
       results: rows
     })
   } catch (error) {
@@ -46,30 +43,30 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
 
 
 //TODO actually query this with param
-app.get('/users/favorite/:player', asyncHandler(async (req, res) => {
-  try {
-    const { rows } = await runQuery(`
-      SELECT * 
-      FROM 
-        user_hero2 
-      WHERE
-        player.steam_id=${req.params.hero};
-    `)
-    res.end(JSON.stringify(rows))
-    // res.render('pages/db', {
-    //   viewName: "User Win Rate",
-    //   results: rows
-    // })
-  } catch (error) {
-    res.end(JSON.stringify(error));
-  }
-}))
+// app.get('/users/favorite/:player', asyncHandler(async (req, res) => {
+//   try {
+//     const { rows } = await runQuery(`
+//       SELECT * 
+//       FROM 
+//         user_hero2 
+//       WHERE
+//         player.steam_id=${req.params.hero};
+//     `)
+//     res.end(JSON.stringify(rows))
+//     // res.render('pages/db', {
+//     //   viewName: "User Win Rate",
+//     //   results: rows
+//     // })
+//   } catch (error) {
+//     res.end(JSON.stringify(error));
+//   }
+// }))
 
-app.get('/users-win/:userId', asyncHandler(async (req, res) => {
+app.get('/users/:userId', asyncHandler(async (req, res) => {
   try {
-    const { rows } = await runQuery(`SELECT * FROM user_view1 WHERE steam_id='${req.params.userId}';`)
-    res.render('pages/simple_user_win_rate', {
-      viewName: "User Win Rate",
+    const { rows } = await runQuery(`SELECT * FROM users WHERE steam_id='${req.params.userId}';`)
+    res.render('pages/user_page', {
+      viewName: "User Page",
       results: rows
     })
   } catch (error) {
@@ -77,10 +74,11 @@ app.get('/users-win/:userId', asyncHandler(async (req, res) => {
   }
 }))
 
-app.get('/users-win', asyncHandler(async (req, res) => {
+app.get('/users', asyncHandler(async (req, res) => {
   try {
-    const { rows } = await runQuery('SELECT * FROM user_view2;')
-    res.render('pages/simple_user_win_rate', {
+    const { rows } = await runQuery('SELECT * FROM user_view1;')
+    rows.reverse()
+    res.render('pages/all_user_page', {
       viewName: "All User's Win Rates",
       results: rows
     })
