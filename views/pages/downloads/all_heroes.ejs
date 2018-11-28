@@ -4,7 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>
             hero_list
-		</title>
+        </title>
+        <% include ../partials/header.ejs %>
         <meta http-equiv="Cache-Control" content="no-siteapp-platform">
         <link rel="apple-touch-icon" sizes="57x57" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
         <link rel="apple-touch-icon" sizes="72x72" href="http://cdn.dota2.com/apps/dota2/images/nav/logo.png">
@@ -195,6 +196,7 @@
         <link rel="stylesheet" type="text/css">
     </head>
     <body style="">
+        <% include ../partials/nav.ejs %>
         <script type="text/javascript">
             function closeApp() {
                 $("#android_app").hide();
