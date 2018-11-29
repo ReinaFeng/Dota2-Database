@@ -31,7 +31,7 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery('SELECT * FROM hero_view1;')
     rows.reverse()
-    res.render('pages/simple_hero_view1', {
+    res.render('pages/heroes_page', {
       viewName: "Heroes By Win Rate",
       results: rows
     })
@@ -41,6 +41,37 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
   }
 }))
 
+app.get('/hero/:heroId', asyncHandler(async (req, res) => {
+  try {
+    const { rows } = await runQuery(`
+    SELECT
+      *
+    FROM 
+      item_hero
+    WHERE
+      times=(
+        SELECT 
+          max(times)
+        FROM
+          item_hero
+        WHERE
+          hero_name='${req.params.heroId}' AND item_name!='empty')
+      AND
+        hero_name='${req.params.heroId}';
+    `)
+    const heroData = await runQuery(`SELECT * FROM hero WHERE hero_id=${req.params.heroId}`)
+    
+    rows.reverse()
+    res.render('pages/hero_page', {
+      viewName: "Heroes By Win Rate",
+      results: rows,
+      heroData: heroData.rows
+    })
+  } catch (error) {
+    console.error(error)
+    res.end(JSON.stringify(error));
+  }
+}))
 
 //TODO actually query this with param
 // app.get('/users/favorite/:player', asyncHandler(async (req, res) => {
@@ -126,6 +157,39 @@ app.get('/matches', asyncHandler(async (req, res) => {
         start_time;
       `)
     res.render('pages/matches', {
+      viewName: "Most Recent Matches",
+      results: rows
+    })
+  } catch (error) {
+    console.error(error)
+    res.end(JSON.stringify(error));
+  }
+}))
+
+app.get('/items/:item', asyncHandler(async (req, res) => {
+  try {
+    const { rows } = await runQuery(`
+      SELECT *
+      FROM
+        item
+      WHERE
+        item_id='${req.params.itemId}';
+    `)
+    res.render('pages/item_page', {
+      viewName: "Most Recent Matches",
+      results: rows
+    })
+  } catch (error) {
+    console.error(error)
+    res.end(JSON.stringify(error));
+  }
+}))
+
+//TODO
+app.get('/items', asyncHandler(async (req, res) => {
+  try {
+    const { rows } = await runQuery(`item frequency`)
+    res.render('pages/items_page', {
       viewName: "Most Recent Matches",
       results: rows
     })
