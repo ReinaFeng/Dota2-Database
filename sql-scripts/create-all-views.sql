@@ -19,22 +19,6 @@ FROM (
 Order by win_rate
 ;
 
---This isn't necessary
--- View Users By Win Rate
--- This query will allow you to sort all the Users in our database by their win rate.
--- CREATE OR REPLACE VIEW user_view2 AS
--- Select a.steam_id
---          ,(a.win_match)/(b.total_match) as win_rate
--- From (select steam_id, count(match_id) as win_match
---            from player
---            where win=1
---            group by steam_id) a left join
---          (select steam_id, count(match_id) as total_match
---           from player
---          group by steam_id) b on a.steam_id = b.steam_id
--- Order by win_rate
--- ;
-
 -- View Hero By Win Rate
 -- This query will allow you to sort the Heroes by their win rate.
 CREATE OR REPLACE VIEW hero_view1 AS
@@ -73,19 +57,28 @@ where hero.hero_id=frq_hero.hero_id
 Order by frq_hero.Times
 ;
 
+--TODO This is broken because user_item hase no steam_id
 -- View The Most Common Item for a Hero
 -- This query will tell you what Item is most commonly used by a given Hero.
 CREATE OR REPLACE VIEW item_hero AS
-select hero.name, item.name, it_times.times
-from(
-select hero_item.hero_id,hero_item.item_id, count(*) as times
-from (
-	select player.match_id, player.hero_id, user_item.item_id
-	from user_item, player
-	where player.steam_id=user_item.steam_id and player.match_id=user_item.match_id)as hero_item
-group by hero_item.item_id)as it_times, hero, item
-where hero.hero_id=it_times.hero_id and item.item_id=it_times.item_id
-order by it_times.times
+SELECT 
+  hero.name, item.name, it_times.times
+FROM(
+  SELECT 
+    hero_item.hero_id,hero_item.item_id, count(*) AS times
+  FROM(
+    SELECT 
+      player.match_id, player.hero_id, user_item.item_id
+    FROM 
+      user_item, player
+    WHERE 
+      player.steam_id=user_item.steam_id AND player.match_id=user_item.match_id) AS hero_item
+    GROUP BY 
+      hero_item.item_id) AS it_times, hero, item
+WHERE 
+  hero.hero_id=it_times.hero_id AND item.item_id=it_times.item_id
+ORDER BY 
+  it_times.times
 ;
 
 -- View Winners of a Match
@@ -96,23 +89,27 @@ from users join player using (steam_id)
 where player.win=1
 ;
 
------ CREATE VIEW
------- find kill, death, assist for each user with a specific hero
-CREATE OR REPLACE VIEW user_hero_view1
-select Player.steam_id
-     ,Hero.name as hero
-     ,max(kills) as max_kill
-     ,avg(kills) as avg_kill
-     ,min(kills) as min_kill
-     ,max(deaths) as max_death
-     ,avg(deaths) as avg_death
-     ,min(deaths) as min_death
-     ,max(assists) as max_assist
-     ,avg(assists) as avg_assist
-     ,min(assists) as min_assist
-from Player p, hero h
-where p.hero_id = h.hero_id
-group by P.steam_id, H.name
+-- CREATE VIEW
+-- find kill, death, assist for each user with a specific hero
+CREATE OR REPLACE VIEW user_hero_view1 AS
+SELECT 
+  player.steam_id, 
+  hero.name as hero,
+  max(kills) as max_kill,
+  avg(kills) as avg_kill,
+  min(kills) as min_kill,
+  max(death) as max_death,
+  avg(death) as avg_death,
+  min(death) as min_death,
+  max(assists) as max_assist,
+  avg(assists) as avg_assist,
+  min(assists) as min_assist
+FROM 
+  player, hero
+WHERE
+  player.hero_id = hero.hero_id
+GROUP BY 
+  player.steam_id, hero.name
 ;
 
 ------- find kill,death,assist for each user

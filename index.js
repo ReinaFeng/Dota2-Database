@@ -11,7 +11,7 @@ const runQuery = async (queryString) => {
     connectionString: DATABASE_URL,
     ssl: false
   });
-  
+
   await client.connect()
   const query = await client.query(queryString)
   await client.end()
@@ -64,10 +64,19 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
 
 app.get('/users/:userId', asyncHandler(async (req, res) => {
   try {
+    const userHeroesData = await runQuery(`
+      SELECT *
+      FROM
+        user_hero_view1
+      WHERE
+        steam_id='${req.params.userId}';
+      `)
     const { rows } = await runQuery(`SELECT * FROM users WHERE steam_id='${req.params.userId}';`)
+    
     res.render('pages/user_page', {
       viewName: "User Page",
-      results: rows
+      results: rows,
+      userHeroesData: userHeroesData.rows
     })
   } catch (error) {
     res.end(JSON.stringify(error));
@@ -125,5 +134,6 @@ app.get('/matches', asyncHandler(async (req, res) => {
     res.end(JSON.stringify(error));
   }
 }))
+
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}/`))

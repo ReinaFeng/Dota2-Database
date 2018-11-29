@@ -11,9 +11,17 @@
 <div class="container">
 <h2>Database Results For <%= viewName %> </h2>
 
+<h3>User Profile Data</h3>
 <ul>
     <% results.forEach(function(r) { %>
         <li><%= r.name %> - <%= r.personaname %> <a href="<%= r.profileurl %>">(steam profile)</a></li>
+    <% }); %>
+</ul>
+
+<h3>User's Hero Specific Stats</h3>
+<ul>
+    <% userHeroesData.forEach(function(r) { %>
+        <li><%= r.hero %> - <%= r.avg_kill %> - <%= r.avg_death %></li>
     <% }); %>
 </ul>
 
