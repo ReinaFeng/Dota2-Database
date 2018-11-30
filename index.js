@@ -25,13 +25,11 @@ app.set('view engine', 'ejs')
 /**************** UI PAGES *****************/
 app.get('/', (req, res) => res.render('pages/index'))
 
-
-/**************** REST API *****************/
-app.get('/hero/view1', asyncHandler(async (req, res) => {
+app.get('/hero', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery('SELECT * FROM hero_view1;')
     rows.reverse()
-    res.render('pages/heroes_page', {
+    res.render('pages/all_heroes', {
       viewName: "Heroes By Win Rate",
       results: rows
     })
@@ -41,6 +39,7 @@ app.get('/hero/view1', asyncHandler(async (req, res) => {
   }
 }))
 
+//TODO this ui isn't a thing yet
 app.get('/hero/:heroId', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery(`
@@ -62,7 +61,7 @@ app.get('/hero/:heroId', asyncHandler(async (req, res) => {
     const heroData = await runQuery(`SELECT * FROM hero WHERE hero_id=${req.params.heroId}`)
     
     rows.reverse()
-    res.render('pages/hero_page', {
+    res.render('pages/hero', {
       viewName: "Heroes By Win Rate",
       results: rows,
       heroData: heroData.rows
@@ -104,7 +103,7 @@ app.get('/users/:userId', asyncHandler(async (req, res) => {
       `)
     const { rows } = await runQuery(`SELECT * FROM users WHERE steam_id='${req.params.userId}';`)
     
-    res.render('pages/user_page', {
+    res.render('pages/user', {
       viewName: "User Page",
       results: rows,
       userHeroesData: userHeroesData.rows
@@ -118,7 +117,7 @@ app.get('/users', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery('SELECT * FROM user_view1;')
     rows.reverse()
-    res.render('pages/all_user_page', {
+    res.render('pages/all_users', {
       viewName: "All User's Win Rates",
       results: rows
     })
@@ -156,7 +155,7 @@ app.get('/matches', asyncHandler(async (req, res) => {
       ORDER BY
         start_time;
       `)
-    res.render('pages/matches', {
+    res.render('pages/all_matches', {
       viewName: "Most Recent Matches",
       results: rows
     })
@@ -166,7 +165,7 @@ app.get('/matches', asyncHandler(async (req, res) => {
   }
 }))
 
-app.get('/items/:item', asyncHandler(async (req, res) => {
+app.get('/items/:itemId', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery(`
       SELECT *
@@ -175,7 +174,7 @@ app.get('/items/:item', asyncHandler(async (req, res) => {
       WHERE
         item_id='${req.params.itemId}';
     `)
-    res.render('pages/item_page', {
+    res.render('pages/item', {
       viewName: "Most Recent Matches",
       results: rows
     })
@@ -185,11 +184,10 @@ app.get('/items/:item', asyncHandler(async (req, res) => {
   }
 }))
 
-//TODO
 app.get('/items', asyncHandler(async (req, res) => {
   try {
-    const { rows } = await runQuery(`item frequency`)
-    res.render('pages/items_page', {
+    const { rows } = await runQuery('SELECT * FROM item_by_freq;')
+    res.render('pages/all_items', {
       viewName: "Most Recent Matches",
       results: rows
     })
@@ -198,6 +196,5 @@ app.get('/items', asyncHandler(async (req, res) => {
     res.end(JSON.stringify(error));
   }
 }))
-
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}/`))

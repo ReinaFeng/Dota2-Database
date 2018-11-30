@@ -157,6 +157,29 @@ GROUP BY
   hero.name
 ;
 
+CREATE OR REPLACE VIEW user_hero_view1 AS
+SELECT 
+  player.steam_id, 
+  hero.name as hero,
+  count(*) as times,
+  max(kills) as max_kill,
+  avg(kills) as avg_kill,
+  min(kills) as min_kill,
+  max(death) as max_death,
+  avg(death) as avg_death,
+  min(death) as min_death,
+  max(assists) as max_assist,
+  avg(assists) as avg_assist,
+  min(assists) as min_assist
+FROM 
+  player, hero
+WHERE 
+  player.hero_id = hero.hero_id
+GROUP BY 
+  player.steam_id, hero.name
+ORDER BY 
+  times desc;
+
 ------ find last_hits, denies for each hero
 CREATE OR REPLACE VIEW hero_view2 AS
 SELECT 
@@ -175,34 +198,12 @@ GROUP BY
   hero.name
 ;
 
-ALTER TABLE user_item ALTER COLUMN player_slot TYPE integer USING (player_slot::integer);
-
+CREATE OR REPLACE VIEW item_by_freq AS
 SELECT
-  *
-FROM 
-  item_hero
-WHERE
-  times=(
-    SELECT 
-      max(times)
-    FROM
-      item_hero
-    WHERE
-      hero_name='Invoker' AND item_name!='empty')
-  AND
-    hero_name='Invoker';
-
-
-SELECT 
-  hero_name, item_name, times
-FROM   
-  item_name item1
-  JOIN 
-    hero_name hero1
-  ON 
-    c1.country=ct.code
-WHERE  
-  item_name.population=(SELECT MAX(times)
-    FROM city c2
-    WHERE c1.country=c2.country)
-ORDER BY country
+  item_id, en_name, COUNT(*) AS item_count
+FROM
+  user_item NATURAL JOIN item
+GROUP BY 
+  item_id, en_name
+ORDER BY 
+  item_count DESC;
