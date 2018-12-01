@@ -47,20 +47,20 @@ ORDER BY win_rate
 -- TODO this is wrong
 -- View A User's Favorite Hero
 -- This query will return the Hero that a given User uses most frequently in their Matches.
-CREATE OR REPLACE VIEW user_hero2 AS
-SELECT *
-FROM(
-	SELECT 
-    steam_id, hero_id, count(*) as Times
-	FROM 
-    player
-	GROUP BY 
-    player.hero_id) as frq_hero, hero
-WHERE 
-  hero.hero_id=frq_hero.hero_id
-ORDER BY 
-  frq_hero.Times
-;
+-- CREATE OR REPLACE VIEW user_hero2 AS
+-- SELECT *
+-- FROM(
+-- 	SELECT 
+--     steam_id, hero_id, count(*) as Times
+-- 	FROM 
+--     player
+-- 	GROUP BY 
+--     player.hero_id) as frq_hero, hero
+-- WHERE 
+--   hero.hero_id=frq_hero.hero_id
+-- ORDER BY 
+--   frq_hero.Times
+-- ;
 
 --TODO This is broken because user_item hase no steam_id
 -- View The Most Common Item for a Hero
@@ -89,9 +89,12 @@ ORDER BY
 -- View Winners of a Match
 -- This query will return which Players won a specific Match
 CREATE OR REPLACE VIEW match_view1 AS
-Select personaname, profileurl, hero_id, steam_id, match_id
-from users join player using (steam_id) 
-where player.win=1
+SELECT 
+  personaname, profileurl, hero_id, steam_id, match_id
+FROM 
+  users JOIN player USING (steam_id) 
+WHERE 
+  player.win=1
 ;
 
 -- CREATE VIEW
@@ -207,9 +210,3 @@ GROUP BY
   item_id, en_name
 ORDER BY 
   item_count DESC;
-
-SELECT *
-FROM
-  player JOIN match ON (player.match_id=match.match_id)
-WHERE
-  steam_id='193884241';
