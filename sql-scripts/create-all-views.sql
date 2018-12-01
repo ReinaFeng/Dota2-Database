@@ -207,3 +207,9 @@ GROUP BY
   item_id, en_name
 ORDER BY 
   item_count DESC;
+
+SELECT *
+FROM
+  player JOIN match ON (player.match_id=match.match_id)
+WHERE
+  steam_id='193884241';

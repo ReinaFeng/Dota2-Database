@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
 
-<% include ../partials/nav.ejs %>
+    <% include ../partials/nav.ejs %>
 
-<div class="container">
-<h2>Database Results For <%= viewName %> </h2>
+    <div class="container">
+        <h2>Database Results For
+            <%= viewName %>
+        </h2>
 
-<h3>User Profile Data</h3>
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.name %> - <%= r.personaname %> </li>
-    <% }); %>
-</ul>
 
-<h3>User's Hero Specific Stats</h3>
-<ul>
-    <% userHeroesData.forEach(function(r) { %>
-        <li><%= r.hero %> - <%= r.avg_kill %> - <%= r.avg_death %></li>
-    <% }); %>
-</ul>
+        <h3>User Profile Data</h3>
+        <ul>
+            <% results.forEach(function(r) { %>
+            <img src="<%= r.avatarfull %>" style="width: 64px"></img>
+            <div>Persona Name:
+                <b><%= r.personaname %></b>
+            </div>
+            <% }); %>
+        </ul>
 
-</div>
+        <h3>User's Stats by Hero</h3>
+        <ul>
+            <% userHeroesData.forEach(function(r) { %>
+            <li>
+                <div><b>Hero:</b>
+                    <%= r.hero %>
+                </div>
+                <div style="padding-left: 16px"><b>Average Kills:</b>
+                    <%= Math.round(r.avg_kill) %>
+                </div>
+                <div style="padding-left: 16px"><b>Average Deaths:</b>
+                    <%= Math.round(r.avg_death) %>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+
+        <h3>User's Matches</h3>
+        <ul>
+            <% userMatchData.forEach(function(r) { %>
+            <li> Game started at
+                <%= new Date(r.start_time * 1000).toLocaleString() %> and lasted
+                <%= Math.round(r.duration1/60) %> mins <a href="/matches/<%= r.match_id %>/winners">(see winners)</a></li>
+            <% }); %>
+        </ul>
+        </ul>
+
+    </div>
 
 </body>
+
 </html>

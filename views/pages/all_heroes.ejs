@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
 
-<% include ../partials/nav.ejs %>
+    <% include ../partials/nav.ejs %>
 
-<div class="container">
-<h2>Database Results For <%= viewName %> </h2>
+    <div class="container">
+        <h2>Database Results For
+            <%= viewName %>
+        </h2>
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.hero_name %> - <%= r.win_rate %></li>
-    <% }); %>
-</ul>
+        <ul>
+            <% results.forEach(function(r) { %>
+            <li>
+                <b><%= r.hero_name %></b>
+                <div style="padding-left:16px">
+                        Win Rate: <b><%= Math.round(r.win_rate+'e2')/100 %></b>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
 
-</div>
+    </div>
 
 </body>
+
 </html>

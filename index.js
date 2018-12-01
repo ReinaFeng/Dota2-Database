@@ -101,12 +101,20 @@ app.get('/users/:userId', asyncHandler(async (req, res) => {
       WHERE
         steam_id='${req.params.userId}';
       `)
+    const userMatchData = await runQuery(`
+      SELECT *
+      FROM
+        player JOIN match ON (player.match_id=match.match_id)
+      WHERE
+        steam_id='${req.params.userId}';
+      `)
     const { rows } = await runQuery(`SELECT * FROM users WHERE steam_id='${req.params.userId}';`)
     
     res.render('pages/user', {
       viewName: "User Page",
       results: rows,
-      userHeroesData: userHeroesData.rows
+      userHeroesData: userHeroesData.rows,
+      userMatchData: userMatchData.rows
     })
   } catch (error) {
     res.end(JSON.stringify(error));
@@ -115,7 +123,7 @@ app.get('/users/:userId', asyncHandler(async (req, res) => {
 
 app.get('/users', asyncHandler(async (req, res) => {
   try {
-    const { rows } = await runQuery('SELECT * FROM user_view1;')
+    const { rows } = await runQuery('SELECT * FROM user_view1 NATURAL JOIN users;')
     rows.reverse()
     res.render('pages/all_users', {
       viewName: "All User's Win Rates",
@@ -153,7 +161,7 @@ app.get('/matches', asyncHandler(async (req, res) => {
       FROM
         match
       ORDER BY
-        start_time;
+        start_time DESC;
       `)
     res.render('pages/all_matches', {
       viewName: "Most Recent Matches",
