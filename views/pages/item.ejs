@@ -9,11 +9,13 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
+<h2>Database Results For <%= viewName %> </h2>
 
+<h3>Item Data</h3>
 <ul>
     <% results.forEach(function(r) { %>
-        <li><%= r.hero_name %> - <%= r.win_rate %></li>
+        <li><b>Name: </b><%= r.en_name %> </li>
+        <li><b>Cost: </b> <%= r.cost %></li>
     <% }); %>
 </ul>
 

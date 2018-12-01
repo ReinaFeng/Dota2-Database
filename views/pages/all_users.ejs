@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+    <% include ../partials/nav.ejs %>
+
+    <div class="container">
+        <h2>Database Results For
+            <%= viewName %>
+        </h2>
+
+        <ul>
+            <% results.forEach(function(r) { %>
+            <li style="margin: 16px; background: lightskyblue; box-shadow: 0 8px 6px -6px black;" onclick="location.href='/users/<%= r.steam_id %>'">
+                <img src="<%= r.avatarfull %>" style="width: 64px"></img>
+                <div>Persona Name:
+                    <%= r.personaname %>
+                </div>
+                <div>MMR:
+                    <%= r.mmr_estimate %> (<i>estimate</i>)
+                </div>
+                <div>
+                    Steam ID:
+                    <%= r.steam_id %>
+                </div>
+            </li>
+            <% }); %>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

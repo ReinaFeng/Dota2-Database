@@ -13,7 +13,7 @@
 
 <ul>
     <% results.forEach(function(r) { %>
-        <li><%= r.en_name %> - <%= r.win_rate %><a href="/items/<%= r.item_id %>">(open)</a></li>
+        <li> Game started at <%= new Date(r.start_time * 1000).toLocaleString() %> and lasted <%= Math.round(r.duration1/60) %> mins <a href="/matches/<%= r.match_id %>/winners">(see winners)</a></li>
     <% }); %>
 </ul>
 

@@ -13,7 +13,7 @@
 
 <ul>
     <% results.forEach(function(r) { %>
-        <li><%= r.en_name %> - <%= r.win_rate %><a href="/items/<%= r.item_id %>">(open)</a></li>
+        <li><%= r.personaname %> - <%= r.hero_id %> <a href="<%= r.profileurl %>">(steam profile)</a></li>
     <% }); %>
 </ul>
 
