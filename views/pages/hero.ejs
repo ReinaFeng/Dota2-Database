@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+<h2>Database Results For <%= viewName %> </h2>
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><b>Name: </b><%= r.hero %> </li>
+        <li><b>Max Kills: </b><%= r.max_kill %> </li>
+        <li><b>Average Kills: </b><%= Math.round(r.avg_kill * 100)/100 %> </li>
+        <li><b>Min Kills: </b><%= r.min_kill %> </li>
+        <li><b>Max Deaths: </b><%= r.max_death %> </li>
+        <li><b>Average Deaths: </b><%= Math.round(r.avg_death) %> </li>
+        <li><b>Min Deaths: </b><%= r.min_death %> </li>
+        <li><b>Max Assist: </b><%= r.max_assist %> </li>
+        <li><b>Average Assist: </b><%= Math.round(r.avg_assist) %> </li>
+        <li><b>Min Assists: </b><%= r.min_assist %> </li>
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -17,7 +17,7 @@
         <ul>
             <% results.forEach(function(r) { %>
             <li>
-                <b><%= r.hero_name %></b>
+                <b><%= r.hero_name %></b> <a href="/hero/<%= r.id %>">(view stats)</a>
                 <div style="padding-left:16px">
                         Win Rate: <b><%= Math.round(r.win_rate+'e2')/100 %></b>
                 </div>

@@ -20,7 +20,8 @@
             <% results.forEach(function(r) { %>
             <img src="<%= r.avatarfull %>" style="width: 64px"></img>
             <div>Persona Name:
-                <b><%= r.personaname %></b>
+                <b>
+                    <%= r.personaname %></b>
             </div>
             <% }); %>
         </ul>
@@ -42,6 +43,17 @@
             <% }); %>
         </ul>
 
+        <h3>User's Favorite Item</h3>
+        <ul>
+            <% userFavoriteItemData.forEach(function(r) { %>
+            <li> Item Name: <b>
+                    <%= r.en_name %> </b>
+                used
+                <%= r.freqs %> time(s)</li>
+            <% }); %>
+        </ul>
+        </ul>
+
         <h3>User's Matches</h3>
         <ul>
             <% userMatchData.forEach(function(r) { %>
@@ -52,6 +64,13 @@
         </ul>
         </ul>
 
+        <h3>User's Recent Teammates</h3>
+        <ul>
+            <% userTeammateData.forEach(function(r) { %>
+                <li> Teammate: <b> <%= r.personaname %> </b> <a href="/users/<%= r.teammate %>">(see profile)</a></li>
+            <% }); %>
+        </ul>
+        </ul>
     </div>
 
 </body>
