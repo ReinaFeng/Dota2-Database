@@ -39,58 +39,26 @@ app.get('/hero', asyncHandler(async (req, res) => {
   }
 }))
 
-//TODO this ui isn't a thing yet
 app.get('/hero/:heroId', asyncHandler(async (req, res) => {
   try {
     const { rows } = await runQuery(`
-    SELECT
-      *
+    SELECT * 
     FROM 
-      item_hero
-    WHERE
-      times=(
-        SELECT 
-          max(times)
-        FROM
-          item_hero
-        WHERE
-          hero_name='${req.params.heroId}' AND item_name!='empty')
-      AND
-        hero_name='${req.params.heroId}';
-    `)
-    const heroData = await runQuery(`SELECT * FROM hero WHERE hero_id=${req.params.heroId}`)
+      all_hero_stats 
+    WHERE 
+      id='${req.params.heroId}';`
+    )
     
     rows.reverse()
     res.render('pages/hero', {
-      viewName: "Heroes By Win Rate",
-      results: rows,
-      heroData: heroData.rows
+      viewName: "Hero Data",
+      results: rows
     })
   } catch (error) {
     console.error(error)
     res.end(JSON.stringify(error));
   }
 }))
-
-//TODO actually query this with param
-// app.get('/users/favorite/:player', asyncHandler(async (req, res) => {
-//   try {
-//     const { rows } = await runQuery(`
-//       SELECT * 
-//       FROM 
-//         user_hero2 
-//       WHERE
-//         player.steam_id=${req.params.hero};
-//     `)
-//     res.end(JSON.stringify(rows))
-//     // res.render('pages/db', {
-//     //   viewName: "User Win Rate",
-//     //   results: rows
-//     // })
-//   } catch (error) {
-//     res.end(JSON.stringify(error));
-//   }
-// }))
 
 app.get('/users/:userId', asyncHandler(async (req, res) => {
   try {
@@ -108,13 +76,31 @@ app.get('/users/:userId', asyncHandler(async (req, res) => {
       WHERE
         steam_id='${req.params.userId}';
       `)
+    const userTeammateData = await runQuery(`
+      SELECT 
+        teammates.steam_id, name, personaname, teammates.teammate
+      FROM
+        teammates JOIN users ON (teammates.teammate=users.steam_id)
+      WHERE
+        teammates.steam_id='${req.params.userId}';
+    `)
+    const userFavoriteItemData = await runQuery(`
+        SELECT * 
+        FROM 
+          user_favorite_item 
+        WHERE 
+          steam_id='${req.params.userId}' 
+          AND en_name!='empty';
+      `)
     const { rows } = await runQuery(`SELECT * FROM users WHERE steam_id='${req.params.userId}';`)
     
     res.render('pages/user', {
       viewName: "User Page",
       results: rows,
       userHeroesData: userHeroesData.rows,
-      userMatchData: userMatchData.rows
+      userMatchData: userMatchData.rows,
+      userTeammateData: userTeammateData.rows,
+      userFavoriteItemData: userFavoriteItemData.rows
     })
   } catch (error) {
     res.end(JSON.stringify(error));
@@ -194,9 +180,15 @@ app.get('/items/:itemId', asyncHandler(async (req, res) => {
 
 app.get('/items', asyncHandler(async (req, res) => {
   try {
-    const { rows } = await runQuery('SELECT * FROM item_by_freq;')
+    const { rows } = await runQuery(`
+      SELECT * 
+      FROM 
+        item_by_freq
+      WHERE
+        en_name!='empty';
+    `)
     res.render('pages/all_items', {
-      viewName: "Most Recent Matches",
+      viewName: "Most Popular Items",
       results: rows
     })
   } catch (error) {
