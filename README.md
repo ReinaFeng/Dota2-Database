@@ -1,2 +1,2 @@
-# cs542-dota2
-The final project for cs542.
+# Dota2 Database
+See detail in "Dota2 Database report.pdf".
